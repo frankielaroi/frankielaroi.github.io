@@ -1,0 +1,191 @@
+*{
+    background-color:#0c0c3b;
+    padding: auto;
+    margin: auto;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all ease-in-out 0.5s;
+}
+header{
+    padding-top: 2vmax;
+}
+h2{
+    position: relative;
+    padding-right:6vmax;
+    padding-left: 0vmax;
+    object-position: 10vmax;
+    right: 10vmax;
+    left: 0vmax;
+}
+ul{
+    position: relative;
+    font-size:medium; 
+    display: flex;
+    list-style:none;
+   padding: auto;
+}
+li{
+    position: relative;
+    right: 20vmax;
+    left: 1vmax;
+}
+a{
+    text-decoration: none;
+}
+li:hover{
+    font-size: large;
+}
+section{
+    padding: 5vmax;
+}
+
+.digitize img{
+    aspect-ratio: 1.2;
+    max-width:50vmax;
+    min-width:none !important;
+    float: right;
+}
+.digitize h1{
+    padding: auto;
+    font-size:5vmax;
+}
+.digitize p{
+    padding:2vmax;    
+    margin: auto;
+    font-size:2vmax ;
+}
+.digitize button{
+    position: relative;
+    background:none;
+    border-radius: 0.8vmax;
+    border-color: #ccccff;
+    backface-visibility: hidden;
+    border-width:0.1vmax;
+    align-content: space-around;
+    width:auto;
+    z-index: 1;
+    font-family:'Roboto',sans-serif;
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+    padding: .7em 1.8em;
+    align-self: auto;
+}
+.digitize button:hover{
+    color:#0c0c3b;
+    
+}
+.digitize button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+.digitize button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.cheap{
+}
+.cheap img {
+    aspect-ratio: 1.2;
+    max-width: 50vmax;
+    min-width: none !important;
+    float:left;
+}
+.cheap h1{
+    padding: auto;
+    font-size:5.5vmax;
+    text-align: center;
+}
+.cheap  p {
+     padding: 3vmax;
+     margin: auto;
+     font-size: 2vmax;
+     text-align: center;
+     line-height: 4vmax;
+}
+.cheap button{
+    position: relative;
+    align-self: auto;
+    width:auto;
+    padding: .7em 1.8em ;
+    border:.1rem solid #fff;
+    border-radius:0.8vmax;
+    color:white;
+    font-weight: bold;
+    font-family:'Roboto', sans-serif;
+    box-shadow:none;
+    cursor: pointer;
+    left:10vmax;
+    right:0vmax ;
+    z-index:1 ;
+    transition: all 1s ease-in-out;
+}
+.cheap button:hover{
+    background: transparent linear-gradient(#848dc0, #e2e3eb) repeat scroll 0% 0%;
+    transform: scale(1.5);
+    color: #0c0c3b;
+}
+.service{
+    display: flex;
+    flex: auto;
+    text-align: center;
+    justify-content:stretch;
+    padding:1vmax;
+    align-content:stretch;
+}
+.pentest{
+    height: auto;
+    text-wrap: wrap;
+    width: fit-content;
+    max-width: 96vw;
+    left: 2vmax;
+    right: 200vmax;
+}
+.webdev{
+    padding: 2vh;
+    left: 4vmax;
+    right: 3vmax;
+}
+.appdev{
+   left: 6vmax;
+   right: 2vmax;
+
+}
+.pentest, .webdev ,.appdev{
+    position: relative;
+    display: flex;
+    line-height: 3vmax;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 0.1vmax ridge #eaeaf1;
+    font-size: auto;
+    border-radius: 0.8vmax;
+    backface-visibility: hidden;
+    padding: 1vmax;
+    box-shadow: 7px 7px 14px #bebebe,
+            -7px -7px 14px #ffffff;
+
+}
+.pentest,.webdev,.appdev h1{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+@media (max-width: 800px) {
+    .service{
+        flex-direction:column;
+    }
+  .pentest, .webdev,.appdev {
+         top:0;
+         left:0;
+         right:0;
+         bottom:0;
+        }
+}
