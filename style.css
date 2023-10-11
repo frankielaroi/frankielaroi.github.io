@@ -92,8 +92,7 @@ section{
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
-.cheap{
-}
+
 .cheap img {
     aspect-ratio: 1.2;
     max-width: 50vmax;
@@ -189,12 +188,21 @@ section{
          bottom:0;
         }
 }
+fieldset{
+    width:max-content;
+    height:max-content;
+    border-radius: 1vmax;
+}
 .tech{
     display: flex;
     flex-direction:row;
-    padding: 0.3vmax;
+    padding:auto;
     justify-content: space-evenly;
 }
 .tech img{
-    width:5vmax;
+    width:4vmax;
+    padding: 2vmax;
+}
+.tech img:hover{
+    transform: scale(1.4);
 }
