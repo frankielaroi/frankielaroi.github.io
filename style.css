@@ -189,3 +189,12 @@ section{
          bottom:0;
         }
 }
+.tech{
+    display: flex;
+    flex-direction:row;
+    padding: 0.3vmax;
+    justify-content: space-evenly;
+}
+.tech img{
+    width:5vmax;
+}
