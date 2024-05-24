@@ -17,4 +17,18 @@ document.addEventListener('scroll', function() {
         header.classList.remove('hidden');
     }
 });
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+});
+window.addEventListener('load', function () {
+    // Set a delay to simulate loading time (you can remove this in your actual implementation)
+    setTimeout(function () {
+        // Remove the preloader from the DOM
+        var preloader = document.querySelector('.preloader');
+      preloader.parentNode.removeChild(preloader);
+      preloader.style.display = 'none'; // Hide the preloader once everything is loaded
+
+    }, 3800); // Adjust the delay time as needed
+});
+
   AOS.init();
