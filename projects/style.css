@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3vmax;
+    height: 100%;
+    background-color: black;
+}
+
+header img {
+    width: 3vmax;
+    height: auto;
+    height: fit-content;
+}
+
+header h1 {
+    align-self: center;
+    text-align: center;
+    font-size: 6vmax;
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    padding: 3vmax;
+    margin-top: 20dvh;
+}
+
+header h1 p {
+    font-size: 4vmax;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    padding: 3vmax;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.drawer {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: black;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: "League Spartan";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.drawer ul {
+    list-style-type: none;
+}
+
+.drawer h3 {
+    font-weight: 400;
+    line-height: 5vmax;
+    margin-right: 10%;
+}
+
+.drawer ul li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 5vmax;
+    font-weight: 700;
+    background-color: white;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.drawer ul li:hover {
+    background-color: #ddd;
+}
+
+.drawer ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.drawer-toggle {
+    font-size: 30px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.drawer-open {
+    width: 100vw;
+}
+
+.drawer-close {
+    font-size: 30px;
+    background: none;
+    color: black;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.tech {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech h3 {
+    padding-left: 5vmax;
+    font-family: "League Spartan";
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.projects div {
+    width: 20vmax;
+    height: 40vmax;
+    margin: 3vmax;
+    background-size: contain;
+    border-radius: 3vmax;
+}
+
+.projects div h1 {
+    padding: 2vmax;
+}
+
+.projects a {
+    text-decoration: none;
+    color: white;
+}
+
+.food {
+    background: linear-gradient(rgb(100, 100, 100), rgb(26, 27, 27)),
+        url("./assets/icons/iPhone\ 11\ Pro\ Max\ -\ 1.png");
+    background-blend-mode: darken;
+}
+
+.eccormerce {
+    background: linear-gradient(rgb(252, 252, 255), rgb(26, 27, 27)),
+        url("./assets/icons/Slice\ 1.png");
+}
+
+.backend {
+    background: linear-gradient(rgb(43, 43, 44), rgb(26, 27, 27));
+}
+
+.see,
+.load {
+    margin: 2vw;
+    padding: 1vw 2vw 1vw 2vw;
+    background-color: grey;
+    border-style: none;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 30vh;
+    padding: 10vmax;
+    font-family: "Roboto";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+footer li {
+    margin: 1vmax;
+}
+
+footer img {
+    width: 8vw;
+    height: auto;
+}

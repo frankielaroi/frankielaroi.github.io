@@ -14,6 +14,7 @@ header {
 
 header img {
   width: 3vmax;
+  height:auto;
   height: fit-content;
 }
 
@@ -120,14 +121,15 @@ header h1 p {
   font-size: 1.8vmax;
   text-align: left;
   padding: 5vmax;
-  width: 50vmax;
+  width: 70vw;
+  
 }
 .tech h3 {
   padding-left: 5vmax;
   font-family: "League Spartan";
 }
 .skills {
-  width: 50vmax;
+  width: 80vw;
   display: flex;
   flex-wrap: wrap;
   font-size: medium;
@@ -171,16 +173,22 @@ header h1 p {
 .backend {
   background: linear-gradient(rgb(43, 43, 44), rgb(26, 27, 27));
 }
+.see , .load{
+  margin: 2vw;
+  padding: 1vw 2vw 1vw 2vw ;
+  background-color: grey;
+  border-style: none;
+}
 footer {
   background-color: black;
   color: white;
-  height: 100%;
+  height: 30vh;
   padding: 10vmax;
   font-family: "Roboto";
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: space-evenly;
+  justify-content: space-between;
+  align-content: space-between;
 }
 footer ul {
   list-style: none;
@@ -191,9 +199,6 @@ footer li {
   margin: 1vmax;
 }
 footer img{
-    width: 5vmax;
+    width: 8vw;
     height:auto;
-}
-footer div {
-  padding: 5%;
 }
