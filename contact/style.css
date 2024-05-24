@@ -111,66 +111,29 @@ header h1 p {
     right: 20px;
     cursor: pointer;
 }
-
-.tech {
-    background-color: white;
-    color: black;
-    display: flex;
+section{
+    margin: 0%;
+}
+form{
+    display:flex;
     flex-direction: column;
     align-items: center;
 }
-
-.tech h3 {
-    padding-left: 5vmax;
-    font-family: "League Spartan";
+form input{
+    width: 30vw;
 }
-
-.projects {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.projects div {
-    width: 20vmax;
-    height: 40vmax;
+form label{
     margin: 3vmax;
-    background-size: contain;
-    border-radius: 3vmax;
 }
-
-.projects div h1 {
-    padding: 2vmax;
+.Message{
+    height: 10vmax;
 }
-
-.projects a {
-    text-decoration: none;
-    color: white;
-}
-
-.food {
-    background: linear-gradient(rgb(100, 100, 100), rgb(26, 27, 27)),
-        url("./assets/icons/iPhone\ 11\ Pro\ Max\ -\ 1.png");
-    background-blend-mode: darken;
-}
-
-.eccormerce {
-    background: linear-gradient(rgb(252, 252, 255), rgb(26, 27, 27)),
-        url("./assets/icons/Slice\ 1.png");
-}
-
-.backend {
-    background: linear-gradient(rgb(43, 43, 44), rgb(26, 27, 27));
-}
-
-.see,
-.load {
+.send{
     margin: 2vw;
     padding: 1vw 2vw 1vw 2vw;
     background-color: grey;
     border-style: none;
 }
-
 footer {
     background-color: black;
     color: white;

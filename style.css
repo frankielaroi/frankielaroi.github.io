@@ -10,6 +10,7 @@ header {
   padding: 3vmax;
   height: 100%;
   background-color: black;
+  position: sticky;
 }
 
 header img {
