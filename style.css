@@ -30,9 +30,8 @@ header.hidden {
   opacity: 0;
 }
 header img {
-  width: 3vmax;
-  height:5vmax;
-      background-size: contain;
+  width:10%;
+  height:15%;
   height: fit-content;
 }
 
