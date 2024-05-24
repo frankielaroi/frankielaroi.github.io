@@ -7,3 +7,14 @@ function toggleDrawer() {
     drawer.classList.add('drawer-open');
   }
 }
+document.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const headerHeight = header.offsetHeight;
+    
+    if (window.scrollY > headerHeight) {
+        header.classList.add('hidden');
+    } else {
+        header.classList.remove('hidden');
+    }
+});
+  AOS.init();

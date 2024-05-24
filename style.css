@@ -10,9 +10,12 @@ header {
   padding: 3vmax;
   height: 100%;
   background-color: black;
-  position: sticky;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
+header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
 header img {
   width: 3vmax;
   height:auto;
