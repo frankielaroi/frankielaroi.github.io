@@ -31,7 +31,8 @@ header.hidden {
 }
 header img {
   width: 3vmax;
-  height:auto;
+  height:5vmax;
+      background-size: contain;
   height: fit-content;
 }
 

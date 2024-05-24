@@ -17,6 +17,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./style.css" />
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -46,21 +48,21 @@
         </h3>
     </nav>
     <section class="projects">
-            <div class="food">
+            <div class="food" data-aos="flip-left">
                 <a href="https://github.com/frankielaroi/FoodAppNative" target="_blank">
                     <h1>Food App with react Native</h1>
 
                 </a>
             </div>
-            <div class="eccormerce"> <a href="https://github.com/frankielaroi/eccormercets" target="_blank">
+            <div class="eccormerce" data-aos="flip-left"> <a href="https://github.com/frankielaroi/eccormercets" target="_blank">
                     <h1>Eccormerce App with React and Firebase</h1>
                 </a></div>
-            <div class="backend"><a href="https://github.com/frankielaroi/backendnode" target="_blank">
+            <div class="backend" data-aos="flip-left"><a href="https://github.com/frankielaroi/backendnode" target="_blank">
                     <h1>Backend with Node and Express js</h1>
                 </a></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div data-aos="flip-left"></div>
+            <div data-aos="flip-left"></div>
+            <div data-aos="flip-left"></div>
     </section>
     <footer>
         <div>
@@ -75,6 +77,10 @@
         </h3>
         <img src="../assets/icons/logo-no-background.png">
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

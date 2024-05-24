@@ -14,8 +14,9 @@ header {
 
 header img {
     width: 3vmax;
-    height: auto;
+    height: 5vmax;
     height: fit-content;
+    background-size: contain;
 }
 
 header h1 {
