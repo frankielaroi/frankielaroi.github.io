@@ -215,6 +215,10 @@ footer ul {
 footer li {
   margin: 1vmax;
 }
+footer a{
+  text-decoration: none;
+  color: inherit;
+}
 footer img{
     width: 8vw;
     height:auto;

@@ -112,28 +112,31 @@ header h1 p {
     right: 20px;
     cursor: pointer;
 }
-section{
+
+section {
     margin: 0%;
-}
-form{
-    display:flex;
+    padding: 3vmax;
+    display: flex;
     flex-direction: column;
-    align-items: center;
 }
-form input{
-    width: 30vw;
+.background ,.hobbies{
+    margin: 3vmax 15vmax;
+    line-height: 5vh;
 }
-form label{
-    margin: 3vmax;
+.background h2,.hobbies h2{
+    font-family: 'League Spartan',sans-serif;
+    font-weight: bold;
+    font-size: larger;
 }
-.Message{
-    height: 10vmax;
+.background p, .hobbies p{
+    font-family: 'Roboto',sans-serif;
+    font-size:1em;
 }
-.send{
-    margin: 2vw;
-    padding: 1vw 2vw 1vw 2vw;
-    background-color: grey;
-    border-style: none;
+section img{
+    align-self: center;
+    filter: grayscale(100%);
+    border-radius: 30%;
+    image-rendering:optimizeQuality;
 }
 footer {
     background-color: black;
@@ -159,6 +162,7 @@ footer li {
 footer a {
     text-decoration: none;
     color: inherit;
+    padding: 5vmax;
 }
 
 footer img {

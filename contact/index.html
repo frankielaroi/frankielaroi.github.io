@@ -17,6 +17,28 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "luXj6u3koLNcUKhk3",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_etdvtgq', 'template_g845nkn', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -27,16 +49,16 @@
                 class="animate__animated animate__rotateIn animate_slower" />
             <button class="drawer-toggle" onclick="toggleDrawer()">☰</button>
         </div>
-        <h1 class="animate__animated animate__fadeInLeft ">CONTACT US<p>LET'S MAKE SOMETHING</p>
+        <h1 class="animate__animated animate__fadeInLeft ">CONTACT ME<p>SAY HELLO</p>
         </h1>
     </header>
     <nav class="drawer">
         <button class="drawer-close" onclick="toggleDrawer()">✖</button>
         <ul>
-            <li><a href="/index.html" onclick="toggleDrawer()">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="../projects/">PROJECTS</a></li>
-            <li><a href=".top">CONTACT</a></li>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about/">ABOUT</a></li>
+            <li><a href="/projects/">PROJECTS</a></li>
+            <li><a onclick="toggleDrawer()">CONTACT</a></li>
         </ul>
         <h3 class="Contact">
             frankiekweku@gmail.com <br> +233208085722 <br>
@@ -46,32 +68,33 @@
         </h3>
     </nav>
     <section>
-        <form action="" method="post">
+        <form action="" method="post" id="contact-form">
             <label>
                 Email:
-                <input type="email">
+                <input type="email" name="email">
             </label>
             <label>
                 Subject:
-                <input type="text">
+                <input type="text" name="subject">
             </label>
             <label>
                 Message:
-                <input type="text" aria-multiline="true" class="Message">
+                <input type="text" aria-multiline="true" name="message" class="Message">
             </label>
-            <button type="submit" class="send">Send </button>
+            <button type="submit" class="send" onclick="alert('email sent')">Send </button>
         </form>
     </section>
     <footer>
         <div>
-            <ul>
-                <li>PROJECTS</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
-            </ul>
+        <ul>
+            <li><a href="/projects/">PROJECTS</a></li>
+            <li><a href="/about/">ABOUT</a></li>
+            <li><a href="/contact/">CONTACT</a></li>
+        </ul>
         </div>
         <h3 class="Contact">
-            frankiekweku@gmail.com <br> +233208085722
+            <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a> <br> <a
+                href="tel:+233208085722">+233208085722</a>
         </h3>
         <img src="../assets/icons/logo-no-background.png">
     </footer>
