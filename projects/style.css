@@ -2,13 +2,16 @@
     margin: 0;
     padding: 0;
 }
-
+html{
+    scroll-snap-type: y mandatory;
+    background-repeat: no-repeat;
+}
 header {
     color: white;
     display: flex;
     flex-direction: column;
     padding: 3vmax;
-    height: 100%;
+    height: 100vh;
     background-color: black;
 }
 
@@ -123,7 +126,7 @@ header h1 p {
 
 .projects div {
     width: 20vmax;
-    height: 40vmax;
+    height: fit-content;
     margin: 3vmax;
     background-size: contain;
     border-radius: 3vmax;
@@ -134,9 +137,13 @@ header h1 p {
 
 .projects div h1 {
     padding: 2vmax;
+    text-align: center;
+    text-wrap: wrap;
 }
 .projects span img{
-    padding: 1.5vmax;
+    padding: 1vmax;
+    width: 2vmax;
+    height: 2vmax;
 }
 .projects a {
     text-decoration: none;

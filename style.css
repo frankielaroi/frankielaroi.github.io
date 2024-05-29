@@ -163,25 +163,35 @@ header h1 p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
 }
+
 .projects div {
   width: 20vmax;
-  height: 40vmax;
+  height: 30vmax;
   margin: 3vmax;
+  text-align: center;
   background-size: contain;
   border-radius: 3vmax;
+  background: linear-gradient(rgb(43, 43, 44), rgb(26, 27, 27));
+  box-shadow: 7px 7px 23px #979393,
+    -7px -7px 23px #f1ebeb;
 }
 .projects div h1 {
-  padding: 2vmax;
+  margin: 20px 0;
+  font-size: 1.5rem;
 }
 .projects a {
   text-decoration: none;
   color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-.food {
+/*.food {
   background: linear-gradient(rgb(100, 100, 100), rgb(26, 27, 27)),
     url("./assets/icons/iPhone\ 11\ Pro\ Max\ -\ 1.png");
-  background-blend-mode: darken;
 }
 .eccormerce {
   background: linear-gradient(rgb(252, 252, 255), rgb(26, 27, 27)),
@@ -189,7 +199,7 @@ header h1 p {
 }
 .backend {
   background: linear-gradient(rgb(43, 43, 44), rgb(26, 27, 27));
-}
+}*/
 .see , .load{
   margin: 2vw;
   padding: 1vw 2vw 1vw 2vw ;
