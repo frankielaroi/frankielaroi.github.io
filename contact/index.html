@@ -4,100 +4,138 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-        <title>Frank Tetteh - Fullstack Developer Portfolio</title>
-        <meta name="google-site-verification" content="ErEC3TD74FIlv4nkJ5s3AhIC-cfwq_-fHWyKJyH-VPA" />
-    <meta name="description"
-        content="Explore the portfolio of Frankie Laroi, a passionate Fullstack Developer specializing in modern web technologies like Angular, React, and Node.js.">
-
+    <title>Contact Me - Frank Tetteh | Fullstack Developer</title>
     <link rel="icon" href="../fav.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Get in touch with Frank Tetteh, a skilled fullstack developer proficient in React.js, Node.js, PHP, Flutter, and database management.">
+    <meta name="keywords"
+        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, contact, get in touch">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (OG) Tags for Social Sharing -->
+    <meta property="og:title" content="Contact Frank Tetteh | Fullstack Developer">
+    <meta property="og:description"
+        content="Reach out to Frank Tetteh for collaborations, project inquiries, or just to say hello.">
+    <meta property="og:image" content="../assets/me.png">
+    <meta property="og:url" content="https://frankielaroi.github.io/contact">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "luXj6u3koLNcUKhk3",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_etdvtgq', 'template_g845nkn', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <script src="./script.js"></script>
-    <header>
-        <div class="top">
-            <img src="../assets/icons/logo-no-background.png" alt="Logo" width="30" height="40"
-                class="animate__animated animate__rotateIn animate_slower" />
-            <button class="drawer-toggle" onclick="toggleDrawer()">☰</button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../" data-aos="fade-right">Frank Tetteh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../#home" data-aos="fade-left">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about" data-aos="fade-left">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects" data-aos="fade-left">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./" data-aos="fade-left">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <h1 class="animate__animated animate__fadeInLeft ">CONTACT ME<p>SAY HELLO</p>
-        </h1>
-    </header>
-    <nav class="drawer">
-        <button class="drawer-close" onclick="toggleDrawer()">✖</button>
-        <ul>
-            <li><a href="/index.html">HOME</a></li>
-            <li><a href="/about/">ABOUT</a></li>
-            <li><a href="/projects/">PROJECTS</a></li>
-            <li><a onclick="toggleDrawer()">CONTACT</a></li>
-        </ul>
-        <h3 class="Contact">
-            frankiekweku@gmail.com <br> +233208085722 <br>
-            <a href="https://github.com/frankielaroi"><img src="../assets/icons/icons8-github.svg" alt="github"
-                    width="25"></a>
-            <a href=""><img src="../assets/icons/icons8-linkedin.svg" alt="linkedIn" width="25"></a>
-        </h3>
     </nav>
-    <section>
-        <form action="" method="post" id="contact-form">
-            <label>
-                Email:
-                <input type="email" name="email">
-            </label>
-            <label>
-                Subject:
-                <input type="text" name="subject">
-            </label>
-            <label>
-                Message:
-                <input type="text" aria-multiline="true" name="message" class="Message">
-            </label>
-            <button type="submit" class="send" onclick="alert('email sent')">Send </button>
-        </form>
-    </section>
-    <footer>
-        <div>
-        <ul>
-            <li><a href="/projects/">PROJECTS</a></li>
-            <li><a href="/about/">ABOUT</a></li>
-            <li><a href="/contact/">CONTACT</a></li>
-        </ul>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h1 class="text-center fw-bold mb-5" data-aos="fade-up">Get in Touch</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-lg">Send Message</button>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3 class="Contact">
-            <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a> <br> <a
-                href="tel:+233208085722">+233208085722</a>
-        </h3>
-        <img src="../assets/icons/logo-no-background.png">
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-light text-center">
+        <div class="container">
+            <p>© 2024 Frank Tetteh. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://github.com/frankielaroi" class="text-light"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://linkedin.com/in/frankielaroi" class="text-light"><i
+                            class="fab fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="mailto:frankietetteh@gmail.com" class="text-light"><i class="fas fa-envelope"></i></a>
+                </li>
+            </ul>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        type="text/javascript">
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+
+                // Define the form values
+                var formData = new FormData(this);
+
+                // Send form data to Google Sheets Web App
+                fetch('https://script.google.com/macros/s/AKfycbxmQFWzT__DfkVW9WjUS5eeGEJ8PNNoulZg5BBdXncxyXbTlWMdx3AQ0l7UZiumRcrc9g/exec', {
+                    method: 'POST',
+                body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === "success") {
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset();
+                    window.location('../')
+            } else {
+                    alert('Failed to send message. Please try again later.');
+            }
+        })
+        .catch(error => {
+                    console.error('Error:', error);
+                alert('Failed to send message. Please try again later.');
+        });
+    });
+        </script>
+
 </body>
 
 </html>

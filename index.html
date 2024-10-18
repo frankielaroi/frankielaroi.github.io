@@ -4,118 +4,261 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-        <title>Frankie Tetteh - Fullstack Developer Portfolio</title>
-        <meta name="google-site-verification" content="ErEC3TD74FIlv4nkJ5s3AhIC-cfwq_-fHWyKJyH-VPA" />
-        <meta name="description"
-            content="Explore the portfolio of Frankie Laroi, a passionate Fullstack Developer specializing in modern web technologies like Angular, React, and Node.js.">
+    <title>Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter</title>
     <link rel="icon" href="./fav.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Explore Frank Tetteh's portfolio, a skilled fullstack developer proficient in React.js, Node.js, PHP, Flutter, and database management. Specializing in building dynamic web and mobile applications with a focus on performance and user experience.">
+    <meta name="keywords"
+        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, UI/UX design, fullstack portfolio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (OG) Tags for Social Sharing -->
+    <meta property="og:title" content="Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter">
+    <meta property="og:description"
+        content="Discover Frank Tetteh's expertise in fullstack development. Skilled in React.js, Node.js, PHP, Flutter, and more. Explore his projects and skills in web and mobile app development.">
+    <meta property="og:image" content="./assets/me.png">
+    <meta property="og:url" content="https://frankielaroi.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>    
-<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-     <script src="./script.js"></script>
+<body>
+    <!-- Preloader -->
     <div class="preloader">
-        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"
-            defer></script>
-        
         <dotlottie-player src="https://lottie.host/76fdfaa1-0d4d-476f-af61-597ea4564b49/5ez0R1euGd.json"
-            background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+            background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></dotlottie-player>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" data-aos="fade-right">Frank Tetteh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-aos="fade-left">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about" data-aos="fade-left">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./projects" data-aos="fade-left">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact" data-aos="fade-left">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    <header >
-        <div class="top">    
-           <img src="./assets/icons/logo-no-background.png" alt="Logo" width="30" height="40" class="animate__animated animate__rotateIn animate_slower"/>
-             <button class="drawer-toggle" onclick="toggleDrawer()">☰</button>
-        </div>
-        <h1 class="animate__animated animate__fadeInLeft ">FRANK NTIM TETTEH<p>FULLSTACK DEVELOPER</p></h1>
-    </header>
-    <nav class="drawer">
-        <button class="drawer-close" onclick="toggleDrawer()">✖</button>
-        <ul>
-            <li><a href="#" onclick="toggleDrawer()">HOME</a></li>
-            <li><a href="/about/">ABOUT</a></li>
-            <li><a href="/projects/">PROJECTS</a></li>
-            <li><a href="/contact/">CONTACT</a></li>
-        </ul>
-        <h3 class="Contact">
-            frankiekweku@gmail.com <br> +233208085722 <br>
-            <a href="https://github.com/frankielaroi"><img src="./assets/icons/icons8-github.svg" alt="github" width="25"></a>
-            <a href=""><img src="./assets/icons/icons8-linkedin.svg" alt="linkedIn" width="25"></a>
-        </h3>
     </nav>
-    <section class="tech" >
-        <div class="aboutme" data-aos="fade-up"     data-aos-delay="200" data-aos-duration="200"> 
-             <h3>
-            About me
-        </h3>
-            <p class="fade-up">
-                I'm a passionate Fullstack Developer with a strong foundation in both frontend and backend development. I
-                am currently pursuing a Bachelor of Technology in Computer Science at Koforidua Technical University, where I am honing
-                my skills and expanding my knowledge in various aspects of computer science and web development. My academic career has fueled my deep interest in web
-                development, particularly in using modern frontend technologies like Angular and React, as well as backend technologies
-                such as Express.js and MongoDB. Professionally, I am gaining invaluable experience as an IT Technician at Regional
-                Maritime University, where I am responsible for maintaining and troubleshooting IT systems. This role has solidified my
-                technical expertise and problem-solving abilities.
-            </p>
-        
-        </div>
-        <div>
-                <h3>
-                    My skills
-                </h3>
-                <div class="skills" data-aos="fade-left"     data-aos-delay="200">
-                    <p><img src="./assets/icons/html.svg" alt="html"> HTML</p>
-                    <p><img src="./assets/icons/javascript.svg" alt="javascript">Javascript</p>
-                    <p><img src="./assets/icons/css.svg" alt="css">CSS</p>
-                    <p><img src="./assets/icons/angular.svg" alt="angular">Angular</p>
-                    <p><img src="./assets/icons/node.svg" alt="node">Node</p>
-                    <p><img src="./assets/icons/react.svg" alt="react">React</p>
-                    <p><img src="https://img.icons8.com/color/48/mongo-db.png" alt="mongo-db" />Mongo DB</p>
-                    <p><img src="./assets/icons/icons8-react.svg" alt="native">React Native</p>
-                    <p><img src="./assets/icons/icons8-express-js.svg" alt="expressjs">Express.js</p>
-                    <p><img src="./assets/icons/icons8-firebase (1).svg" alt="firebase">Firebase</p>
-                    <p><img src="./assets/icons/icons8-npm-logo.svg">NPM</p>
+
+    <!-- Hero Section -->
+    <section id="home" class="d-flex align-items-center min-vh-100">
+        <div class="container" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 text-white mb-4 mb-lg-0 order-2 order-lg-1">
+                    <h1 class="fw-bold display-1">Hi, I'm Frank Tetteh</h1>
+                    <p class="fs-2">A Fullstack Developer specializing in modern web technologies.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="./projects" class="btn btn-indigo btn-lg mb-2">View My Projects</a>
+                        <a href="./about" class="btn btn-teal btn-lg mb-2">Learn More About Me</a>
+                        <a href="./contact" class="btn btn-amber btn-lg mb-2">Get In Touch</a>
                     </div>
+                </div>
+                <div class="col-lg-6 col-md-12 order-1 order-lg-2">
+                    <img src="./assets/me.png" alt="Frank Tetteh - Fullstack Developer" class="img-fluid">
+                </div>
+            </div>
         </div>
-
-        <div class="projects">
-            <h3> Projects</h3>
-           <div class="food">
-            <a href="https://github.com/frankielaroi/FoodAppNative" target="_blank"><h1>Food App with react Native</h1>
-            
-            </a> </div>
-            <div class="eccormerce"> <a href="https://github.com/frankielaroi/eccormercets" target="_blank"> <h1>Eccormerce App with React and Firebase</h1></a></div>
-            <div class="backend"><a href="https://github.com/frankielaroi/backendnode" target="_blank"> <h1>Backend with Node and Express js</h1></a></div>
-        </div>
-        <a href="https://github.com/frankielaroi" target="_blank"> <button class="see"> See All</button></a> <a href="./projects/index.html"><button class="load">Load More</button></a>
-
     </section>
-    <footer>
-        <div>
-            <ul>
-                <li><a href="/projects/">PROJECTS</a></li>
-                <li><a href="/about/">ABOUT</a></li>
-                <li><a href="/contact/">CONTACT</a></li>
-            </ul>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">What I Do</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-box text-center p-4 h-100">
+                        <i class="fas fa-code fa-2x mb-3"></i>
+                        <h5>Fullstack Web Development</h5>
+                        <p>Building dynamic and responsive web applications using modern frameworks like React.js, PHP,
+                            and
+                            Node.js.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box text-center p-4 h-100">
+                        <i class="fas fa-mobile-alt fa-2x mb-3"></i>
+                        <h5>Mobile App Development</h5>
+                        <p>Developing cross-platform mobile applications using Flutter for fast and reliable mobile
+                            solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box text-center p-4 h-100">
+                        <i class="fas fa-database fa-2x mb-3"></i>
+                        <h5>Database Management</h5>
+                        <p>Optimizing and managing databases with SQL and MongoDB to handle complex queries and large
+                            datasets efficiently.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3 class="Contact">
-           <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>  <br> <a href="tel:+233208085722">+233208085722</a>
-        </h3>
-        <img src="./assets/icons/logo-no-background.png" >
+    </section>
+
+    <!-- Technologies Stack -->
+    <section id="tech-stack" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Technologies I Use</h2>
+            <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-3">
+                        <i class="fab fa-js fa-3x mb-3"></i>
+                        <p>JavaScript</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-3">
+                        <i class="fab fa-react fa-3x mb-3"></i>
+                        <p>React</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-3">
+                        <i class="fab fa-node-js fa-3x mb-3"></i>
+                        <p>Node.js</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-3">
+                        <i class="fas fa-database fa-3x mb-3"></i>
+                        <p>SQL</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="500">
+                    <div class="p-3">
+                        <i class="fab fa-laravel fa-3x mb-3"></i>
+                        <p>Laravel</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="600">
+                    <div class="p-3">
+                        <i class="fas fa-database fa-3x mb-3"></i>
+                        <p>MongoDB</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="700">
+                    <div class="p-3">
+                        <i class="fab fa-php fa-3x mb-3"></i>
+                        <p>PHP</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="800">
+                    <div class="p-3">
+                        <i class="fas fa-code fa-3x mb-3"></i>
+                        <p>Express.js</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="900">
+                    <div class="p-3">
+                        <i class="fas fa-cloud fa-3x mb-3"></i>
+                        <p>Google Cloud</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="p-3">
+                        <i class="fas fa-database fa-3x mb-3"></i>
+                        <p>MySQL</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="p-3">
+                        <i class="fab fa-docker fa-3x mb-3"></i>
+                        <p>Docker</p>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="p-3">
+                        <i class="fab fa-git-alt fa-3x mb-3"></i>
+                        <p>Git</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">What People Are Saying</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <blockquote class="blockquote p-4 bg-light">
+                        <p>"Frank's attention to detail and dedication to his work is truly remarkable. He delivers on
+                            time with great results."</p>
+                        <footer class="blockquote-footer mt-2">Client A, <cite title="Source Title">CEO at
+                                TechFirm</cite></footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <blockquote class="blockquote p-4 bg-light">
+                        <p>"Highly professional and always ready to go the extra mile. Working with Frank was a
+                            pleasure!"</p>
+                        <footer class="blockquote-footer mt-2">Client B, <cite title="Source Title">Founder at
+                                Startup</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Ready to Work Together?</h2>
+            <p class="mb-4">I'm available for freelance projects and full-time positions.</p>
+            <a href="./contact.html" class="btn btn-light btn-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-4 bg-dark text-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./about" class="text-light">About Me</a></li>
+                        <li><a href="./projects" class="text-light">Projects</a></li>
+                        <li><a href="./contact" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Connect with Me</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com" class="text-light">GitHub</a></li>
+                        <li><a href="https://linkedin.com" class="text-light">LinkedIn</a></li>
+                        <li><a href="https://twitter.com" class="text-light">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        // Preloader
+        window.addEventListener('load', function () {
+            document.querySelector('.preloader').classList.add('hidden');
+        });
     </script>
 </body>
 

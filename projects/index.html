@@ -4,140 +4,193 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-        <title>Frankie Tetteh- Fullstack Developer Portfolio</title>
-        <meta name="google-site-verification" content="ErEC3TD74FIlv4nkJ5s3AhIC-cfwq_-fHWyKJyH-VPA" />
-    <meta name="description"
-        content="Explore the portfolio of Frankie Laroi, a passionate Fullstack Developer specializing in modern web technologies like Angular, React, and Node.js.">
-
+    <title>Projects - Frank Tetteh | Fullstack Developer</title>
     <link rel="icon" href="../fav.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sevillana&display=swap"
-            rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="./style.css" />
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Explore Frank Tetteh's portfolio showcasing his skills in React.js, Node.js, PHP, Flutter, and database management through a variety of dynamic web and mobile application projects.">
+    <meta name="keywords"
+        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, project portfolio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (OG) Tags for Social Sharing -->
+    <meta property="og:title" content="Frank Tetteh's Projects | Fullstack Development Portfolio">
+    <meta property="og:description"
+        content="Discover Frank Tetteh's latest projects showcasing his expertise in React.js, Node.js, PHP, Flutter, and more. Explore his work in web and mobile app development.">
+    <meta property="og:image" content="../assets/me.png">
+    <meta property="og:url" content="https://frankielaroi.github.io/projects">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <script src="./script.js"></script>
-    <header>
-        <div class="top">
-            <img src="../assets/icons/logo-no-background.png" alt="Logo" width="30" height="40"
-                class="animate__animated animate__rotateIn animate_slower" />
-            <button class="drawer-toggle" onclick="toggleDrawer()">☰</button>
-        </div>
-        <h1 class="animate__animated animate__fadeInLeft ">MY PROJECTS<p>MADE WITH LOVE</p>
-        </h1>
-    </header>
-    <nav class="drawer">
-        <button class="drawer-close" onclick="toggleDrawer()">✖</button>
-        <ul>
-            <li><a href="/index.html">HOME</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li><a onclick="toggleDrawer()">PROJECTS</a></li>
-            <li><a href="/contact">CONTACT</a></li>
-        </ul>
-        <h3 class="Contact">
-            frankiekweku@gmail.com <br> +233208085722 <br>
-            <a href="https://github.com/frankielaroi"><img src="../assets/icons/icons8-github.svg" alt="github"
-                    width="25"></a>
-            <a href=""><img src="../assets/icons/icons8-linkedin.svg" alt="linkedIn" width="25"></a>
-        </h3>
-    </nav>
-    <section class="projects">
-            <div class="food" data-aos="flip-left">
-                <a href="https://github.com/frankielaroi/FoodAppNative" target="_blank">
-                    <h1>Food App with react Native</h1>
-                    <p> A food delivery Application for Android and IOS with React Native</p>
-                    <h3>Stack</h3>
-                    <span>
-                        <img src="/assets/icons/icons8-git.svg" >
-                        <img src="/assets/icons/icons8-logo-figma.svg" alt="Figma" >
-                        <img src="/assets/icons/javascript.svg" alt="Javascript" >
-                        <img src="/assets/icons/react.svg" alt="React" >
-                        <img src="/assets/icons/node.svg" alt="Node" >
-                        <img src="/assets/icons/icons8-firebase (1).svg" alt=" Firebase">
-                    </span>
-                </a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../" data-aos="fade-right">Frank Tetteh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../#home" data-aos="fade-left">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about" data-aos="fade-left">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./" data-aos="fade-left">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact" data-aos="fade-left">Contact</a></li>
+                </ul>
             </div>
-            <div class="eccormerce" data-aos="flip-left"> <a href="https://github.com/frankielaroi/eccormercets" target="_blank">
-                    <h1>Eccormerce App with React and Firebase</h1>
-                    <p>A Fully functioning Eccormerce Shop with Firebase as Backend </p>
-                    <h3>Stack</h3>
-                    <span>
-                        <img src="/assets/icons/icons8-git.svg">
-                        <img src="/assets/icons/icons8-logo-figma.svg" alt="Figma" >
-                        <img src="/assets/icons/javascript.svg" alt="Javascript" >
-                        <img src="/assets/icons/react.svg" alt="React" >
-                        <img src="/assets/icons/node.svg" alt="Node" >
-                        <img src="/assets/icons/icons8-firebase (1).svg" alt=" Firebase" >
-                    </span>
-                </a></div>
-            <div class="backend" data-aos="flip-left"><a href="https://github.com/frankielaroi/backendnode" target="_blank">
-                    <h1>Backend with Node and Express js</h1>
-                    <p>A Backend with Node, Express js and Mongo DB for a Food Application or Website</p>
-                    <h3>Stack</h3>
-                    <span>
-                        <img src="/assets/icons/icons8-git.svg" alt="Git" >
-                        <img src="/assets/icons/mongodb-icon-2.svg" alt="mongo-db" >
-                        <img src="/assets/icons/icons8-express-js.svg" alt="Express" >
-                        <img src="/assets/icons/postman.svg" alt="npm" >
-                        <img src="/assets/icons/javascript.svg" alt="Javascript" >
-                        <img src="/assets/icons/node.svg" alt="Node" >
-                    </span>
-                </a></div>
-            <div data-aos="flip-left"><a href="https://github.com/frankielaroi/Limpworld"> 
-                <h1>LimpWorld  </h1>
-                <p>
-                    A Website for a new  NGO to help kids in Ghana.
-                </p>
-                <h3>Stack</h3>
-                <span>
-                    <img src="../assets/icons/html.svg" alt="HTML" >
-                    <img src="../assets/icons/css.svg" alt="CSS" >
-                    <img src="../assets/icons/javascript.svg" alt="Javascript" >
-                </span>
-            </a></div>
-            <div data-aos="flip-left"><a href="https://github.com/frankielaroi/valentine"><h1>Valentine Day Proposal</h1>
-                <p>A Proposal for my Valentine Day</p>
-                <h3>Stack</h3>
-                <span>
-                    <img src="../assets/icons/html.svg" alt="HTML" >
-                    <img src="../assets/icons/css.svg" alt="CSS" >
-                    <img src="../assets/icons/javascript.svg" alt="Javascript" >
-                </span>
-            </a></div>
-            <div data-aos="flip-left"><a href="https://github.com/frankielaroi/backendphp">
-                <h1>Simple Backend Wih PHP</h1>
-                <p> My First BAckend With PHP and MysQl </p>
-                <h3>Stack</h3>
-                <span>
-                    <img src="../assets/icons/xampp.svg" alt="XAMPP" >
-                    <img src="../assets/icons/php-1.svg" alt="PHP" >
-                    <img src="../assets/icons/mysql-3.svg" alt="MySQL" >
-                </span>
-            </a></div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h1 class="text-center fw-bold mb-5" data-aos="fade-up">My Projects</h1>
+            <div class="row g-4">
+                <!-- Food App with React Native -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
+                            alt="Food App with React Native">
+                        <div class="card-body">
+                            <h5 class="card-title">Food App with React Native</h5>
+                            <p class="card-text">A food delivery application for Android and iOS developed using React
+                                Native.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/FoodAppNative"
+                                    class="btn btn-outline-primary">View Project</a>
+                                <a href="https://github.com/frankielaroi/FoodAppNative"
+                                    class="btn btn-outline-secondary"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce App with React and Firebase -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
+                            alt="E-commerce App with React and Firebase">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce App with React and Firebase</h5>
+                            <p class="card-text">A fully functional e-commerce shop built with React and Firebase.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/eccormercets"
+                                    class="btn btn-outline-primary">View Project</a>
+                                <a href="https://github.com/frankielaroi/eccormercets"
+                                    class="btn btn-outline-secondary"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend with Node and Express.js -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
+                            alt="Backend with Node and Express.js">
+                        <div class="card-body">
+                            <h5 class="card-title">Backend with Node and Express.js</h5>
+                            <p class="card-text">A backend for a food application or website using Node.js, Express, and
+                                MongoDB.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/backendnode"
+                                    class="btn btn-outline-primary">View Project</a>
+                                <a href="https://github.com/frankielaroi/backendnode"
+                                    class="btn btn-outline-secondary"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LimpWorld NGO Website -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="LimpWorld NGO Website">
+                        <div class="card-body">
+                            <h5 class="card-title">LimpWorld NGO Website</h5>
+                            <p class="card-text">A website for an NGO supporting children in Ghana.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/Limpworld" class="btn btn-outline-primary">View
+                                    Project</a>
+                                <a href="https://github.com/frankielaroi/Limpworld" class="btn btn-outline-secondary"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valentine's Day Proposal Website -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
+                            alt="Valentine's Day Proposal Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Valentine's Day Proposal</h5>
+                            <p class="card-text">A proposal website created for Valentine's Day.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/valentine" class="btn btn-outline-primary">View
+                                    Project</a>
+                                <a href="https://github.com/frankielaroi/valentine" class="btn btn-outline-secondary"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Backend with PHP -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
+                            alt="Simple Backend with PHP">
+                        <div class="card-body">
+                            <h5 class="card-title">Simple Backend with PHP</h5>
+                            <p class="card-text">A simple backend for managing user authentication and data storage,
+                                built using PHP.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/frankielaroi/simplephpbackend"
+                                    class="btn btn-outline-primary">View Project</a>
+                                <a href="https://github.com/frankielaroi/simplephpbackend"
+                                    class="btn btn-outline-secondary"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <a href="https://github.com/frankielaroi/" target="_blank"><button class="btn-12"><span>Goto Github</span></button></a>
-    <footer>
-    <div>
-    <ul>
-        <li><a href="/projects/">PROJECTS</a></li>
-        <li><a href="/about/">ABOUT</a></li>
-        <li><a href="/contact/">CONTACT</a></li>
-    </ul>
-    </div>
-    <h3 class="Contact">
-        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a> <br> <a
-            href="tel:+233208085722">+233208085722</a>
-    </h3>
-        <img src="../assets/icons/logo-no-background.png">
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-light text-center">
+        <div class="container">
+            <p>&copy; 2024 Frank Tetteh. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://github.com/frankielaroi" class="text-light"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://linkedin.com/in/frankielaroi" class="text-light"><i
+                            class="fab fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="mailto:frankietetteh@gmail.com" class="text-light"><i class="fas fa-envelope"></i></a>
+                </li>
+            </ul>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
