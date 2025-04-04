@@ -2,172 +2,331 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Projects - Frank Tetteh | Fullstack Developer</title>
-    <link rel="icon" href="../fav.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
+    <meta name="keywords" content="Frank Ntim Tetteh, Software Engineer, Projects, Web Development, Mobile Development, React, Node.js, PHP">
+    <meta name="author" content="Frank Ntim Tetteh">
+    <meta property="og:title" content="Frank Ntim Tetteh - Projects">
+    <meta property="og:description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
+    <meta property="og:image" content="https://franktetteh.me/assets/og-image.jpg">
+    <meta property="og:url" content="https://franktetteh.me/projects/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Frank Ntim Tetteh - Projects">
+    <meta name="twitter:description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
+    <meta name="twitter:image" content="https://franktetteh.me/assets/og-image.jpg">
+    <title>Frank Ntim Tetteh - Projects</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#6b7280' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Explore Frank Tetteh's portfolio showcasing his skills in React.js, Node.js, PHP, Flutter, and database management through a variety of dynamic web and mobile application projects.">
-    <meta name="keywords"
-        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, project portfolio">
-    <meta name="robots" content="index, follow">
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-    <!-- Open Graph (OG) Tags for Social Sharing -->
-    <meta property="og:title" content="Frank Tetteh's Projects | Fullstack Development Portfolio">
-    <meta property="og:description"
-        content="Discover Frank Tetteh's latest projects showcasing his expertise in React.js, Node.js, PHP, Flutter, and more. Explore his work in web and mobile app development.">
-    <meta property="og:image" content="../assets/me.png">
-    <meta property="og:url" content="https://frankielaroi.github.io/projects">
-    <meta property="og:type" content="website">
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <dotlottie-player src="https://lottie.host/76fdfaa1-0d4d-476f-af61-597ea4564b49/5ez0R1euGd.json"
-            background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></dotlottie-player>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="fade-down">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../" data-aos="fade-right">Frank Tetteh</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-['Pacifico'] text-gray-800 hover:text-primary transition-colors duration-300">Frank</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/index.html"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="/about/"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">About Me</a>
+                <a href="/projects/"
+                    class="nav-item active-nav text-primary hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="/contact/"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+            </nav>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+                <i class="ri-menu-line ri-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../#home" data-aos="fade-left"><i class="bi bi-house-door me-1"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../about" data-aos="fade-left"><i class="bi bi-person me-1"></i>About Me</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./" data-aos="fade-left"><i class="bi bi-code-square me-1"></i>Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contact" data-aos="fade-left"><i class="bi bi-envelope me-1"></i>Contact</a></li>
-                </ul>
-            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 mt-5">
-        <div class="container">
-            <h1 class="text-center fw-bold mb-5" data-aos="fade-up">My Projects</h1>
-            <div class="row g-4">
-                <!-- Food App with React Native -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="Food App with React Native">
-                        <div class="card-body">
-                            <h5 class="card-title">Food App with React Native</h5>
-                            <p class="card-text">A food delivery application for Android and iOS developed using React
-                                Native.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/FoodAppNative"
-                                    class="btn btn-outline-primary">View Project</a>
-                                <a href="https://github.com/frankielaroi/FoodAppNative"
-                                    class="btn btn-outline-secondary"><i class="bi bi-github"></i></a>
-                            </div>
+    <!-- Mobile Menu -->
+    <divs
+        class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 transform -translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/" class="text-2xl font-['Pacifico'] text-gray-800">Frank</a>
+            <button class="w-10 h-10 flex items-center justify-center text-gray-800" id="close-menu-button">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6">
+            <a href="/" class="text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+            <a href="/about/" class="text-gray-800 hover:text-primary transition-colors duration-300">About Me</a>
+            <a href="/projects/" class="text-primary font-medium">Projects</a>
+            <a href="/contact/" class="text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+        </nav>
+    </divs>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">My Projects</h1>
+            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto">A collection of my recent development work
+                across various technologies and domains.</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/61b08d490e886e39451bf11d34366c9f.jpg"
+                            alt="Screenshot of Food App with React Native" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Food App with React Native</h3>
+                        <p class="text-gray-600 mb-4">A food delivery application for Android and iOS developed using
+                            React Native.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Redux</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Food App Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- E-commerce App with React and Firebase -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="E-commerce App with React and Firebase">
-                        <div class="card-body">
-                            <h5 class="card-title">E-commerce App with React and Firebase</h5>
-                            <p class="card-text">A fully functional e-commerce shop built with React and Firebase.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/eccormercets"
-                                    class="btn btn-outline-primary">View Project</a>
-                                <a href="https://github.com/frankielaroi/eccormercets"
-                                    class="btn btn-outline-secondary"><i class="bi bi-github"></i></a>
-                            </div>
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/3f57a1486aa81178aaec6ba8132d71c3.jpg"
+                            alt="Screenshot of E-commerce App with React and Firebase" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">E-commerce App with React and Firebase</h3>
+                        <p class="text-gray-600 mb-4">A fully functional e-commerce shop built with React and Firebase.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Stripe</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View E-commerce App Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend with Node and Express.js -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="Backend with Node and Express.js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend with Node and Express.js</h5>
-                            <p class="card-text">A backend for a food application or website using Node.js, Express, and
-                                MongoDB.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/backendnode"
-                                    class="btn btn-outline-primary">View Project</a>
-                                <a href="https://github.com/frankielaroi/backendnode"
-                                    class="btn btn-outline-secondary"><i class="bi bi-github"></i></a>
-                            </div>
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/c3e7ead0209e62b84cecf294bf1d754e.jpg"
+                            alt="Screenshot of Backend with Node and Express.js" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Backend with Node and Express.js</h3>
+                        <p class="text-gray-600 mb-4">A backend for a food application or website using Node.js,
+                            Express, and MongoDB.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Express</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JWT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Backend Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- LimpWorld NGO Website -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="LimpWorld NGO Website">
-                        <div class="card-body">
-                            <h5 class="card-title">LimpWorld NGO Website</h5>
-                            <p class="card-text">A website for an NGO supporting children in Ghana.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/Limpworld" class="btn btn-outline-primary">View
-                                    Project</a>
-                                <a href="https://github.com/frankielaroi/Limpworld" class="btn btn-outline-secondary"><i
-                                        class="bi bi-github"></i></a>
-                            </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/585464caae0bf6de4e0c8f37f29b6323.jpg"
+                            alt="Screenshot of LimpWorld NGO Website" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">LimpWorld NGO Website</h3>
+                        <p class="text-gray-600 mb-4">A website for an NGO supporting children in Ghana.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">WordPress</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">PHP</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View LimpWorld NGO Website Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Valentine's Day Proposal Website -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="Valentine's Day Proposal Website">
-                        <div class="card-body">
-                            <h5 class="card-title">Valentine's Day Proposal</h5>
-                            <p class="card-text">A proposal website created for Valentine's Day.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/valentine" class="btn btn-outline-primary">View
-                                    Project</a>
-                                <a href="https://github.com/frankielaroi/valentine" class="btn btn-outline-secondary"><i
-                                        class="bi bi-github"></i></a>
-                            </div>
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/9a171db63299584318dab6ad25f43a45.jpg"
+                            alt="Screenshot of Valentine's Day Proposal Website" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Valentine's Day Proposal</h3>
+                        <p class="text-gray-600 mb-4">A proposal website created for Valentine's Day.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">HTML5</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">CSS3</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">GSAP</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Valentine's Day Proposal Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Simple Backend with PHP -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="Simple Backend with PHP">
-                        <div class="card-body">
-                            <h5 class="card-title">Simple Backend with PHP</h5>
-                            <p class="card-text">A simple backend for managing user authentication and data storage,
-                                built using PHP.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="https://github.com/frankielaroi/simplephpbackend"
-                                    class="btn btn-outline-primary">View Project</a>
-                                <a href="https://github.com/frankielaroi/simplephpbackend"
-                                    class="btn btn-outline-secondary"><i class="bi bi-github"></i></a>
-                            </div>
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/2f2d57e633c81dbc6859ce472a0dada5.jpg"
+                            alt="Screenshot of Simple Backend with PHP" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Simple Backend with PHP</h3>
+                        <p class="text-gray-600 mb-4">A simple backend for managing user authentication and data
+                            storage, built using PHP.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">PHP</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">jQuery</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Simple Backend Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/f76866d4fe3631f5f6bd3ba75d0c2937.jpg"
+                            alt="Screenshot of Task Management App" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">A collaborative task management application with real-time updates
+                            and team features.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Vuex</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Task Management App Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/436e0f453b34d274885c5a7313efd262.jpg"
+                            alt="Screenshot of Crypto Dashboard" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Crypto Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A cryptocurrency tracking dashboard with real-time price updates
+                            and portfolio management.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Redux</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">D3.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">CoinGecko API</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Crypto Dashboard Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/8d0686404159784efb269126c4c498fa.jpg"
+                            alt="Screenshot of Weather App" class="w-full h-full object-cover object-top" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Weather App</h3>
+                        <p class="text-gray-600 mb-4">A weather forecast application with location-based data and
+                            interactive visualizations.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">OpenWeather
+                                API</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Chart.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Geolocation
+                                API</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Weather App Project">View
+                                Project</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
+                                <i class="ri-github-line ri-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -175,37 +334,76 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="py-4 bg-dark text-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-person-circle me-2"></i><a href="../about" class="text-light">About Me</a></li>
-                        <li><i class="bi bi-folder me-2"></i><a href="./" class="text-light">Projects</a></li>
-                        <li><i class="bi bi-envelope me-2"></i><a href="../contact" class="text-light">Contact</a></li>
-                    </ul>
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-4">Interested in Collaborating?</h2>
+                <p class="text-gray-600 mb-6">Let's work together to create something amazing. Get in touch today!</p>
+                <a href="/contact/" class="bg-primary text-white px-6 py-3 rounded hover:bg-blue-600 transition-all duration-300">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="#"
+                        class="text-3xl font-['Pacifico'] text-white hover:text-primary transition-colors duration-300">Frank</a>
+                    <p class="mt-2 text-gray-400 max-w-md">Passionate software engineer dedicated to creating elegant,
+                        efficient, and user-focused digital experiences.</p>
                 </div>
-                <div class="col-md-6">
-                    <h5>Connect with Me</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-github me-2"></i><a href="https://github.com/frankielaroi" class="text-light">GitHub</a></li>
-                        <li><i class="bi bi-linkedin me-2"></i><a href="https://www.linkedin.com/in/frank-tetteh-a64900259/" class="text-light">LinkedIn</a></li>
-                    </ul>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex gap-4 mb-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                            <i class="ri-github-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                            <i class="ri-twitter-x-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                            <i class="ri-mail-fill ri-lg"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">© 2025 Frank Ntim Tetteh. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
-        
-        // Preloader
-        window.addEventListener('load', function () {
-            document.querySelector('.preloader').classList.add('hidden');
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Project card animations
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').classList.add('scale-110');
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').classList.remove('scale-110');
+            });
         });
     </script>
 </body>

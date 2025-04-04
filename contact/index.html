@@ -2,183 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Contact Me - Frank Tetteh | Fullstack Developer</title>
-    <link rel="icon" href="../fav.ico" type="image/x-icon" />
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Get in touch with Frank Tetteh, a skilled fullstack developer proficient in React.js, Node.js, PHP, Flutter, and database management.">
-    <meta name="keywords"
-        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, contact, get in touch">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (OG) Tags for Social Sharing -->
-    <meta property="og:title" content="Contact Frank Tetteh | Fullstack Developer">
-    <meta property="og:description"
-        content="Reach out to Frank Tetteh for collaborations, project inquiries, or just to say hello.">
-    <meta property="og:image" content="../assets/me.png">
-    <meta property="og:url" content="https://frankielaroi.github.io/contact">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Frank Ntim Tetteh, a dedicated full-stack developer skilled in building dynamic and responsive web and mobile applications.">
+    <meta name="keywords" content="Frank Ntim Tetteh, Contact, Full-stack Developer, Web Development, Mobile Development, Software Engineer">
+    <meta name="author" content="Frank Ntim Tetteh">
+    <meta property="og:title" content="Contact Me - Frank Ntim Tetteh">
+    <meta property="og:description" content="Reach out to Frank Ntim Tetteh for software development services including frontend, backend, and mobile app development.">
+    <meta property="og:image" content="https://frankielaroi.github.io/assets/images/contact-thumbnail.jpg">
+    <meta property="og:url" content="https://frankielaroi.github.io/contact/">
     <meta property="og:type" content="website">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Frank Tetteh",
-      "jobTitle": "Fullstack Developer",
-      "url": "https://frankielaroi.github.io",
-      "sameAs": [
-        "https://github.com/frankielaroi",
-        "https://linkedin.com/in/frankielaroi"
-      ]
-    }
-    </script>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Me - Frank Ntim Tetteh">
+    <meta name="twitter:description" content="Reach out to Frank Ntim Tetteh for software development services including frontend, backend, and mobile app development.">
+    <meta name="twitter:image" content="https://frankielaroi.github.io/assets/images/contact-thumbnail.jpg">
+    <title>Contact Me - Frank Ntim Tetteh</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#6b7280' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
-       
+        /* Existing styles */
     </style>
 </head>
-
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" data-aos="fade-down">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../" data-aos="fade-right">Frank Tetteh</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../#home" data-aos="fade-left"><i class="bi bi-house-door me-1"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../about" data-aos="fade-left"><i class="bi bi-person me-1"></i>About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../projects" data-aos="fade-left"><i class="bi bi-code-square me-1"></i>Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./" data-aos="fade-left"><i class="bi bi-envelope me-1"></i>Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Schedule Section -->
-    <div class="text-center mt-5 pt-5 mb-5" data-aos="fade-up">
-        <div class="position-relative d-inline-block">
-            <div class="position-absolute top-0 start-50 translate-middle-x" style="z-index: -1;">
-                <div style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,123,255,0.3) 0%, rgba(108,99,255,0.2) 100%); filter: blur(50px);"></div>
-            </div>
-            <button class="schedule-btn" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                <i class="bi bi-calendar3 me-2"></i>Schedule a Meeting
-            </button>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h1 class="text-center fw-bold mb-5" data-aos="fade-up">Get in Touch</h1>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="glass-card shadow-lg">
-                        <div class="card-body p-5">
-                        <form id="contactForm">
-                            <div class="mb-4">
-                                <label for="name" class="form-label"><i class="bi bi-person me-2"></i>Your Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="form-label"><i class="bi bi-envelope me-2"></i>Your Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="form-label"><i class="bi bi-chat me-2"></i>Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-send btn-lg w-100"><i class="bi bi-send me-2"></i>Send Message</button>
-                        </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment Modal -->
-    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content glass-card">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold" id="appointmentModalLabel">Schedule an Appointment</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" style="width: 100%; height: 600px; border: none; border-radius: 10px;"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script async defer src="https://js.appointlet.com/"></script>
-    <link href="https://js.appointlet.com/styles.css" rel="stylesheet">
-
-    <!-- Footer -->
-    <footer class="py-4 bg-dark text-light text-center">
-        <div class="container">
-            <p>© 2024 Frank Tetteh. All rights reserved.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="https://github.com/frankielaroi" class="text-light fs-4"><i class="bi bi-github"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://linkedin.com/in/frankielaroi" class="text-light fs-4"><i class="bi bi-linkedin"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="mailto:frankietetteh@gmail.com" class="text-light fs-4"><i class="bi bi-envelope"></i></a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            AOS.init();
-            document.getElementById('contactForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                var formData = new FormData(this);
-                fetch('https://script.google.com/macros/s/AKfycbxmQFWzT__DfkVW9WjUS5eeGEJ8PNNoulZg5BBdXncxyXbTlWMdx3AQ0l7UZiumRcrc9g/exec', {
-                    method: 'POST',
-                    body: formData,
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.result === "success") {
-                            alert('Message sent successfully!');
-                            document.getElementById('contactForm').reset();
-                            window.location.href = '../';
-                        } else {
-                            alert('Failed to send message. Please try again later.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Failed to send message. Please try again later.');
-                    });
-            });
-        });
-    </script>
-
-</body>
-
-</html>

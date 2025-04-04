@@ -1,296 +1,833 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter</title>
-    <link rel="icon" href="./fav.ico" type="image/x-icon" />
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Explore Frank Tetteh's portfolio, a skilled fullstack developer proficient in React.js, Node.js, PHP, Flutter, and database management. Specializing in building dynamic web and mobile applications with a focus on performance and user experience.">
-    <meta name="keywords"
-        content="Frank Tetteh, fullstack developer, React.js, Node.js, PHP, Flutter, web development, mobile app development, database management, UI/UX design, fullstack portfolio, software engineer, web developer, mobile developer, database expert, JavaScript developer">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Frank Tetteh">
-    <meta name="googlebot" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <!-- Open Graph (OG) Tags for Social Sharing -->
-    <meta property="og:title" content="Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter">
-    <meta property="og:description"
-        content="Discover Frank Tetteh's expertise in fullstack development. Skilled in React.js, Node.js, PHP, Flutter, and more. Explore his projects and skills in web and mobile app development.">
-    <meta property="og:image" content="./assets/me.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Frank Tetteh Portfolio">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Ntim Tetteh - Software Engineer</title>
+    <meta name="description" content="Frank Ntim Tetteh - Software Engineer specializing in web and mobile development.">
+    <meta name="keywords" content="Frank Ntim Tetteh, Software Engineer, Web Development, Mobile Development, React, Node.js, PHP">
+    <meta name="author" content="Frank Ntim Tetteh">
+    <meta property="og:title" content="Frank Ntim Tetteh - Software Engineer">
+    <meta property="og:description" content="Frank Ntim Tetteh - Software Engineer specializing in web and mobile development.">
+    <meta property="og:image" content="https://franktetteh.me/assets/og-image.jpg">
+    <meta property="og:url" content="https://franktetteh.me/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@frankielaroi">
-    <meta name="twitter:creator" content="@frankielaroi">
-    <meta name="twitter:title" content="Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter">
-    <meta name="twitter:description"
-        content="Discover Frank Tetteh's expertise in fullstack development. Skilled in React.js, Node.js, PHP, Flutter, and more. Explore his projects and skills in web and mobile app development.">
-    <meta name="twitter:image" content="./assets/me.png">
-    <meta name="twitter:image:alt" content="Frank Tetteh - Fullstack Developer">
+    <meta name="twitter:title" content="Frank Ntim Tetteh - Software Engineer">
+    <meta name="twitter:description" content="Frank Ntim Tetteh - Software Engineer specializing in web and mobile development.">
+    <meta name="twitter:image" content="https://franktetteh.me/assets/og-image.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#3b82f6',
+                                secondary: '#6b7280'
+                            },
+                            borderRadius: {
+                                'none': '0px',
+                                'sm': '4px',
+                                DEFAULT: '8px',
+                                'md': '12px',
+                                'lg': '16px',
+                                'xl': '20px',
+                                '2xl': '24px',
+                                '3xl': '32px',
+                                'full': '9999px',
+                                'button': '8px'
+                            }
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
 
-    <!-- LinkedIn Card Tags -->
-    <meta property="linkedin:owner" content="Frank Tetteh">
-    <meta property="linkedin:title" content="Frank Tetteh - Fullstack Developer | React.js, Node.js, PHP, Flutter">
-    <meta property="linkedin:description"
-        content="Discover Frank Tetteh's expertise in fullstack development. Skilled in React.js, Node.js, PHP, Flutter, and more.">
-    <meta property="linkedin:image" content="./assets/me.png">
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-    <!-- Schema.org Markup -->
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+        }
 
+        .nav-item {
+            position: relative;
+        }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:wght@100..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .active-nav::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .progress-bar {
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #3b82f6;
+            width: 0;
+            animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #3b82f6
+            }
+        }
+
+        .magnetic-button {
+            transition: transform 0.3s ease;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .parallax {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: #3b82f6;
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+            transform: translateY(-20px) scale(0.8);
+            color: #3b82f6;
+        }
+
+        textarea:focus+label,
+        textarea:not(:placeholder-shown)+label {
+            transform: translateY(-20px) scale(0.8);
+            color: #3b82f6;
+        }
+
+        .form-label {
+            transition: transform 0.3s ease, color 0.3s ease;
+            transform-origin: left top;
+        }
+
+        .social-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 </head>
 
-
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <dotlottie-player src="https://lottie.host/76fdfaa1-0d4d-476f-af61-597ea4564b49/5ez0R1euGd.json"
-            background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></dotlottie-player>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="fade-down">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" data-aos="fade-right">Frank Tetteh</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+<body class="bg-white text-gray-800">
+    <div class="cursor-follower hidden md:block"></div>
+    <div class="scroll-indicator"></div>
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-['Pacifico'] text-gray-800 hover:text-primary transition-colors duration-300">Frank</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/"
+                    class="nav-item active-nav text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="/about"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">About</a>
+                <a href="/projects/"   data-readdy="true"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="/contact"
+                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+            </nav>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+                <i class="ri-menu-line ri-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home" data-aos="fade-left"><i class="bi bi-house-door me-1"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./about" data-aos="fade-left"><i class="bi bi-person me-1"></i>About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./projects" data-aos="fade-left"><i class="bi bi-code-square me-1"></i>Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contact" data-aos="fade-left"><i class="bi bi-envelope me-1"></i>Contact</a></li>
-                </ul>
+        </div>
+    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6">
+        <div class="flex justify-between items-center mb-8">
+            <a href="#" class="text-2xl font-['Pacifico'] text-gray-800">Frank</a>
+            <button class="w-10 h-10 flex items-center justify-center text-gray-800" id="close-menu-button">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6">
+            <a href="/" class="text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+            <a href="/about" class="text-gray-800 hover:text-primary transition-colors duration-300">About</a>
+            <a href="/projects/"
+                data-readdy="true" class="text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
+            <a href="/contact" class="text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+        </nav>
+    </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden"
+        style="background-image: url('./assets/frankie.svg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-6 z-10">
+            <div class="max-w-3xl fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Frank Ntim Tetteh</h1>
+                <div class="typing-animation" aria-label="Software Engineer">
+                    <h2 class="text-2xl md:text-3xl font-medium text-gray-200 mb-8">Software Engineer</h2>
+                </div>
+                <p class="text-xl text-gray-300 mb-10">Crafting elegant solutions to complex problems with code.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/contact"
+                        class="magnetic-button relative overflow-hidden bg-primary hover:bg-blue-600 text-white px-8 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" aria-label="Contact Me">Get
+                        in Touch</a>
+                    <a href="#projects"
+                        class="magnetic-button relative overflow-hidden bg-transparent border-2 border-white text-white px-8 py-3 !rounded-button font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 whitespace-nowrap" aria-label="View Projects">View
+                        Projects</a>
+                </div>
             </div>
         </div>
-    </nav>
-      <!-- Hero Section -->
-      <section id="home" class="d-flex align-items-center min-vh-100 bg-black">
-          <div class="container" data-aos="fade-up">
-              <div class="row align-items-center">
-                  <div class="col-lg-6 col-md-12 text-white mb-4 mb-lg-0 order-2 order-lg-1">
-                      <h1 class="fw-bold display-1 text-white">Hi, I'm Frank Tetteh</h1>
-                      <p class="fs-2 text-white">A Fullstack Developer specializing in modern web technologies.</p>
-                      <div class="d-flex flex-wrap gap-3">
-                          <button class="btn btn-light btn-lg mb-2" onclick="window.location.href='./projects'"><i class="bi bi-code-square me-2"></i>View My Projects</button>
-                          <button class="btn btn-light btn-lg mb-2" onclick="window.location.href='./about'"><i class="bi bi-person me-2"></i>Learn More About Me</button>
-                          <button class="btn btn-light btn-lg mb-2" onclick="window.location.href='./contact'"><i class="bi bi-envelope me-2"></i>Get In Touch</button>                    </div>
-                  </div>                <div class="col-lg-6 col-md-12 order-1 order-lg-2">
-                      <img src="./assets/me.png" alt="Frank Tetteh - Fullstack Developer" class="img-fluid">
-                  </div>
-              </div>
-          </div>
-      </section>
-    <!-- Services Section -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5">What I Do</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-box text-center p-4 h-100">
-                        <i class="bi bi-code-slash fa-3x mb-3"></i>
-                        <h5>Fullstack Web Development</h5>
-                        <p>Building dynamic and responsive web applications using modern frameworks like React.js, PHP,
-                            and
-                            Node.js.</p>
-                    </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white opacity-80 hover:opacity-100 transition-opacity duration-300" aria-label="Scroll to About Section">
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class="ri-arrow-down-line ri-xl"></i>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-box text-center p-4 h-100">
-                        <i class="bi bi-phone fa-3x mb-3"></i>
-                        <h5>Mobile App Development</h5>
-                        <p>Developing cross-platform mobile applications using Flutter for fast and reliable mobile
-                            solutions.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-box text-center p-4 h-100">
-                        <i class="bi bi-database-fill fa-3x mb-3"></i>
-                        <h5>Database Management</h5>
-                        <p>Optimizing and managing databases with SQL and MongoDB to handle complex queries and large
-                            datasets efficiently.</p>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
     </section>
-
-    <!-- Technologies Stack -->
-    <section id="tech-stack" class="py-5 bg-dark">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5 text-white">Technologies I Use</h2>
-            <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-filetype-js fa-3x mb-3 text-warning"></i>
-                        <p class="fw-bold text-white">JavaScript</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in text-gray-900">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 fade-in">
+                    <div class="relative overflow-hidden rounded-lg shadow-xl">
+                        <img src="/assets/me.png"
+                            alt="Frank Ntim Tetteh" class="w-full h-auto object-cover parallax" loading="lazy">
                     </div>
                 </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-code-slash fa-3x mb-3 text-info"></i>
-                        <p class="fw-bold text-white">React</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-node-plus fa-3x mb-3 text-success"></i>
-                        <p class="fw-bold text-white">Node.js</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="400">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-database-fill fa-3x mb-3 text-primary"></i>
-                        <p class="fw-bold text-white">SQL</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="500">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-code-square fa-3x mb-3 text-danger"></i>
-                        <p class="fw-bold text-white">Laravel</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="600">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-database-fill fa-3x mb-3 text-success"></i>
-                        <p class="fw-bold text-white">MongoDB</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="700">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-filetype-php fa-3x mb-3 text-primary"></i>
-                        <p class="fw-bold text-white">PHP</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="800">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-code-slash fa-3x mb-3 text-dark"></i>
-                        <p class="fw-bold text-white">Express.js</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="900">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-cloud-fill fa-3x mb-3 text-info"></i>
-                        <p class="fw-bold text-white">Google Cloud</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-database-fill fa-3x mb-3 text-primary"></i>
-                        <p class="fw-bold text-white">MySQL</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="1100">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-boxes fa-3x mb-3 text-info"></i>
-                        <p class="fw-bold text-white">Docker</p>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-delay="1200">
-                    <div class="p-3 tech-card">
-                        <i class="bi bi-git fa-3x mb-3 text-danger"></i>
-                        <p class="fw-bold text-white">Git</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5">What People Are Saying</h2>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-right">
-                    <blockquote class="blockquote p-4 bg-light">
-                        <p>"Frank's attention to detail and dedication to his work is truly remarkable. He delivers on
-                            time with great results."</p>
-                        <footer class="blockquote-footer mt-2">Mr Collins, <cite title="Source Title">Regional Maritime University</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <blockquote class="blockquote p-4 bg-light">
-                        <p>"Highly professional and always ready to go the extra mile. Working with Frank was a
-                            pleasure!"</p>
-                        <footer class="blockquote-footer mt-2">Mr Prosper, <cite title="Source Title">HEPEPS T</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Call to Action Section -->
-    <section id="cta" class="py-5 bg-primary text-white text-center">
-        <div class="container">
-            <h2 class="fw-bold mb-3">Ready to Work Together?</h2>
-            <p class="mb-4">I'm available for freelance projects and full-time positions.</p>
-            <div class="text-center mt-5 pt-5 mb-5" data-aos="fade-up">
-                <div class="position-relative d-inline-block">
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="z-index: -1;">
-                        <div
-                            style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,123,255,0.3) 0%, rgba(108,99,255,0.2) 100%); filter: blur(50px);">
+                <div class="w-full md:w-1/2">
+                    <div class="space-y-6">
+                        <div class="stagger-item">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Who I Am</h3>
+                            <p class="text-gray-800">I'm a passionate software engineer with over 8 years of experience
+                                building innovative solutions for complex problems. My journey in technology began with
+                                a curiosity about how things work, which evolved into a career creating elegant,
+                                efficient code.</p>
+                        </div>
+                        <div class="stagger-item">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">My Approach</h3>
+                            <p class="text-gray-800">I believe in writing clean, maintainable code that stands the test
+                                of time. My engineering philosophy centers around understanding the problem deeply
+                                before implementing a solution, and continuously refining my approach as new information
+                                emerges.</p>
+                        </div>
+                        <div class="stagger-item">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Beyond Coding</h3>
+                            <p class="text-gray-800">When I'm not immersed in code, you'll find me hiking mountain
+                                trails, experimenting with new cooking techniques, or contributing to open-source
+                                projects. I'm also passionate about mentoring junior developers and sharing knowledge
+                                through tech talks.</p>
+                        </div>
+                        <div class="stagger-item pt-4">
+                            <a href="/assets/resume.pdf"
+                                class="magnetic-button inline-flex items-center gap-2 bg-gray-800 hover:bg-black text-white px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" download>
+                                <span>Download Resume</span>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-download-line"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <button class="schedule-btn" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                        <i class="bi bi-calendar3 me-2"></i>Schedule a Meeting
-                    </button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer Section -->
-    <footer class="py-4 bg-dark text-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-person-circle me-2"></i><a href="./about" class="text-light">About Me</a></li>
-                        <li><i class="bi bi-folder me-2"></i><a href="./projects" class="text-light">Projects</a></li>
-                        <li><i class="bi bi-envelope me-2"></i><a href="./contact" class="text-light">Contact</a></li>
-                    </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
+                <div class="skill-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 flex items-center justify-center bg-gray-200 rounded-full mb-6 mx-auto">
+                        <i class="ri-code-s-slash-line ri-xl text-gray-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-6">Frontend Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">React.js</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">JavaScript</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Flutter</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Connect with Me</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-github me-2"></i><a href="https://github.com/frankielaroi" class="text-light">GitHub</a></li>
-                        <li><i class="bi bi-linkedin me-2"></i><a href="https://www.linkedin.com/in/frank-tetteh-a64900259/" class="text-light">LinkedIn</a></li>
-                    </ul>
+                <!-- Backend & DevOps -->
+                <div class="skill-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 flex items-center justify-center bg-gray-200 rounded-full mb-6 mx-auto">
+                        <i class="ri-server-line ri-xl text-gray-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-6">Backend & DevOps</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Java</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">C++</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Cloud & Infrastructure -->
+                <div class="skill-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 flex items-center justify-center bg-gray-200 rounded-full mb-6 mx-auto">
+                        <i class="ri-cloud-line ri-xl text-gray-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-6">Cloud & Infrastructure</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">PHP</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Git/GitHub CI/CD</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">AWS</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Databases -->
+                <div class="skill-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 flex items-center justify-center bg-gray-200 rounded-full mb-6 mx-auto">
+                        <i class="ri-database-2-line ri-xl text-gray-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-6">Databases</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">MongoDB</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">PostgreSQL</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Redis</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">MySQL</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+      <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/61b08d490e886e39451bf11d34366c9f.jpg"
+                            alt="Food App with React Native"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Food App with React Native</h3>
+                        <p class="text-gray-600 mb-4">A food delivery application for Android and iOS developed using React Native.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Redux</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Live Demo</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Source Code</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-github-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/3f57a1486aa81178aaec6ba8132d71c3.jpg"
+                            alt="E-commerce App with React and Firebase"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce App with React and Firebase</h3>
+                        <p class="text-gray-600 mb-4">A fully functional e-commerce shop built with React and Firebase.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Stripe</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Live Demo</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Source Code</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-github-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/c3e7ead0209e62b84cecf294bf1d754e.jpg"
+                            alt="Backend with Node and Express.js"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Backend with Node and Express.js</h3>
+                        <p class="text-gray-600 mb-4">A backend for a food application or website using Node.js, Express, and MongoDB.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Express</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JWT</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Live Demo</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="text-primary hover:text-blue-700 transition-colors duration-300 flex items-center gap-1">
+                                <span>Source Code</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-github-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 fade-in">
+                <a href="/projects/"
+                    class="magnetic-button inline-flex items-center gap-2 bg-gray-800 hover:bg-black text-white px-8 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap">
+                    <span>View All Projects</span>
+                    <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-arrow-right-line"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in visible">Get in Touch</h2>
+            <a href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-600 transition-all duration-300">Let's talk</a>
+        </div>
+    </section>    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="#"
+                        class="text-3xl font-['Pacifico'] text-white hover:text-primary transition-colors duration-300">Frank</a>
+                    <p class="mt-2 text-gray-400 max-w-md">Passionate software engineer dedicated to creating elegant,
+                        efficient, and user-focused digital experiences.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-gray-400 mb-2">© 2025 Frank Ntim Tetteh. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm">Last updated: April 3, 2025</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-gray-800 text-center">
+                <a href="#home"
+                    class="inline-block p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-arrow-up-line ri-lg"></i>
+                    </div>
+                </a>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
-
-        // Preloader
-        window.addEventListener('load', function () {
-            document.querySelector('.preloader').classList.add('hidden');
+        // Cursor follower
+        const cursor = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            if (cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+        // Magnetic buttons
+        const magneticButtons = document.querySelectorAll('.magnetic-button');
+        magneticButtons.forEach(button => {
+            button.addEventListener('mousemove', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translate(0, 0)';
+            });
+            button.addEventListener('click', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                button.appendChild(ripple);
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const staggerItems = document.querySelectorAll('.stagger-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('progress-bar')) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+        progressBars.forEach(bar => {
+            observer.observe(bar);
+        });
+        // Staggered animations
+        staggerItems.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+        // Scroll indicator
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const fullHeight = document.body.scrollHeight - windowHeight;
+            const sections = document.querySelectorAll('section');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            const navItems = document.querySelectorAll('nav a');
+            navItems.forEach(item => {
+                item.classList.remove('active-nav');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active-nav');
+                }
+            });
+        });
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Parallax effect
+        const parallaxElements = document.querySelectorAll('.parallax');
+        window.addEventListener('scroll', () => {
+            parallaxElements.forEach(element => {
+                const scrollPosition = window.scrollY;
+                const elementPosition = element.offsetTop;
+                const distance = scrollPosition - elementPosition;
+                if (Math.abs(distance) < window.innerHeight) {
+                    element.style.transform = `translateY(${distance * 0.1}px)`;
+                }
+            });
+        });
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(element => {
+                    element.classList.add('visible');
+                });
+                document.querySelectorAll('.stagger-item').forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 300);
         });
     </script>
 </body>
