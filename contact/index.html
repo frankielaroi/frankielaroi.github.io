@@ -24,7 +24,495 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
     <style>
-        /* Existing styles */
-    </style>
-</head>
+            :where([class^="ri-"])::before {
+                content: "\f3c2";
+            }
+    
+            body {
+                font-family: 'Inter', sans-serif;
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+            }
+    
+            .nav-item {
+                position: relative;
+            }
+    
+            .nav-item::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 50%;
+                background-color: #3b82f6;
+                transition: all 0.3s ease;
+            }
+    
+            .nav-item:hover::after {
+                width: 100%;
+                left: 0;
+            }
+    
+            .active-nav::after {
+                width: 100%;
+                left: 0;
+            }
+    
+            input:focus+label,
+            input:not(:placeholder-shown)+label {
+                transform: translateY(-20px) scale(0.8);
+                color: #3b82f6;
+            }
+    
+            textarea:focus+label,
+            textarea:not(:placeholder-shown)+label {
+                transform: translateY(-20px) scale(0.8);
+                color: #3b82f6;
+            }
+    
+            .form-label {
+                transition: transform 0.3s ease, color 0.3s ease;
+                transform-origin: left top;
+            }
+    
+            .social-icon {
+                transition: transform 0.3s ease;
+            }
+    
+            .social-icon:hover {
+                transform: rotate(10deg) scale(1.2);
+            }
+    
+            .form-input {
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .form-input:focus {
+                border-color: #3b82f6;
+                box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+            }
+    
+            .mobile-menu {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+    
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+    
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+    
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+    
+    <body class="bg-gray-50 text-gray-800">
+        <!-- Header -->
+        <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="/"
+                    class="text-2xl font-['Pacifico'] text-gray-800 hover:text-primary transition-colors duration-300">Frank</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/"
+                        class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="/about"
+                        class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="/projects"
+                        class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="/contact"
+                        class="nav-item active-nav text-primary hover:text-primary transition-colors duration-300">Contact</a>
+                </nav>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </header>
+    
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6">
+            <div class="flex justify-between items-center mb-8">
+                <a href="/" class="text-2xl font-['Pacifico'] text-gray-800">Frank</a>
+                <button class="w-10 h-10 flex items-center justify-center text-gray-800" id="close-menu-button">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6">
+                <a href="/" class="text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="/about" class="text-gray-800 hover:text-primary transition-colors duration-300">About</a>
+                <a href="/projects" class="text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="/contact" class="text-primary font-medium transition-colors duration-300">Contact</a>
+            </nav>
+        </div>
+    
+        <!-- Page Header -->
+        <section class="pt-32 pb-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">Get in Touch</h1>
+                <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto fade-in">Have a question or want to work
+                    together? Feel free to reach out using the form below.</p>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Contact Form -->
+                    <div class="w-full lg:w-1/2 fade-in">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-semibold mb-6">Send Me a Message</h2>
+                            <form class="space-y-6" id="contactForm">
+                                <div class="relative">
+                                    <input type="text" id="name" placeholder=" "
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded focus:outline-none bg-white text-sm">
+                                    <label for="name"
+                                        class="form-label absolute text-gray-500 left-4 top-3 pointer-events-none text-sm">Your
+                                        Name</label>
+                                </div>
+                                <div class="relative">
+                                    <input type="email" id="email" placeholder=" "
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded focus:outline-none bg-white text-sm">
+                                    <label for="email"
+                                        class="form-label absolute text-gray-500 left-4 top-3 pointer-events-none text-sm">Your
+                                        Email</label>
+                                </div>
+                                <div class="relative">
+                                    <input type="text" id="subject" placeholder=" "
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded focus:outline-none bg-white text-sm">
+                                    <label for="subject"
+                                        class="form-label absolute text-gray-500 left-4 top-3 pointer-events-none text-sm">Subject</label>
+                                </div>
+                                <div class="relative">
+                                    <textarea id="message" rows="5" placeholder=" "
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded focus:outline-none bg-white text-sm"></textarea>
+                                    <label for="message"
+                                        class="form-label absolute text-gray-500 left-4 top-3 pointer-events-none text-sm">Your
+                                        Message</label>
+                                </div>
+                                <button type="submit"
+                                    class="relative overflow-hidden bg-primary hover:bg-blue-600 text-white px-8 py-3 !rounded-button font-medium transition-all duration-300 w-full whitespace-nowrap">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <!-- Contact Information -->
+                    <div class="w-full lg:w-1/2 fade-in">
+                        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                            <h2 class="text-2xl font-semibold mb-6">Contact Information</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                        <i class="ri-map-pin-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-medium mb-1">Location</h4>
+                                        <p class="text-gray-600">Koforidua, Ghana</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                        <i class="ri-mail-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-medium mb-1">Email</h4>
+                                        <a href="mailto:frankiekweku@gmail.com"
+                                            class="text-gray-600 hover:text-primary transition-colors duration-300">frankiekweku@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                        <i class="ri-phone-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-medium mb-1">Phone</h4>
+                                        <a href="tel:+233532681140"
+                                            class="text-gray-600 hover:text-primary transition-colors duration-300">+233 53 268 1140</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                        <i class="ri-time-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-medium mb-1">Working Hours</h4>
+                                        <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Social Media -->
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-semibold mb-6">Connect With Me</h2>
+                            <div class="grid grid-cols-2 gap-6">
+                                <a href="https://frankielaroi.github.io"
+                                    class="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-primary hover:bg-gray-50 transition-all duration-300">
+                                    <div
+                                        class="social-icon w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-700">
+                                        <i class="ri-github-fill ri-lg"></i>
+                                    </div>
+                                    <span class="font-medium">GitHub</span>
+                                </a>
+                                <a href="https://gh.linkedin.com/in/frank-tetteh-a64900259"
+                                    class="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-primary hover:bg-gray-50 transition-all duration-300">
+                                    <div
+                                        class="social-icon w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-700">
+                                        <i class="ri-linkedin-fill ri-lg"></i>
+                                    </div>
+                                    <span class="font-medium">LinkedIn</span>
+                                </a>
+                                <a href="https://frankielaroi.framer.website"
+                                    class="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-primary hover:bg-gray-50 transition-all duration-300">
+                                    <div
+                                        class="social-icon w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-700">
+                                        <i class="ri-global-line ri-lg"></i>
+                                    </div>
+                                    <span class="font-medium">Website</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+       
+    
+        <!-- FAQ Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-10 fade-in">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6 fade-in">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">What services do you offer?</h3>
+                            <p class="text-gray-600">I offer a range of software development services including frontend and
+                                backend development, mobile app development, API integration, and technical consulting. My
+                                expertise spans across various technologies and frameworks.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">How long does it take to complete a project?</h3>
+                            <p class="text-gray-600">Project timelines vary depending on complexity, scope, and
+                                requirements. After our initial consultation, I'll provide a detailed estimate based on your
+                                specific needs. I'm committed to delivering high-quality work within agreed timeframes.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">Do you offer maintenance after project completion?</h3>
+                            <p class="text-gray-600">Yes, I provide ongoing maintenance and support services to ensure your
+                                application continues to run smoothly. I offer various maintenance packages tailored to your
+                                needs, including bug fixes, updates, and performance optimizations.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">What is your development process?</h3>
+                            <p class="text-gray-600">My development process follows an agile methodology with regular client
+                                communication. It typically includes requirements gathering, planning, design, development,
+                                testing, deployment, and maintenance phases. I ensure transparency throughout the process
+                                with regular updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- CTA Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="bg-gray-900 rounded-xl p-10 md:p-16 text-center fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">I'm excited to hear about your ideas and help
+                        bring them to life. Let's create something amazing together.</p>
+                    <a type="button" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
+                        class="bg-primary hover:bg-blue-600 text-white px-8 py-3 !rounded-button font-medium transition-all duration-300 inline-block whitespace-nowrap"
+                        onclick="document.getElementById('name').focus()">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-8 md:mb-0">
+                        <a href="index.html"
+                            class="text-3xl font-['Pacifico'] text-white hover:text-primary transition-colors duration-300">Frank</a>
+                        <p class="mt-2 text-gray-400 max-w-md">Passionate software engineer dedicated to creating elegant,
+                            efficient, and user-focused digital experiences.</p>
+                    </div>
+                    <div class="flex flex-col items-center md:items-end">
+                        <div class="flex gap-4 mb-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                                <i class="ri-github-fill ri-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                                <i class="ri-twitter-x-fill ri-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
+                                <i class="ri-mail-fill ri-lg"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-400">© 2025 Frank Ntim Tetteh. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <script>
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+
+            // Form validation
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                let isValid = true;
+
+                if (!name) {
+                    isValid = false;
+                    document.getElementById('name').classList.add('border-red-500');
+                } else {
+                    document.getElementById('name').classList.remove('border-red-500');
+                }
+
+                if (!email || !email.includes('@')) {
+                    isValid = false;
+                    document.getElementById('email').classList.add('border-red-500');
+                } else {
+                    document.getElementById('email').classList.remove('border-red-500');
+                }
+
+                if (!subject) {
+                    isValid = false;
+                    document.getElementById('subject').classList.add('border-red-500');
+                } else {
+                    document.getElementById('subject').classList.remove('border-red-500');
+                }
+
+                if (!message) {
+                    isValid = false;
+                    document.getElementById('message').classList.add('border-red-500');
+                } else {
+                    document.getElementById('message').classList.remove('border-red-500');
+                }
+
+                if (isValid) {
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Sending...';
+
+                    const formData = new FormData(form);
+                    fetch('https://script.google.com/macros/s/AKfycbxmQFWzT__DfkVW9WjUS5eeGEJ8PNNoulZg5BBdXncxyXbTlWMdx3AQ0l7UZiumRcrc9g/exec', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.result === "success") {
+                                form.reset();
+                                submitButton.innerHTML = 'Message Sent!';
+                                setTimeout(() => {
+                                    submitButton.disabled = false;
+                                    submitButton.innerHTML = 'Send Message';
+                                    window.location.href = '../';
+                                }, 2000);
+                            } else {
+                                submitButton.disabled = false;
+                                submitButton.innerHTML = 'Send Message';
+                                alert('Failed to send message. Please try again later.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = 'Send Message';
+                            alert('Failed to send message. Please try again later.');
+                        });
+                }
+            });            // Fade-in animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Form input effects
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('focused');
+                });
+
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('focused');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+    
+    </html>
+
