@@ -2,5 +2,7 @@
 User-agent: *
 Disallow:
 
+Disallow: /google0275461c5aae65cc.html
+
 # Sitemap
 Sitemap: https://franktetteh.me/sitemap.xml
