@@ -3,884 +3,476 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frank Ntim Tetteh - Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#6b7280' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About — Frank Tetteh</title>
+    <meta name="description"
+        content="Frank Tetteh's background: engineering roles at Kofa Technologies, Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group, a B.Tech in Computer Science, and the full technical stack.">
+    <meta name="author" content="Frank Tetteh">
+    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://frankielaroi.github.io/about/">
+    <link rel="icon" href="/fav.ico">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="About — Frank Tetteh">
+    <meta property="og:description"
+        content="Roles, education and the full technical stack behind Frank Tetteh's work as a full stack engineer.">
+    <meta property="og:url" content="https://frankielaroi.github.io/about/">
+    <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { /* storage unavailable */ }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="canonical" href="https://franktetteh.me/about/" />
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 50%;
-            background-color: #3b82f6;
-            transition: all 0.3s ease;
-        }
-
-        .nav-item:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        .active-nav::after {
-            width: 100%;
-            left: 0;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 28px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #3b82f6;
-            z-index: 1;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 20px;
-            bottom: -20px;
-            width: 2px;
-            background-color: #e5e7eb;
-        }
-
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        .skill-badge {
-            transition: all 0.3s ease;
-        }
-
-        .skill-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
-<body class="bg-white text-gray-800">
-    <!-- Header -->
-    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#"
-                class="text-2xl font-['Pacifico'] text-gray-800 hover:text-primary transition-colors duration-300">Frank</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
-                <a href="/about/"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">About</a>
-                <a href="/projects/"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
-                
-                <a href="/contact"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+        <div class="shell nav__inner">
+            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+
+            <nav class="nav__links" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/about/" aria-current="page">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/contact/">Contact</a>
             </nav>
-            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
-                <i class="ri-menu-line ri-lg"></i>
-            </button>
+
+            <div class="nav__actions">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+                    </svg>
+                </button>
+                <a class="btn btn--ghost nav__cta" href="/contact/">Start a project</a>
+                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
+                    aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                        aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 transform -translate-x-full transition-transform duration-300"
-        id="mobile-menu">
-        <div class="flex justify-between items-center mb-8">
-            <a href="#" class="text-2xl font-['Pacifico'] text-gray-800">Frank</a>
-            <button class="w-10 h-10 flex items-center justify-center text-gray-800" id="close-menu-button">
-                <i class="ri-close-line ri-lg"></i>
+    <div class="drawer" data-open="false">
+        <div class="shell drawer__head">
+            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
             </button>
         </div>
-        <nav class="flex flex-col space-y-6">
-            <a href="/" class="text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
-            <a href="/about/" class="text-gray-800 hover:text-primary transition-colors duration-300">About</a>
-            <a href="/projects/" class="text-gray-800 hover:text-primary transition-colors duration-300">Projects</a>
-            <a href="/contact" class="text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
-        </nav>
+        <div class="shell">
+            <nav aria-label="Mobile">
+                <a href="/">Home</a>
+                <a href="/about/" aria-current="page">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+            <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
+        </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/3">
-                    <div class="rounded-full overflow-hidden border-4 border-white shadow-xl max-w-xs mx-auto">
-                        <img src="/assets/me.png"
-                            alt="Frank Ntim Tetteh" class="w-full h-auto">
-                    </div>
-                </div>
-                <div class="w-full md:w-2/3 text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Frank Ntim Tetteh</h1>
-                    <h2 class="text-2xl text-primary font-medium mb-6">Software Engineer</h2>
-                    <p class="text-gray-600 text-lg mb-8 max-w-2xl">I am a dedicated Software Engineer skilled in
-                        building dynamic and responsive web and mobile applications. With expertise in React.js, PHP,
-                        Flutter, and Node.js, I bring a versatile approach to front and backend development.</p>
-                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="/contact"
-                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap">Contact
-                            Me</a>
-                        
-                    </div>
-                    <div class="flex mt-8 gap-4 justify-center md:justify-start">
-                        <a href="https://gh.linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                            <i class="ri-linkedin-fill ri-lg"></i>
-                        </a>
-                        <a href="https://github.com/frankielaroi" target="_blank"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                            <i class="ri-github-fill ri-lg"></i>
-                        </a>
-                        <a href="https://franktetteh.me" target="_blank"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                            <i class="ri-global-line ri-lg"></i>
-                        </a>
-                        <a href="mailto:frankiekweku@gmail.com"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                            <i class="ri-mail-line ri-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 fade-in">About Me</h2>
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="w-full lg:w-1/2 fade-in">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-semibold mb-6">Personal Details</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-user-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm text-gray-500">Full Name</h4>
-                                    <p class="font-medium">Frank Ntim Tetteh</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-mail-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm text-gray-500">Email</h4>
-                                    <p class="font-medium">frankiekweku@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-phone-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm text-gray-500">Phone</h4>
-                                    <p class="font-medium">+233 53 268 1140</p>
-                                </div>
-                            </div>
-                           
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-map-pin-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm text-gray-500">Nationality</h4>
-                                    <p class="font-medium">Ghanaian</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-global-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm text-gray-500">Website</h4>
-                                    <p class="font-medium">franktetteh.me</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 fade-in">
-                    <h3 class="text-2xl font-semibold mb-6">Professional Summary</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        I am Frank Ntim Tetteh, a dedicated Software Engineer skilled in building dynamic and responsive
-                        web and mobile applications. With expertise in React.js, PHP, Flutter, and Node.js, I bring a
-                        versatile approach to front and backend development.
+    <main id="main">
+        <!-- Intro -->
+        <section class="hero">
+            <div class="shell hero__grid">
+                <div class="rise">
+                    <span class="eyebrow">About</span>
+                    <h1 style="font-size:clamp(2.2rem,5.2vw,3.4rem)">Frank Tetteh</h1>
+                    <p class="hero__role">Full Stack Engineer · Accra, Ghana</p>
+                    <p class="lede" style="margin-top:22px">
+                        I have roughly three years of professional experience building and shipping production web
+                        and mobile applications. I work in React.js, Next.js, TypeScript, Node.js, Flutter and PHP
+                        (Laravel), across the whole development cycle: database design, API development,
+                        responsive frontend delivery and cloud deployment.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Currently pursuing a Bachelor of Technology in Computer Science at Koforidua Technical
-                        University, I am focused on mastering modern programming languages and frameworks. My experience
-                        includes IT support and developing user-centric solutions that enhance performance and
-                        efficiency.
+                    <p class="lede" style="margin-top:18px">
+                        At Kofa Technologies I build frontend applications for a clean energy platform operating
+                        across Africa. Outside of employment I have designed and shipped three complete platforms
+                        on my own, and I hold a B.Tech in Computer Science from Koforidua Technical University.
                     </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        I am driven by a passion for innovation and delivering impactful digital experiences. My goal is
-                        to create elegant, efficient, and user-focused applications that solve real-world problems.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#education"
-                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap flex items-center gap-2">
-                            <span>View Education</span>
-                            <div class="w-5 h-5 flex items-center justify-center">
-                                <i class="ri-arrow-right-line"></i>
-                            </div>
-                        </a>
-                        <a href="#experience"
-                            class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap flex items-center gap-2">
-                            <span>View Experience</span>
-                            <div class="w-5 h-5 flex items-center justify-center">
-                                <i class="ri-arrow-right-line"></i>
-                            </div>
-                        </a>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="/contact/">Get in touch</a>
+                        <a class="btn btn--ghost" href="/projects/">View projects</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 fade-in">Education</h2>
-            <div class="max-w-3xl mx-auto fade-in">
-                <div class="space-y-12">
-                    <div class="timeline-item pb-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Bachelor of Technology in Computer Science</h3>
-                            </div>
-                            <h4 class="text-lg mb-4">Koforidua Technical University, Koforidua, Ghana</h4>
-                            <p class="text-gray-600">Pursuing a comprehensive degree in Computer Science with focus on
-                                software development, algorithms, data structures, and system design. Actively
-                                participating in programming competitions and tech-related extracurricular activities.
-                            </p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Programming</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Software
-                                    Engineering</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Database
-                                    Management</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">System
-                                    Analysis</span>
-                            </div>
+                <div class="rise">
+                    <dl class="facts">
+                        <div>
+                            <dt>Location</dt>
+                            <dd>Accra, Ghana (GMT)</dd>
                         </div>
-                    </div>
-
-                    <div class="timeline-item pb-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">High School Diploma</h3>
-                                </div>
-                            <h4 class="text-lg mb-4">Koforidua Senior High Technical School, Koforidua, Ghana</h4>
-                            <p class="text-gray-600">Completed secondary education with focus on science and
-                                mathematics. Participated in various technical and programming clubs, developing a
-                                strong foundation in logical thinking and problem-solving skills.</p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Mathematics</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Science</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Technical
-                                    Drawing</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Computer
-                                    Studies</span>
-                            </div>
+                        <div>
+                            <dt>Current role</dt>
+                            <dd>Frontend Developer, Kofa Technologies</dd>
                         </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Junior High School</h3>
-                            </div>
-                            <h4 class="text-lg mb-4">Gentle Mother Care Academy</h4>
-                            <p class="text-gray-600">Completed basic education with distinction in mathematics and
-                                science subjects. Developed early interest in computers and technology, participating in
-                                school science fairs and competitions.</p>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Basic
-                                    Education</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Mathematics</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">Science</span>
-                                <span
-                                    class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">ICT</span>
-                            </div>
+                        <div>
+                            <dt>Experience</dt>
+                            <dd>~3 years</dd>
                         </div>
-                    </div>
+                        <div>
+                            <dt>Education</dt>
+                            <dd>B.Tech Computer Science, Second Upper</dd>
+                        </div>
+                        <div>
+                            <dt>Languages</dt>
+                            <dd>English, full professional</dd>
+                        </div>
+                        <div>
+                            <dt>Email</dt>
+                            <dd><a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a></dd>
+                        </div>
+                        <div>
+                            <dt>Phone</dt>
+                            <dd><a href="tel:+233532681140">+233 53 268 1140</a></dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 fade-in">Professional Experience</h2>
-            <div class="max-w-3xl mx-auto fade-in">
-                <div class="space-y-12">
-                    <div class="timeline-item pb-12">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Frontend Developer</h3>
-                                <span class="text-primary font-medium">Dec 2024 - Present</span>
-                            </div>
-                            <h4 class="text-lg mb-4">Hepeps, Accra</h4>
-                            <p class="text-gray-600 mb-4">Working as a frontend developer on various client projects,
-                                focusing on creating responsive and user-friendly interfaces using React.js and modern
-                                CSS frameworks.</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2">
-                                <li>Developing responsive web applications using React.js and Tailwind CSS</li>
-                                <li>Collaborating with UX/UI designers to implement pixel-perfect designs</li>
-                                <li>Optimizing application performance and ensuring cross-browser compatibility</li>
-                                <li>Implementing state management using Redux and Context API</li>
+        <!-- Experience -->
+        <section class="section section--sunken" id="experience">
+            <div class="shell">
+                <div class="section-head">
+                    <span class="eyebrow">Experience</span>
+                    <h2>Every role, most recent first.</h2>
+                    <p>Engineering work, and the IT support roles that came before it.</p>
+                </div>
+
+                <div class="records">
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Sep 2026 — Present</b>
+                            <span>Accra, Ghana</span>
+                            <span>On-site</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Frontend Developer</h3>
+                            <p class="record__org">Kofa Technologies</p>
+                            <ul class="points">
+                                <li>Building responsive frontend interfaces with React and Next.js for a live
+                                    battery swapping platform deployed across multiple African markets.</li>
+                                <li>Connecting UI components to live APIs and managing application state across
+                                    complex data flows.</li>
+                                <li>Contributing to PHP (Laravel) backend work and Flutter mobile development
+                                    alongside the web frontend.</li>
+                                <li>Reviewing code and delivering features within a cross-functional engineering
+                                    team.</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="timeline-item pb-12">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Software Engineer</h3>
-                                <span class="text-primary font-medium">Nov 2024 - Present</span>
-                            </div>
-                            <h4 class="text-lg mb-4">Reuben Gold, Accra</h4>
-                            <p class="text-gray-600 mb-4">Working as a Software Engineer on financial technology
-                                solutions, developing both frontend and backend components for secure and efficient
-                                financial applications.</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2">
-                                <li>Developing and maintaining RESTful APIs using Node.js and Express</li>
-                                <li>Implementing secure authentication and authorization systems</li>
-                                <li>Building responsive frontend interfaces with React.js</li>
-                                <li>Working with SQL and NoSQL databases to optimize data storage and retrieval</li>
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Nov 2024 — Aug 2026</b>
+                            <span>Remote</span>
+                            <span>Part-time</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Full Stack Engineer</h3>
+                            <p class="record__org">Reuben Foundation Africa</p>
+                            <ul class="points">
+                                <li>Led frontend, backend and Flutter mobile development for an NGO platform,
+                                    shipping features that increased user engagement across the organisation.</li>
+                                <li>Built and maintained REST APIs using Node.js and Next.js, integrating AWS
+                                    services for cloud infrastructure and deployment.</li>
+                                <li>Cut manual reporting overhead by automating key operational workflows in
+                                    custom software.</li>
                             </ul>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Jan 2026 — May 2026</b>
+                            <span>Ghana</span>
+                            <span>Internship</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>IT Support Specialist</h3>
+                            <p class="record__org">Dumpong Community Bank</p>
+                            <ul class="points">
+                                <li>Managed user accounts and access permissions across banking platforms in
+                                    compliance with security and regulatory standards.</li>
+                                <li>Maintained IT infrastructure including workstations, network systems and
+                                    banking software, keeping operations continuous.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Oct 2025 — Dec 2025</b>
+                            <span>Tema, Ghana</span>
+                            <span>Contract</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>IT Support Technician</h3>
+                            <p class="record__org">Toyota Ghana Company Limited</p>
+                            <ul class="points">
+                                <li>Deployed and configured IT equipment for internal teams to corporate
+                                    standards.</li>
+                                <li>Supported day-to-day IT operations and infrastructure maintenance across
+                                    departments.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Jun 2024 — Jan 2025</b>
+                            <span>Remote</span>
+                            <span>Full-time</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Frontend Developer</h3>
+                            <p class="record__org">Hepeps IT Solutions Limited</p>
+                            <ul class="points">
+                                <li>Delivered production React.js and Next.js interfaces across multiple
+                                    client-facing products.</li>
+                                <li>Improved page load performance by optimising component rendering and
+                                    implementing code-splitting on key client projects.</li>
+                                <li>Translated Figma designs into pixel-accurate responsive components that passed
+                                    client UAT on first submission in the majority of projects.</li>
+                                <li>Worked with backend teams on API integration and kept UI quality consistent
+                                    across browsers and devices.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Jan 2024 — Jun 2024</b>
+                            <span>Remote</span>
+                            <span>Part-time</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Full Stack Engineer</h3>
+                            <p class="record__org">AfRipul Group</p>
+                            <ul class="points">
+                                <li>Integrated RESTful APIs and resolved production performance bottlenecks,
+                                    improving response times across key application flows.</li>
+                                <li>Built custom automation tools that reduced manual business process time.</li>
+                                <li>Designed and maintained MySQL database schemas to support application
+                                    scalability.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>Oct 2023 — Dec 2023</b>
+                            <span>Nungua, Ghana</span>
+                            <span>Internship</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>IT Technician</h3>
+                            <p class="record__org">Regional Maritime University</p>
+                            <ul class="points">
+                                <li>Resolved hardware, software and network issues across the institution,
+                                    maintaining system uptime for academic operations.</li>
+                                <li>Managed user access and documented technical procedures for ongoing
+                                    operational reference.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="shell">
+                <div class="section-head">
+                    <span class="eyebrow">Technical skills</span>
+                    <h2>The stack I work in.</h2>
+                </div>
+
+                <div class="skills">
+                    <div class="skill">
+                        <h3>Frontend</h3>
+                        <div class="tags">
+                            <span class="tag">React.js</span><span class="tag">Next.js</span><span
+                                class="tag">TypeScript</span><span class="tag">JavaScript</span><span
+                                class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind
+                                CSS</span><span class="tag">Redux</span><span class="tag">Zustand</span><span
+                                class="tag">Responsive UI</span><span class="tag">Figma-to-code</span><span
+                                class="tag">Performance optimisation</span>
                         </div>
                     </div>
 
-                    <div class="timeline-item pb-12">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Software Engineer</h3>
-                                <span class="text-primary font-medium">Oct 2024 - Nov 2024</span>
-                            </div>
-                            <h4 class="text-lg mb-4">Regional Maritime University</h4>
-                            <p class="text-gray-600 mb-4">Worked on developing and maintaining the university's student
-                                management system and online learning platform, focusing on improving user experience
-                                and system reliability.</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2">
-                                <li>Enhanced existing web applications using PHP and JavaScript</li>
-                                <li>Implemented new features for the student portal and learning management system</li>
-                                <li>Optimized database queries and improved application performance</li>
-                                <li>Collaborated with the IT team to resolve technical issues and implement system
-                                    improvements</li>
-                            </ul>
+                    <div class="skill">
+                        <h3>Backend</h3>
+                        <div class="tags">
+                            <span class="tag">Node.js</span><span class="tag">Express</span><span
+                                class="tag">NestJS</span><span class="tag">PHP (Laravel)</span><span
+                                class="tag">Spring Boot</span><span class="tag">Python</span><span
+                                class="tag">FastAPI</span><span class="tag">REST API design</span>
                         </div>
                     </div>
 
-                    <div class="timeline-item pb-12">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">Software Engineer</h3>
-                                <span class="text-primary font-medium">Jan 2024 - Jun 2024</span>
-                            </div>
-                            <h4 class="text-lg mb-4">Afripul Group</h4>
-                            <p class="text-gray-600 mb-4">Worked as part of the development team on various web and
-                                mobile applications, focusing on creating efficient and scalable solutions for clients
-                                across different industries.</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2">
-                                <li>Developed mobile applications using Flutter for cross-platform compatibility</li>
-                                <li>Created and maintained RESTful APIs using Node.js</li>
-                                <li>Implemented frontend interfaces with React.js and modern CSS frameworks</li>
-                                <li>Collaborated with the team on code reviews and technical documentation</li>
-                            </ul>
+                    <div class="skill">
+                        <h3>Mobile</h3>
+                        <div class="tags">
+                            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Java
+                                (familiar)</span>
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold">IT Technician</h3>
-                                <span class="text-primary font-medium">Oct 2023 - Dec 2023</span>
-                            </div>
-                            <h4 class="text-lg mb-4">Regional Maritime University, Tema, Ghana</h4>
-                            <p class="text-gray-600 mb-4">Provided technical support and maintenance for the
-                                university's IT infrastructure, ensuring smooth operation of systems and networks.</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-2">
-                                <li>Troubleshooting hardware and software issues for faculty and students</li>
-                                <li>Maintaining and updating computer systems and networks</li>
-                                <li>Assisting with the implementation of new IT solutions</li>
-                                <li>Providing training and support for university staff on various software applications
-                                </li>
-                            </ul>
+                    <div class="skill">
+                        <h3>Databases</h3>
+                        <div class="tags">
+                            <span class="tag">SQL</span><span class="tag">MySQL</span><span
+                                class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
+                                class="tag">Redis</span>
                         </div>
+                    </div>
+
+                    <div class="skill">
+                        <h3>DevOps and cloud</h3>
+                        <div class="tags">
+                            <span class="tag">Git</span><span class="tag">GitHub Actions</span><span
+                                class="tag">CI/CD</span><span class="tag">Docker</span><span
+                                class="tag">Vercel</span><span class="tag">AWS (S3, EC2)</span><span
+                                class="tag">Linux</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Testing</h3>
+                        <div class="tags">
+                            <span class="tag">Jest</span><span class="tag">Cypress</span><span class="tag">React
+                                Testing Library</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Practices and tools</h3>
+                        <div class="tags">
+                            <span class="tag">Agile / Scrum</span><span class="tag">Jira</span><span
+                                class="tag">IT infrastructure</span><span class="tag">Network support</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Development tools</h3>
+                        <p>Claude Code, Cursor and GitHub Copilot are part of my daily workflow, for code
+                            generation, debugging and working through architecture decisions.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 fade-in">Technical Skills</h2>
-            <div class="max-w-4xl mx-auto fade-in">
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-javascript-line ri-lg"></i>
+        <!-- Education -->
+        <section class="section section--sunken" id="education">
+            <div class="shell">
+                <div class="section-head">
+                    <span class="eyebrow">Education</span>
+                    <h2>Academic background.</h2>
+                </div>
+
+                <div class="records">
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>2023 — 2026</b>
+                            <span>Koforidua, Ghana</span>
                         </div>
-                        <h3 class="font-medium">JavaScript</h3>
+                        <div class="record__body">
+                            <h3>Bachelor of Technology, Computer Science</h3>
+                            <p class="record__org">Koforidua Technical University</p>
+                            <ul class="points">
+                                <li>Classification: Second Upper Honours.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Close -->
+        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
+            <div class="shell">
+                <div class="callout">
+                    <div>
+                        <h2>Looking for an engineer?</h2>
+                        <p>I take on full stack and frontend work: contract, remote, or on-site in Accra.</p>
                     </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-reactjs-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">React</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-nodejs-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Node.js</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-flutter-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Dart</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-database-2-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">MongoDB</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-database-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">SQL</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-code-s-slash-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">PHP</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-code-box-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Laravel</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-smartphone-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">React Native</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-braces-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">TypeScript</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-redux-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Redux</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-server-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Express.js</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-git-branch-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Git</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-api-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">RESTful APIs</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-team-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Agile</h3>
-                    </div>
-
-                    <div class="skill-badge bg-white p-4 rounded-lg shadow-sm text-center">
-                        <div
-                            class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mx-auto mb-3">
-                            <i class="ri-database-2-line ri-lg"></i>
-                        </div>
-                        <h3 class="font-medium">Database Management</h3>
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="/contact/">Contact me</a>
+                        <a class="btn btn--onDeep" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
+                            target="_blank" rel="noopener">Book a call</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 fade-in">Get In Touch</h2>
-            <div class="flex flex-col lg:flex-row gap-12 max-w-5xl mx-auto">
-                <div class="w-full lg:w-1/2 fade-in">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
-                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-mail-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-1">Email</h4>
-                                    <a href="mailto:frankiekweku@gmail.com"
-                                        class="text-gray-600 hover:text-primary transition-colors duration-300">frankiekweku@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-phone-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-1">Phone</h4>
-                                    <a href="tel:+233532681140"
-                                        class="text-gray-600 hover:text-primary transition-colors duration-300">+233 53
-                                        268 1140</a>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-map-pin-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-1">Location</h4>
-                                    <p class="text-gray-600">Koforidua, Ghana</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
-                                    <i class="ri-global-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-1">Website</h4>
-                                    <a href="https://franktetteh.me" target="_blank"
-                                        class="text-gray-600 hover:text-primary transition-colors duration-300">franktetteh.me</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h4 class="text-lg font-medium mb-4">Connect with me</h4>
-                            <div class="flex gap-4">
-                                <a href="https://gh.linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                                    <i class="ri-linkedin-fill ri-lg"></i>
-                                </a>
-                                <a href="https://frankielaroi.github.io" target="_blank"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                                    <i class="ri-github-fill ri-lg"></i>
-                                </a>
-                                <a href="https://franktetteh.me" target="_blank"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                                    <i class="ri-global-line ri-lg"></i>
-                                </a>
-                                <a href="mailto:frankiekweku@gmail.com"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full text-gray-700 transition-all duration-300">
-                                    <i class="ri-mail-line ri-lg"></i>
-                                </a>
-                            </div>
-                        </div>
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer__top">
+                <div>
+                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+                    <p class="footer__blurb">Full stack engineer in Accra, Ghana, building production web and
+                        mobile systems end to end.</p>
+                </div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <h4>Site</h4>
+                        <a href="/">Home</a>
+                        <a href="/about/">About</a>
+                        <a href="/projects/">Projects</a>
+                        <a href="/contact/">Contact</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Elsewhere</h4>
+                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
+                            rel="noopener">LinkedIn</a>
+                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Direct</h4>
+                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                        <a href="tel:+233532681140">+233 53 268 1140</a>
                     </div>
                 </div>
-                <div class="w-full lg:w-1/2 fade-in">
-                    <form class="space-y-6" id="contactForm">
-                        <div class="relative">
-                            <input type="text" id="name" placeholder=" "
-                                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors duration-300 bg-gray-50">
-                            <label for="name"
-                                class="absolute text-gray-500 left-4 top-3 transition-all duration-300 pointer-events-none transform -translate-y-6 scale-75 origin-left bg-white px-1">Your
-                                Name</label>
-                        </div>
-                        <div class="relative">
-                            <input type="email" id="email" placeholder=" "
-                                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors duration-300 bg-gray-50">
-                            <label for="email"
-                                class="absolute text-gray-500 left-4 top-3 transition-all duration-300 pointer-events-none transform -translate-y-6 scale-75 origin-left bg-white px-1">Your
-                                Email</label>
-                        </div>
-                        <div class="relative">
-                            <input type="text" id="subject" placeholder=" "
-                                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors duration-300 bg-gray-50">
-                            <label for="subject"
-                                class="absolute text-gray-500 left-4 top-3 transition-all duration-300 pointer-events-none transform -translate-y-6 scale-75 origin-left bg-white px-1">Subject</label>
-                        </div>
-                        <div class="relative">
-                            <textarea id="message" rows="5" placeholder=" "
-                                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors duration-300 bg-gray-50"></textarea>
-                            <label for="message"
-                                class="absolute text-gray-500 left-4 top-3 transition-all duration-300 pointer-events-none transform -translate-y-6 scale-75 origin-left bg-white px-1">Your
-                                Message</label>
-                        </div>
-                        <button type="submit"
-                            class="bg-primary hover:bg-blue-600 text-white px-8 py-3 !rounded-button font-medium transition-all duration-300 w-full whitespace-nowrap">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <a href="#"
-                        class="text-3xl font-['Pacifico'] text-white hover:text-primary transition-colors duration-300">Frank</a>
-                    <p class="mt-2 text-gray-400 max-w-md">Software Engineer dedicated to creating elegant,
-                        efficient, and user-focused digital experiences.</p>
-                </div>
-                <div class="flex flex-col items-center md:items-end">
-                    <p class="text-gray-400 mb-2">© 2025 Frank Ntim Tetteh. All rights reserved.</p>
-                    <p class="text-gray-500 text-sm">Last updated: April 3, 2025</p>
-                </div>
-            </div>
-            <div class="mt-10 pt-8 border-t border-gray-800 text-center">
-                <a href="#"
-                    class="inline-block p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-300">
-                    <div class="w-6 h-6 flex items-center justify-center">
-                        <i class="ri-arrow-up-line ri-lg"></i>
-                    </div>
-                </a>
+            <div class="footer__bottom">
+                <p>© 2026 Frank Tetteh</p>
+                <p>Hand-built. No framework, no page builder.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-
-                document.addEventListener('DOMContentLoaded', function () {
-                    document.getElementById('contactForm').addEventListener('submit', function (event) {
-                        event.preventDefault();
-                        var formData = new FormData(this);
-                        fetch('https://script.google.com/macros/s/AKfycbxmQFWzT__DfkVW9WjUS5eeGEJ8PNNoulZg5BBdXncxyXbTlWMdx3AQ0l7UZiumRcrc9g/exec', {
-                            method: 'POST',
-                            body: formData,
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.result === "success") {
-                                    alert('Message sent successfully!');
-                                    document.getElementById('contactForm').reset();
-                                    window.location.href = '../';
-                                } else {
-                                    alert('Failed to send message. Please try again later.');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                alert('Failed to send message. Please try again later.');
-                            });
-                    });
-                });
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('-translate-x-full');
-        });
-
-        closeMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('-translate-x-full');
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('-translate-x-full')) {
-                        mobileMenu.classList.add('-translate-x-full');
-                    }
-                }
-            });
-        });
-
-        // Scroll animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Active navigation
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-item');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(item => {
-                item.classList.remove('active-nav');
-                if (item.getAttribute('href').includes(current)) {
-                    item.classList.add('active-nav');
-                }
-            });
-        });
-
-        // Form labels animation
-        const formInputs = document.querySelectorAll('input, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.previousElementSibling?.classList.add('transform', '-translate-y-6', 'scale-75', 'text-primary');
-            });
-
-            input.addEventListener('blur', () => {
-                if (input.value === '') {
-                    input.previousElementSibling?.classList.remove('transform', '-translate-y-6', 'scale-75', 'text-primary');
-                }
-            });
-
-            // Check on load if input has value
-            if (input.value !== '') {
-                input.previousElementSibling?.classList.add('transform', '-translate-y-6', 'scale-75');
-            }
-        });
-
-        // Initialize animations on load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach(element => {
-                    element.classList.add('visible');
-                });
-            }, 300);
-        });
-    </script>
+    <script src="/assets/js/site.js" defer></script>
 </body>
 
 </html>

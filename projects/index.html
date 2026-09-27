@@ -3,410 +3,405 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
-    <meta name="keywords" content="Frank Ntim Tetteh, Software Engineer, Projects, Web Development, Mobile Development, React, Node.js, PHP">
-    <meta name="author" content="Frank Ntim Tetteh">
-    <meta property="og:title" content="Frank Ntim Tetteh - Projects">
-    <meta property="og:description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
-    <meta property="og:image" content="https://franktetteh.me/assets/og-image.jpg">
-    <meta property="og:url" content="https://franktetteh.me/projects/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Projects — Frank Tetteh</title>
+    <meta name="description"
+        content="PharmaSysGH, FinWatch and TokenLink Africa: three platforms Frank Tetteh built from scratch, plus production work at Kofa Technologies, Reuben Foundation Africa and Hepeps IT Solutions.">
+    <meta name="author" content="Frank Tetteh">
+    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://frankielaroi.github.io/projects/">
+    <link rel="icon" href="/fav.ico">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects — Frank Tetteh">
+    <meta property="og:description"
+        content="A pharmacy management SaaS, an AML detection platform and a tokenization API, built end to end.">
+    <meta property="og:url" content="https://frankielaroi.github.io/projects/">
+    <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Frank Ntim Tetteh - Projects">
-    <meta name="twitter:description" content="Explore Frank Ntim Tetteh's portfolio of projects, showcasing expertise in web and mobile development using modern technologies.">
-    <meta name="twitter:image" content="https://franktetteh.me/assets/og-image.jpg">
-    <link rel="canonical" href="https://franktetteh.me/projects/" />
-    <title>Frank Ntim Tetteh - Projects</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#6b7280' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { /* storage unavailable */ }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
-<body class="bg-white text-gray-800">
-    <!-- Header -->
-    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#"
-                class="text-2xl font-['Pacifico'] text-gray-800 hover:text-primary transition-colors duration-300">Frank</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/index.html"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
-                <a href="/about/"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">About Me</a>
-                <a href="/projects/"
-                    class="nav-item active-nav text-primary hover:text-primary transition-colors duration-300">Projects</a>
-                <a href="/contact/"
-                    class="nav-item text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+        <div class="shell nav__inner">
+            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+
+            <nav class="nav__links" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/projects/" aria-current="page">Projects</a>
+                <a href="/contact/">Contact</a>
             </nav>
-            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
-                <i class="ri-menu-line ri-lg"></i>
-            </button>
+
+            <div class="nav__actions">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+                    </svg>
+                </button>
+                <a class="btn btn--ghost nav__cta" href="/contact/">Start a project</a>
+                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
+                    aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                        aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <divs
-        class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 transform -translate-x-full transition-transform duration-300">
-        <div class="flex justify-between items-center mb-8">
-            <a href="/" class="text-2xl font-['Pacifico'] text-gray-800">Frank</a>
-            <button class="w-10 h-10 flex items-center justify-center text-gray-800" id="close-menu-button">
-                <i class="ri-close-line ri-lg"></i>
+    <div class="drawer" data-open="false">
+        <div class="shell drawer__head">
+            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
             </button>
         </div>
-        <nav class="flex flex-col space-y-6">
-            <a href="/" class="text-gray-800 hover:text-primary transition-colors duration-300">Home</a>
-            <a href="/about/" class="text-gray-800 hover:text-primary transition-colors duration-300">About Me</a>
-            <a href="/projects/" class="text-primary font-medium">Projects</a>
-            <a href="/contact/" class="text-gray-800 hover:text-primary transition-colors duration-300">Contact</a>
-        </nav>
-    </divs>
-
-    <!-- Page Header -->
-    <section class="pt-32 pb-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">My Projects</h1>
-            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto">A collection of my recent development work
-                across various technologies and domains.</p>
+        <div class="shell">
+            <nav aria-label="Mobile">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/projects/" aria-current="page">Projects</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+            <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Projects Grid -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/61b08d490e886e39451bf11d34366c9f.jpg"
-                            alt="Screenshot of Food App with React Native" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Food App with React Native</h3>
-                        <p class="text-gray-600 mb-4">A food delivery application for Android and iOS developed using
-                            React Native.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React Native</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Redux</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Food App Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
+    <main id="main">
+        <!-- Intro -->
+        <section class="hero" style="padding-bottom:clamp(20px,3vw,32px)">
+            <div class="shell">
+                <div class="rise" style="max-width:64ch">
+                    <span class="eyebrow">Projects</span>
+                    <h1 style="font-size:clamp(2.2rem,5.2vw,3.4rem);margin-block:20px 22px">Built, deployed, and
+                        answerable for.</h1>
+                    <p class="lede">
+                        Three platforms I designed and built on my own, from schema to deployment, and the
+                        production work I do inside engineering teams. Every architecture note below describes
+                        what actually runs.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="/contact/">Work with me</a>
+                        <a class="btn btn--ghost" href="https://github.com/frankielaroi" target="_blank"
+                            rel="noopener">
+                            GitHub
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7 17L17 7M9 7h8v8"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/3f57a1486aa81178aaec6ba8132d71c3.jpg"
-                            alt="Screenshot of E-commerce App with React and Firebase" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">E-commerce App with React and Firebase</h3>
-                        <p class="text-gray-600 mb-4">A fully functional e-commerce shop built with React and Firebase.
+        <!-- Independent -->
+        <section class="section section--tight">
+            <div class="shell">
+                <div class="section-head">
+                    <span class="eyebrow">Independent</span>
+                    <h2>Solo builds.</h2>
+                </div>
+
+                <div class="records">
+                    <article class="record" id="pharmasysgh">
+                        <div class="record__rail">
+                            <b>2025</b>
+                            <span class="flag flag--live">In active use</span>
+                            <span>Solo build</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>PharmaSysGH — Pharmacy Management SaaS</h3>
+                            <p>A multi-branch pharmacy management platform, designed and built from scratch and
+                                currently in active use.</p>
+                            <ul class="points">
+                                <li><b>Architecture</b> React.js and Next.js frontend, Node.js REST API, MySQL
+                                    database, deployed on Vercel behind a CI/CD pipeline.</li>
+                                <li><b>Operations</b> Multi-branch point of sale, real-time inventory tracking and
+                                    supplier management across locations.</li>
+                                <li><b>Access</b> Staff role access control, with reporting dashboards for branch
+                                    and group level figures.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">React.js</span><span class="tag">Next.js</span><span
+                                    class="tag">Node.js</span><span class="tag">MySQL</span><span
+                                    class="tag">Vercel</span><span class="tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record" id="finwatch">
+                        <div class="record__rail">
+                            <b>2024</b>
+                            <span class="flag flag--live">Shipped</span>
+                            <span>Solo build</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>FinWatch — AML Detection Platform</h3>
+                            <p>A financial crime detection platform covering the full path from transaction to
+                                analyst decision.</p>
+                            <ul class="points">
+                                <li><b>Backend</b> FastAPI with PostgreSQL and Alembic migrations, plus
+                                    Redis-backed async workers with dead-letter queue retry.</li>
+                                <li><b>Detection</b> An XGBoost model registry feeding the scoring pipeline, with
+                                    Prometheus observability across the system.</li>
+                                <li><b>Process split</b> The API, the profile ingestion worker and the DLQ retry
+                                    worker run as separate processes, so each scales and restarts on its own.</li>
+                                <li><b>Deployment</b> A Docker Compose stack (Postgres, Redis, migrations, API,
+                                    both workers) for local work, and systemd units for the servers.</li>
+                                <li><b>Security</b> API key authentication on every <code>/api/v1</code> route,
+                                    role-based access control, and audit records written for authenticated
+                                    traffic.</li>
+                                <li><b>Frontend</b> A React.js dashboard with alert queues, case management views
+                                    and evidence review interfaces.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span
+                                    class="tag">Alembic</span><span class="tag">Redis</span><span
+                                    class="tag">XGBoost</span><span class="tag">Prometheus</span><span
+                                    class="tag">Docker</span><span class="tag">React.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record" id="cyberdefend">
+                        <div class="record__rail">
+                            <b>2025</b>
+                            <span class="flag flag--live">Shipped</span>
+                            <span>Solo build</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>CyberDefend 360 — Security Posture Platform</h3>
+                            <p>A cybersecurity assessment and monitoring platform for organisations, built as two
+                                products over one backend.</p>
+                            <ul class="points">
+                                <li><b>DefendX</b> An adaptive questionnaire that scores an organisation's Cyber
+                                    Safety Index, classifies it into risk tiers A to F, and benchmarks it against
+                                    regional, sectoral and national averages, with generated reports and
+                                    assessment history.</li>
+                                <li><b>DefendX+</b> Phishing simulation campaigns, a live alert monitoring
+                                    dashboard, security scanning, detection rule management and resilience
+                                    scoring.</li>
+                                <li><b>Commercial</b> Tiered subscriptions with card and Mobile Money payments,
+                                    invoicing, auto-renewal and trial lifecycle handling.</li>
+                                <li><b>Admin and public</b> System-wide analytics, a question bank, organisation
+                                    oversight and audit logging, plus a public CSI directory searchable by sector,
+                                    region and company size.</li>
+                                <li><b>Architecture</b> React 18 and TypeScript with Redux Toolkit and RTK Query
+                                    on Vite, over a TypeScript backend with PostgreSQL stored procedures, shipped
+                                    in Docker.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">React 18</span><span class="tag">TypeScript</span><span
+                                    class="tag">Redux Toolkit</span><span class="tag">RTK Query</span><span
+                                    class="tag">Vite</span><span class="tag">Tailwind CSS</span><span
+                                    class="tag">Recharts</span><span class="tag">PostgreSQL</span><span
+                                    class="tag">Docker</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record" id="tokenlink">
+                        <div class="record__rail">
+                            <b>2026</b>
+                            <span class="flag flag--wip">In progress</span>
+                            <span>Solo build</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>TokenLink Africa — Tokenization as a Service</h3>
+                            <p>A plug-in tokenization API and SDK that lets fintechs and banks in Ghana add secure
+                                payment and credential tokenization to existing systems, without standing up
+                                blockchain or compliance infrastructure in-house.</p>
+                            <ul class="points">
+                                <li><b>Architecture</b> Microservices in NestJS, Java Spring Boot and Go, over a
+                                    PostgreSQL database, with a Next.js frontend.</li>
+                                <li><b>Multi-tenancy</b> An Organization Service with role-based access control
+                                    (Owner, Admin, Developer, Viewer), scoped API keys, webhooks and audit logging
+                                    across the organisation and membership lifecycle.</li>
+                                <li><b>Local rails</b> Built for Mobile Money and GhIPSS integration, aligned with
+                                    Bank of Ghana and SEC frameworks for payment and virtual asset service
+                                    providers.</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">NestJS</span><span class="tag">Spring Boot</span><span
+                                    class="tag">Go</span><span class="tag">PostgreSQL</span><span
+                                    class="tag">Next.js</span><span class="tag">Microservices</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team work -->
+        <section class="section section--sunken">
+            <div class="shell">
+                <div class="section-head">
+                    <span class="eyebrow">In production</span>
+                    <h2>Work shipped with teams.</h2>
+                    <p>Products I contributed to as part of an engineering team, or as the sole developer on a
+                        client engagement.</p>
+                </div>
+
+                <div class="records">
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>2026 — Present</b>
+                            <span>Kofa Technologies</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Battery swapping platform</h3>
+                            <p>A clean energy platform running in multiple African markets. I build the responsive
+                                React and Next.js interfaces, wire them to live APIs, and contribute to the
+                                Laravel backend and the Flutter app.</p>
+                            <div class="tags">
+                                <span class="tag">React</span><span class="tag">Next.js</span><span
+                                    class="tag">Laravel</span><span class="tag">Flutter</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>2024 — 2026</b>
+                            <span>Reuben Foundation Africa</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>NGO platform and mobile app</h3>
+                            <p>Led frontend, backend and Flutter mobile development: REST APIs in Node.js and
+                                Next.js on AWS, plus automation that removed manual reporting work.</p>
+                            <div class="tags">
+                                <span class="tag">Node.js</span><span class="tag">Next.js</span><span
+                                    class="tag">Flutter</span><span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>2024 — 2025</b>
+                            <span>Hepeps IT Solutions</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>Client product interfaces</h3>
+                            <p>Production React.js and Next.js interfaces across several client products. Figma
+                                designs translated to pixel-accurate components, with code-splitting and render
+                                optimisation for page load.</p>
+                            <div class="tags">
+                                <span class="tag">React.js</span><span class="tag">Next.js</span><span
+                                    class="tag">Figma-to-code</span><span class="tag">Performance</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="record">
+                        <div class="record__rail">
+                            <b>2024</b>
+                            <span>AfRipul Group</span>
+                        </div>
+                        <div class="record__body">
+                            <h3>API integration and automation tooling</h3>
+                            <p>Integrated RESTful APIs, resolved production performance bottlenecks, built custom
+                                automation tools, and designed MySQL schemas that held up as the application
+                                grew.</p>
+                            <div class="tags">
+                                <span class="tag">REST APIs</span><span class="tag">MySQL</span><span
+                                    class="tag">Automation</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Close -->
+        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
+            <div class="shell">
+                <div class="callout">
+                    <div>
+                        <h2>Interested in collaborating?</h2>
+                        <p>Tell me what you're building and I'll say plainly whether I'm the right person for it.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Stripe</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View E-commerce App Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
                     </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/c3e7ead0209e62b84cecf294bf1d754e.jpg"
-                            alt="Screenshot of Backend with Node and Express.js" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Backend with Node and Express.js</h3>
-                        <p class="text-gray-600 mb-4">A backend for a food application or website using Node.js,
-                            Express, and MongoDB.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Express</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JWT</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Backend Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/585464caae0bf6de4e0c8f37f29b6323.jpg"
-                            alt="Screenshot of LimpWorld NGO Website" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">LimpWorld NGO Website</h3>
-                        <p class="text-gray-600 mb-4">A website for an NGO supporting children in Ghana.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">WordPress</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">PHP</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View LimpWorld NGO Website Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/9a171db63299584318dab6ad25f43a45.jpg"
-                            alt="Screenshot of Valentine's Day Proposal Website" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Valentine's Day Proposal</h3>
-                        <p class="text-gray-600 mb-4">A proposal website created for Valentine's Day.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">HTML5</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">CSS3</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">GSAP</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Valentine's Day Proposal Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/2f2d57e633c81dbc6859ce472a0dada5.jpg"
-                            alt="Screenshot of Simple Backend with PHP" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Simple Backend with PHP</h3>
-                        <p class="text-gray-600 mb-4">A simple backend for managing user authentication and data
-                            storage, built using PHP.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">PHP</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">jQuery</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Simple Backend Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/f76866d4fe3631f5f6bd3ba75d0c2937.jpg"
-                            alt="Screenshot of Task Management App" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Task Management App</h3>
-                        <p class="text-gray-600 mb-4">A collaborative task management application with real-time updates
-                            and team features.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Vuex</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Task Management App Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/436e0f453b34d274885c5a7313efd262.jpg"
-                            alt="Screenshot of Crypto Dashboard" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Crypto Dashboard</h3>
-                        <p class="text-gray-600 mb-4">A cryptocurrency tracking dashboard with real-time price updates
-                            and portfolio management.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Redux</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">D3.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">CoinGecko API</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Crypto Dashboard Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 9 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/8d0686404159784efb269126c4c498fa.jpg"
-                            alt="Screenshot of Weather App" class="w-full h-full object-cover object-top" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Weather App</h3>
-                        <p class="text-gray-600 mb-4">A weather forecast application with location-based data and
-                            interactive visualizations.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">OpenWeather
-                                API</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Chart.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Geolocation
-                                API</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium transition-colors duration-300" aria-label="View Weather App Project">View
-                                Project</a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary border border-gray-200 rounded-full transition-colors duration-300" aria-label="View Source Code on GitHub">
-                                <i class="ri-github-line ri-lg"></i>
-                            </a>
-                        </div>
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="/contact/">Get in touch</a>
+                        <a class="btn btn--onDeep" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
+                            target="_blank" rel="noopener">Book a call</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-4">Interested in Collaborating?</h2>
-                <p class="text-gray-600 mb-6">Let's work together to create something amazing. Get in touch today!</p>
-                <a href="/contact/" class="bg-primary text-white px-6 py-3 rounded hover:bg-blue-600 transition-all duration-300">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <a href="#"
-                        class="text-3xl font-['Pacifico'] text-white hover:text-primary transition-colors duration-300">Frank</a>
-                    <p class="mt-2 text-gray-400 max-w-md">Passionate software engineer dedicated to creating elegant,
-                        efficient, and user-focused digital experiences.</p>
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer__top">
+                <div>
+                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+                    <p class="footer__blurb">Full stack engineer in Accra, Ghana, building production web and
+                        mobile systems end to end.</p>
                 </div>
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex gap-4 mb-4">
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
-                            <i class="ri-github-fill ri-lg"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
-                            <i class="ri-linkedin-fill ri-lg"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
-                            <i class="ri-twitter-x-fill ri-lg"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full text-white transition-all duration-300">
-                            <i class="ri-mail-fill ri-lg"></i>
-                        </a>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <h4>Site</h4>
+                        <a href="/">Home</a>
+                        <a href="/about/">About</a>
+                        <a href="/projects/">Projects</a>
+                        <a href="/contact/">Contact</a>
                     </div>
-                    <p class="text-gray-400">© 2025 Frank Ntim Tetteh. All rights reserved.</p>
+                    <div class="footer__col">
+                        <h4>Elsewhere</h4>
+                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
+                            rel="noopener">LinkedIn</a>
+                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Direct</h4>
+                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                        <a href="tel:+233532681140">+233 53 268 1140</a>
+                    </div>
                 </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Frank Tetteh</p>
+                <p>Hand-built. No framework, no page builder.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('-translate-x-full');
-        });
-
-        closeMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('-translate-x-full');
-        });
-
-        // Project card animations
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.querySelector('img').classList.add('scale-110');
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.querySelector('img').classList.remove('scale-110');
-            });
-        });
-    </script>
+    <script src="/assets/js/site.js" defer></script>
 </body>
 
 </html>
