@@ -70,7 +70,7 @@
         if (data && data.result === 'success') {
           form.reset();
           submit.textContent = 'Message sent';
-          setStatus('Thanks — I\'ll get back to you shortly.', 'ok');
+          setStatus('Thanks, I\'ll get back to you shortly.', 'ok');
           setTimeout(function () {
             submit.disabled = false;
             submit.textContent = 'Send message';
