@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>About | Frank Tetteh</title>
-    <meta name="description"
-        content="Frank Tetteh's background: engineering roles at Kofa Technologies, Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group, IT support at Dumpong Community Bank and Toyota Ghana, a B.Tech in Computer Science, and the full technical stack.">
+    <meta name="description" content="Frank Tetteh's background: engineering roles at Kofa Technologies, Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group, IT support at Dumpong Community Bank and Toyota Ghana, a B.Tech in Computer Science, and the full technical stack.">
     <meta name="author" content="Frank Tetteh">
-    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1626" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://frankielaroi.github.io/about/">
     <link rel="icon" href="/fav.ico">
 
     <meta property="og:type" content="profile">
     <meta property="og:title" content="About | Frank Tetteh">
-    <meta property="og:description"
-        content="Roles, education and the full technical stack behind Frank Tetteh's work as a full stack engineer.">
+    <meta property="og:description" content="Frank Tetteh's background: engineering roles at Kofa Technologies, Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group, IT support at Dumpong Community Bank and Toyota Ghana, a B.Tech in Computer Science, and the full technical stack.">
     <meta property="og:url" content="https://frankielaroi.github.io/about/">
     <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | Frank Tetteh">
+    <meta name="twitter:description" content="Frank Tetteh's background: engineering roles at Kofa Technologies, Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group, IT support at Dumpong Community Bank and Toyota Ghana, a B.Tech in Computer Science, and the full technical stack.">
+    <meta name="twitter:image" content="https://frankielaroi.github.io/assets/portrait.png">
 
     <script>
+        /* Mark JS as present and apply a saved theme before paint. With no saved
+           choice the stylesheet follows the operating system. */
         (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            if ('noModule' in HTMLScriptElement.prototype && window.WebGLRenderingContext) root.classList.add('has-3d');
             try {
                 var saved = localStorage.getItem('theme');
-                if (saved === 'dark' || saved === 'light') {
-                    document.documentElement.setAttribute('data-theme', saved);
-                }
+                if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
             } catch (e) { /* storage unavailable */ }
         })();
     </script>
@@ -35,8 +39,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="/assets/css/site.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin>
 </head>
 
 <body>
@@ -44,7 +57,10 @@
 
     <header class="nav">
         <div class="shell nav__inner">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <a class="brand" href="/" aria-label="Frank Tetteh, home">
+                <span class="cell" aria-hidden="true"><span class="cell__fill"></span></span>
+                Frank Tetteh
+            </a>
 
             <nav class="nav__links" aria-label="Primary">
                 <a href="/">Home</a>
@@ -54,6 +70,16 @@
             </nav>
 
             <div class="nav__actions">
+                <button class="jump" type="button" data-palette-open aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="M16 16l4 4"></path>
+                    </svg>
+                    <span class="jump__label">Jump to</span>
+                    <span class="jump__menu">Menu</span>
+                    <kbd data-mod-key>Ctrl K</kbd>
+                </button>
                 <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                         stroke-linecap="round" aria-hidden="true">
@@ -65,267 +91,135 @@
                         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
                     </svg>
                 </button>
-                <a class="btn btn--ghost nav__cta" href="/contact/">Start a project</a>
-                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
-                    aria-label="Open menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                        aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <div class="drawer" data-open="false">
-        <div class="shell drawer__head">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    aria-hidden="true">
-                    <path d="M6 6l12 12M18 6L6 18"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="shell">
-            <nav aria-label="Mobile">
-                <a href="/">Home</a>
-                <a href="/about/" aria-current="page">About</a>
-                <a href="/projects/">Projects</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-            <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
-        </div>
-    </div>
-
     <main id="main">
-        <!-- Intro -->
-        <section class="hero">
-            <div class="shell hero__grid">
-                <div class="rise">
-                    <span class="eyebrow">About</span>
-                    <h1 style="font-size:clamp(2.2rem,5.2vw,3.4rem)">Frank Tetteh</h1>
-                    <p class="hero__role">Software Engineer · IT Support &amp; Systems · Accra, Ghana</p>
-                    <p class="lede" style="margin-top:22px">
-                        I'm a software engineer with a strong IT support background. I build and ship production web
-                        and mobile applications in React, Next.js, TypeScript, Node.js, Python, PHP (Laravel) and
-                        Flutter, from database design and APIs through to deployment. I've also kept systems running
-                        at a bank, a national automotive company and a university: troubleshooting hardware,
-                        software and networks, and managing user access.
-                    </p>
-                    <p class="lede" style="margin-top:18px">
-                        I'm a Full Stack Developer at Kofa Technologies, on a live clean energy platform operating
-                        across African markets. Outside of employment I have designed and shipped three complete
-                        platforms on my own, and I hold a B.Tech in Computer Science from Koforidua Technical
-                        University.
-                    </p>
-                    <div class="hero__actions">
-                        <a class="btn btn--primary" href="/contact/">Get in touch</a>
-                        <a class="btn btn--ghost" href="/projects/">View projects</a>
-                    </div>
-                </div>
-
-                <div class="rise">
-                    <dl class="facts">
-                        <div>
-                            <dt>Location</dt>
-                            <dd>Accra, Ghana (GMT)</dd>
-                        </div>
-                        <div>
-                            <dt>Current role</dt>
-                            <dd>Full Stack Developer, Kofa Technologies</dd>
-                        </div>
-                        <div>
-                            <dt>Experience</dt>
-                            <dd>~3 years</dd>
-                        </div>
-                        <div>
-                            <dt>Education</dt>
-                            <dd>B.Tech Computer Science, Second Upper</dd>
-                        </div>
-                        <div>
-                            <dt>Languages</dt>
-                            <dd>English, full professional</dd>
-                        </div>
-                        <div>
-                            <dt>Email</dt>
-                            <dd><a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a></dd>
-                        </div>
-                        <div>
-                            <dt>Phone</dt>
-                            <dd><a href="tel:+233532681140">+233 53 268 1140</a></dd>
-                        </div>
-                    </dl>
-                </div>
+        <section class="shell intro">
+            <div>
+                <h1 class="display">Engineer first. Support desk second. Both, always.</h1>
+                <p class="lede">I'm a software engineer with a strong IT support background. I build and ship production
+                    web and mobile applications in React, Next.js, TypeScript, Node.js, Python, PHP (Laravel) and
+                    Flutter, from database design and APIs through to deployment.</p>
+                <p class="lede">I've also kept systems running at a bank, a national automotive company and a
+                    university: troubleshooting hardware, software and networks, and managing user access. That's
+                    why I build for the person who gets the call when something breaks.</p>
             </div>
+            <figure class="portrait" style="margin:0">
+                <img src="/assets/portrait.png" alt="Frank Tetteh in a dark suit" width="433" height="577" fetchpriority="high">
+                <figcaption><span class="live">Full Stack Developer at Kofa</span></figcaption>
+            </figure>
         </section>
 
-        <!-- Experience -->
-        <section class="section section--sunken" id="experience">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Experience</span>
-                    <h2>Every role, most recent first.</h2>
-                    <p>Engineering work, and the IT support roles that came before it.</p>
-                </div>
+        <section class="shell" style="padding-bottom:clamp(56px,8vw,96px)">
+            <dl class="facts">
+                <div><dt>Location</dt><dd>Accra, Ghana (GMT)</dd></div>
+                <div><dt>Now</dt><dd>Full Stack Developer, Kofa Technologies</dd></div>
+                <div><dt>Education</dt><dd>B.Tech Computer Science, Second Upper Honours, Koforidua Technical University</dd></div>
+                <div><dt>Languages</dt><dd>English, full professional</dd></div>
+                <div><dt>Email</dt><dd><a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a></dd></div>
+                <div><dt>Phone</dt><dd><a href="tel:+233532681140">+233 53 268 1140</a></dd></div>
+            </dl>
+        </section>
 
-                <div class="records">
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Sep 2026 – Present</b>
-                            <span>Accra, Ghana</span>
-                            <span>On-site</span>
-                        </div>
-                        <div class="record__body">
+        <section class="band band--panel" id="experience" aria-labelledby="exp-title">
+            <div class="shell">
+                <div class="band__head">
+                    <h2 class="title" id="exp-title">Every role, most recent first.</h2>
+                    <p class="lede">Engineering work and the IT support roles running alongside it.</p>
+                </div>
+                <div class="timeline">
+                    <article class="role role--now">
+                        <p class="role__when">Sep 2026 to now</p>
+                        <div>
                             <h3>Full Stack Developer</h3>
-                            <p class="record__org">Kofa Technologies</p>
+                            <p class="role__org">Kofa Technologies <span class="role__kind">On-site, Accra</span></p>
                             <ul class="points">
-                                <li>Delivered 35+ stories, tasks and bug fixes in my first two months across four
-                                    products: the operations dashboard, network platform, fleet-partner portal and
-                                    the Flutter rider app.</li>
-                                <li>Built a real-time notification inbox and browser push alerts (service worker,
-                                    web push) so operations staff are alerted to at-risk stations and new
-                                    battery-movement requests even with the app closed.</li>
-                                <li>Built a manual slot-unlock flow in the rider app so riders on
-                                    battery-redistribution trips can finish a pickup or drop-off when a station slot
-                                    faults, keeping batteries moving and correctly counted.</li>
-                                <li>Added a slot-level activity log with search and type/date filters, so field
-                                    technicians and support diagnose a faulty slot in one view.</li>
-                                <li>Gave fleet partners live moving, parked and immobilised bike counts on their
-                                    network map, and fixed data bugs that were giving operations teams inaccurate
-                                    numbers.</li>
+                                <li>Delivered 35+ stories, tasks and bug fixes in my first two months across four products: the operations dashboard, network platform, fleet-partner portal and the Flutter rider app.</li>
+                                <li>Built a real-time notification inbox and browser push alerts (service worker, web push) so operations staff are alerted to at-risk stations and new battery-movement requests even with the app closed.</li>
+                                <li>Built a manual slot-unlock flow in the rider app so riders on battery-redistribution trips can finish a pickup or drop-off when a station slot faults.</li>
+                                <li>Added a slot-level activity log with search and type and date filters, so field technicians and support diagnose a faulty slot in one view.</li>
+                                <li>Gave fleet partners live moving, parked and immobilised bike counts on their network map, and fixed data bugs that were giving operations teams inaccurate numbers.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Nov 2024 – Aug 2026</b>
-                            <span>Remote</span>
-                            <span>Full-time</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Nov 2024 to Aug 2026</p>
+                        <div>
                             <h3>Full Stack Engineer</h3>
-                            <p class="record__org">Reuben Foundation Africa</p>
+                            <p class="role__org">Reuben Foundation Africa <span class="role__kind">Remote</span></p>
                             <ul class="points">
-                                <li>Led frontend, backend and Flutter mobile development for an NGO platform,
-                                    shipping features that increased user engagement across the organisation.</li>
-                                <li>Built and maintained REST APIs using Node.js and Next.js, integrating AWS
-                                    services for cloud infrastructure and deployment.</li>
-                                <li>Cut manual reporting overhead by automating key operational workflows in
-                                    custom software.</li>
+                                <li>Led frontend, backend and Flutter mobile development for the organisation's platform, shipping features that increased user engagement.</li>
+                                <li>Built and maintained REST APIs with Node.js and Next.js, integrating AWS services for hosting and deployment.</li>
+                                <li>Automated key operational workflows, reducing manual reporting overhead.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Jan 2026 – May 2026</b>
-                            <span>Ghana</span>
-                            <span>Internship</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Jan 2026 to May 2026</p>
+                        <div>
                             <h3>IT Support Specialist</h3>
-                            <p class="record__org">Dumpong Community Bank</p>
+                            <p class="role__org">Dumpong Community Bank <span class="role__kind">Internship</span></p>
                             <ul class="points">
-                                <li>Managed user accounts and access permissions across banking platforms in
-                                    compliance with security and regulatory standards.</li>
-                                <li>Maintained IT infrastructure including workstations, network systems and
-                                    banking software, keeping operations continuous.</li>
+                                <li>Managed user accounts and access permissions across banking platforms in line with security and regulatory standards.</li>
+                                <li>Maintained workstations, network systems and banking software, keeping operations running without interruption.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Oct 2025 – Dec 2025</b>
-                            <span>Tema, Ghana</span>
-                            <span>Contract</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Oct 2025 to Dec 2025</p>
+                        <div>
                             <h3>IT Support Technician</h3>
-                            <p class="record__org">Toyota Ghana Company Limited</p>
+                            <p class="role__org">Toyota Ghana Company Limited <span class="role__kind">Contract, Tema</span></p>
                             <ul class="points">
-                                <li>Deployed and configured IT equipment for internal teams to corporate
-                                    standards.</li>
-                                <li>Supported day-to-day IT operations and infrastructure maintenance across
-                                    departments.</li>
+                                <li>Deployed and configured IT equipment for internal teams to corporate standards.</li>
+                                <li>Supported day-to-day IT operations and infrastructure maintenance across departments.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Jun 2024 – Jan 2025</b>
-                            <span>Remote</span>
-                            <span>Full-time</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Jun 2024 to Jan 2025</p>
+                        <div>
                             <h3>Frontend Developer</h3>
-                            <p class="record__org">Hepeps IT Solutions Limited</p>
+                            <p class="role__org">Hepeps IT Solutions Limited <span class="role__kind">Remote</span></p>
                             <ul class="points">
-                                <li>Delivered production React.js and Next.js interfaces across multiple
-                                    client-facing products.</li>
-                                <li>Improved page load performance by optimising component rendering and
-                                    implementing code-splitting on key client projects.</li>
-                                <li>Translated Figma designs into pixel-accurate responsive components that passed
-                                    client UAT on first submission in the majority of projects.</li>
-                                <li>Worked with backend teams on API integration and kept UI quality consistent
-                                    across browsers and devices.</li>
+                                <li>Delivered production React.js and Next.js interfaces across multiple client-facing products.</li>
+                                <li>Improved page load performance through rendering optimisation and code-splitting.</li>
+                                <li>Translated Figma designs into responsive components that passed client UAT on first submission in most projects.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Oct 2024 – Nov 2024</b>
-                            <span>Accra, Ghana</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Oct 2024 to Nov 2024</p>
+                        <div>
                             <h3>Full Stack Engineer</h3>
-                            <p class="record__org">Regional Maritime University</p>
+                            <p class="role__org">Regional Maritime University <span class="role__kind">Accra</span></p>
                             <ul class="points">
-                                <li>Built and maintained internal web applications (PHP, MySQL) for institutional
-                                    administration.</li>
-                                <li>Resolved hardware, software and network issues for staff, minimising
-                                    downtime.</li>
+                                <li>Built and maintained internal web applications (PHP, MySQL) for institutional administration.</li>
+                                <li>Resolved hardware, software and network issues for staff, minimising downtime.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Jan 2024 – Jun 2024</b>
-                            <span>Remote</span>
-                            <span>Full-time</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Jan 2024 to Jun 2024</p>
+                        <div>
                             <h3>Full Stack Engineer</h3>
-                            <p class="record__org">AfRipul Group</p>
+                            <p class="role__org">AfRipul Group <span class="role__kind">Remote</span></p>
                             <ul class="points">
-                                <li>Integrated RESTful APIs and resolved production performance bottlenecks,
-                                    improving response times across key application flows.</li>
-                                <li>Built custom automation tools that reduced manual business process time.</li>
-                                <li>Designed and maintained MySQL database schemas to support application
-                                    scalability.</li>
+                                <li>Integrated REST APIs and resolved production performance bottlenecks, improving response times.</li>
+                                <li>Built automation tools that reduced manual business process time, and designed and maintained MySQL schemas.</li>
                             </ul>
                         </div>
                     </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Oct 2023 – Dec 2023</b>
-                            <span>Nungua, Ghana</span>
-                            <span>Internship</span>
-                        </div>
-                        <div class="record__body">
+                    <article class="role">
+                        <p class="role__when">Oct 2023 to Dec 2023</p>
+                        <div>
                             <h3>IT Technician</h3>
-                            <p class="record__org">Regional Maritime University</p>
+                            <p class="role__org">Regional Maritime University <span class="role__kind">Internship, Nungua</span></p>
                             <ul class="points">
-                                <li>Resolved hardware, software and network issues across the institution,
-                                    maintaining system uptime for academic operations.</li>
-                                <li>Managed user access and documented technical procedures for ongoing
-                                    operational reference.</li>
+                                <li>Resolved hardware, software and network issues across the institution, keeping academic systems available.</li>
+                                <li>Managed user access and documented technical procedures.</li>
                             </ul>
                         </div>
                     </article>
@@ -333,181 +227,97 @@
             </div>
         </section>
 
-        <!-- Skills -->
-        <section class="section" id="skills">
+        <section class="band" id="skills" aria-labelledby="skills-title">
             <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Technical skills</span>
-                    <h2>The stack I work in.</h2>
+                <div class="skills-head">
+                    <div class="band__head">
+                        <h2 class="title" id="skills-title">What I work with.</h2>
+                        <p class="lede">Eight groups of tools I use.<span class="if-3d"> Point at or tap a group to light up its cell in the pack.</span></p>
+                    </div>
+                    <div class="emblem emblem--pack" data-3d="pack" aria-hidden="true"></div>
                 </div>
-
                 <div class="skills">
-                    <div class="skill">
+                    <div class="skill" data-cell="0" tabindex="0">
                         <h3>Frontend</h3>
-                        <div class="tags">
-                            <span class="tag">React.js</span><span class="tag">Next.js</span><span
-                                class="tag">TypeScript</span><span class="tag">JavaScript</span><span
-                                class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind
-                                CSS</span><span class="tag">Redux</span><span class="tag">Zustand</span><span
-                                class="tag">Responsive UI</span><span class="tag">Figma-to-code</span><span
-                                class="tag">Performance optimisation</span>
-                        </div>
+                        <ul class="chips"><li class="chip">React.js</li><li class="chip">Next.js</li><li class="chip">TypeScript</li><li class="chip">JavaScript</li><li class="chip">HTML5</li><li class="chip">CSS3</li><li class="chip">Tailwind CSS</li><li class="chip">Redux</li><li class="chip">Zustand</li><li class="chip">Responsive UI</li><li class="chip">Figma-to-code</li><li class="chip">Performance optimisation</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="1" tabindex="0">
                         <h3>Backend</h3>
-                        <div class="tags">
-                            <span class="tag">Node.js</span><span class="tag">Express</span><span
-                                class="tag">NestJS</span><span class="tag">PHP (Laravel)</span><span
-                                class="tag">Java (Spring Boot)</span><span class="tag">Python</span><span
-                                class="tag">FastAPI</span><span class="tag">REST API design</span><span
-                                class="tag">Third-party integrations</span>
-                        </div>
+                        <ul class="chips"><li class="chip">Node.js</li><li class="chip">Express</li><li class="chip">NestJS</li><li class="chip">Java (Spring Boot)</li><li class="chip">Python (FastAPI)</li><li class="chip">PHP (Laravel)</li><li class="chip">REST API design</li><li class="chip">Third-party integrations</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="2" tabindex="0">
                         <h3>Mobile</h3>
-                        <div class="tags">
-                            <span class="tag">Flutter</span><span class="tag">Dart</span>
-                        </div>
+                        <ul class="chips"><li class="chip">Flutter</li><li class="chip">Dart</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="3" tabindex="0">
                         <h3>Databases</h3>
-                        <div class="tags">
-                            <span class="tag">SQL</span><span class="tag">MySQL</span><span
-                                class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
-                                class="tag">Redis</span><span class="tag">Schema design</span>
-                        </div>
+                        <ul class="chips"><li class="chip">MySQL</li><li class="chip">PostgreSQL</li><li class="chip">MongoDB</li><li class="chip">Redis</li><li class="chip">Schema design</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="4" tabindex="0">
                         <h3>DevOps and cloud</h3>
-                        <div class="tags">
-                            <span class="tag">Git</span><span class="tag">GitHub Actions</span><span
-                                class="tag">CI/CD</span><span class="tag">Docker</span><span
-                                class="tag">Vercel</span><span class="tag">AWS (S3, EC2)</span><span
-                                class="tag">Linux</span>
-                        </div>
+                        <ul class="chips"><li class="chip">Git</li><li class="chip">GitHub Actions</li><li class="chip">CI/CD</li><li class="chip">Docker</li><li class="chip">Linux</li><li class="chip">Vercel</li><li class="chip">AWS (S3, EC2)</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="5" tabindex="0">
                         <h3>Testing</h3>
-                        <div class="tags">
-                            <span class="tag">Jest</span><span class="tag">Cypress</span><span class="tag">React
-                                Testing Library</span>
-                        </div>
+                        <ul class="chips"><li class="chip">Jest</li><li class="chip">Cypress</li><li class="chip">React Testing Library</li></ul>
                     </div>
-
-                    <div class="skill">
+                    <div class="skill" data-cell="6" tabindex="0">
                         <h3>IT support</h3>
-                        <div class="tags">
-                            <span class="tag">Hardware troubleshooting</span><span class="tag">Software
-                                troubleshooting</span><span class="tag">Network troubleshooting</span><span
-                                class="tag">User account &amp; access management</span><span class="tag">Equipment
-                                setup &amp; configuration</span><span class="tag">Technical documentation</span>
-                        </div>
+                        <ul class="chips"><li class="chip">Hardware troubleshooting</li><li class="chip">Software troubleshooting</li><li class="chip">Network troubleshooting</li><li class="chip">User account &amp; access management</li><li class="chip">Equipment setup</li><li class="chip">Technical documentation</li></ul>
                     </div>
-
-                    <div class="skill">
-                        <h3>Practices and AI</h3>
-                        <div class="tags">
-                            <span class="tag">Agile / Scrum</span><span class="tag">Jira</span><span
-                                class="tag">ML model integration (XGBoost)</span>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <h3>Development tools</h3>
-                        <p>Claude Code, Cursor and GitHub Copilot are part of my daily workflow, for code
-                            generation, debugging and working through architecture decisions.</p>
+                    <div class="skill" data-cell="7" tabindex="0">
+                        <h3>AI and ways of working</h3>
+                        <ul class="chips"><li class="chip">ML model integration (XGBoost)</li><li class="chip">Claude Code</li><li class="chip">Cursor</li><li class="chip">GitHub Copilot</li><li class="chip">Agile / Scrum</li><li class="chip">Jira</li></ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education -->
-        <section class="section section--sunken" id="education">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Education</span>
-                    <h2>Academic background.</h2>
-                </div>
-
-                <div class="records">
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2023 – 2026</b>
-                            <span>Koforidua, Ghana</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Bachelor of Technology, Computer Science</h3>
-                            <p class="record__org">Koforidua Technical University</p>
-                            <ul class="points">
-                                <li>Classification: Second Upper Honours.</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+        <section class="shell close" data-3d-hover>
+            <span class="emblem emblem--cell" data-3d="battery" aria-hidden="true"></span>
+            <div>
+                <h2 class="title">Looking for an engineer?</h2>
+                <p class="lede">Full stack and frontend work: contract, remote, or on-site in Accra.</p>
             </div>
-        </section>
-
-        <!-- Close -->
-        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
-            <div class="shell">
-                <div class="callout">
-                    <div>
-                        <h2>Looking for an engineer?</h2>
-                        <p>I take on full stack and frontend work: contract, remote, or on-site in Accra.</p>
-                    </div>
-                    <div class="btn-row">
-                        <a class="btn btn--primary" href="/contact/">Contact me</a>
-                        <a class="btn btn--onDeep" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
-                            target="_blank" rel="noopener">Book a call</a>
-                    </div>
-                </div>
+            <div class="btn-row">
+                <a class="btn btn--charge" href="/contact/">Contact me</a>
+                <a class="btn btn--line" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" target="_blank" rel="noopener">Book a call</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="shell">
-            <div class="footer__top">
-                <div>
-                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-                    <p class="footer__blurb">Software engineer in Accra, Ghana, building production web and
-                        mobile systems end to end, with an IT support background.</p>
-                </div>
-                <div class="footer__cols">
-                    <div class="footer__col">
-                        <h4>Site</h4>
-                        <a href="/">Home</a>
-                        <a href="/about/">About</a>
-                        <a href="/projects/">Projects</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Elsewhere</h4>
-                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            rel="noopener">LinkedIn</a>
-                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Direct</h4>
-                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
-                        <a href="tel:+233532681140">+233 53 268 1140</a>
-                    </div>
-                </div>
+        <div class="shell footer__inner">
+            <p>Software engineer in Accra, Ghana, building production web and mobile systems end to end.</p>
+            <div class="footer__links">
+                <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                <a href="tel:+233532681140">+233 53 268 1140</a>
             </div>
-            <div class="footer__bottom">
-                <p>© 2026 Frank Tetteh</p>
-                <p>Hand-built. No framework, no page builder.</p>
-            </div>
+        </div>
+        <div class="shell footer__inner" style="margin-top:22px">
+            <p>© 2026 Frank Tetteh</p>
+            <p>Hand-built. No framework, no page builder.</p>
         </div>
     </footer>
 
+    <dialog class="palette" id="palette" aria-label="Jump to a page or action">
+        <div class="palette__head">
+            <span class="palette__prompt" aria-hidden="true">&gt;</span>
+            <input class="palette__input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list"
+                aria-autocomplete="list" aria-label="Search pages, projects and actions"
+                placeholder="Where to? Try &quot;projects&quot; or &quot;email&quot;" autocomplete="off" spellcheck="false">
+            <form method="dialog"><button class="icon-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button></form>
+        </div>
+        <div class="palette__list" id="palette-list" role="listbox" aria-label="Results"></div>
+        <div class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+    </dialog>
+
     <script src="/assets/js/site.js" defer></script>
+    <script type="module" src="/assets/js/views3d.js"></script>
 </body>
 
 </html>

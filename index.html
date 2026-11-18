@@ -5,35 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Frank Tetteh | Software Engineer</title>
-    <meta name="description"
-        content="Frank Tetteh is a software engineer in Accra, Ghana, building production web and mobile systems with React, Next.js, TypeScript, Node.js, Flutter and Laravel, backed by hands-on IT support experience.">
+    <meta name="description" content="Frank Tetteh is a software engineer in Accra, Ghana, building production web and mobile systems with React, Next.js, TypeScript, Node.js, Flutter and Laravel, backed by hands-on IT support experience.">
     <meta name="author" content="Frank Tetteh">
-    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1626" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://frankielaroi.github.io/">
     <link rel="icon" href="/fav.ico">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Frank Tetteh | Software Engineer">
-    <meta property="og:description"
-        content="Full stack engineer in Accra, Ghana. React, Next.js, TypeScript, Node.js, Flutter and PHP (Laravel).">
+    <meta property="og:description" content="Frank Tetteh is a software engineer in Accra, Ghana, building production web and mobile systems with React, Next.js, TypeScript, Node.js, Flutter and Laravel, backed by hands-on IT support experience.">
     <meta property="og:url" content="https://frankielaroi.github.io/">
     <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Frank Tetteh | Software Engineer">
-    <meta name="twitter:description"
-        content="Full stack engineer in Accra, Ghana. React, Next.js, TypeScript, Node.js, Flutter and PHP (Laravel).">
+    <meta name="twitter:description" content="Frank Tetteh is a software engineer in Accra, Ghana, building production web and mobile systems with React, Next.js, TypeScript, Node.js, Flutter and Laravel, backed by hands-on IT support experience.">
     <meta name="twitter:image" content="https://frankielaroi.github.io/assets/portrait.png">
 
     <script>
-        /* Apply a saved theme choice before paint. With no saved choice the
-           stylesheet follows the operating system. */
+        /* Mark JS as present and apply a saved theme before paint. With no saved
+           choice the stylesheet follows the operating system. */
         (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            if ('noModule' in HTMLScriptElement.prototype && window.WebGLRenderingContext) root.classList.add('has-3d');
             try {
                 var saved = localStorage.getItem('theme');
-                if (saved === 'dark' || saved === 'light') {
-                    document.documentElement.setAttribute('data-theme', saved);
-                }
+                if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
             } catch (e) { /* storage unavailable */ }
         })();
     </script>
@@ -41,8 +39,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="/assets/css/site.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin>
 </head>
 
 <body>
@@ -50,7 +57,10 @@
 
     <header class="nav">
         <div class="shell nav__inner">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <a class="brand" href="/" aria-label="Frank Tetteh, home">
+                <span class="cell" aria-hidden="true"><span class="cell__fill"></span></span>
+                Frank Tetteh
+            </a>
 
             <nav class="nav__links" aria-label="Primary">
                 <a href="/" aria-current="page">Home</a>
@@ -60,6 +70,16 @@
             </nav>
 
             <div class="nav__actions">
+                <button class="jump" type="button" data-palette-open aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="M16 16l4 4"></path>
+                    </svg>
+                    <span class="jump__label">Jump to</span>
+                    <span class="jump__menu">Menu</span>
+                    <kbd data-mod-key>Ctrl K</kbd>
+                </button>
                 <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                         stroke-linecap="round" aria-hidden="true">
@@ -71,396 +91,346 @@
                         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
                     </svg>
                 </button>
-                <a class="btn btn--ghost nav__cta" href="/contact/">Start a project</a>
-                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
-                    aria-label="Open menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                        aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <div class="drawer" data-open="false">
-        <div class="shell drawer__head">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    aria-hidden="true">
-                    <path d="M6 6l12 12M18 6L6 18"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="shell">
-            <nav aria-label="Mobile">
-                <a href="/" aria-current="page">Home</a>
-                <a href="/about/">About</a>
-                <a href="/projects/">Projects</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-            <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
-        </div>
-    </div>
-
     <main id="main">
-        <!-- Hero -->
-        <section class="hero">
-            <div class="shell hero__grid">
-                <div class="rise">
-                    <p class="status">
-                        <span class="status__dot" aria-hidden="true"></span>
-                        Accra, Ghana · GMT · open to work
-                    </p>
-                    <h1>I build the systems behind products that have to stay up.</h1>
-                    <p class="hero__role">React / Next.js / TypeScript / Node.js / Spring Boot / Flutter / Laravel</p>
-                    <p class="lede" style="margin-top:22px">
-                        Three years of shipping production web and mobile software, from schema design and API
-                        work through to the interface and the deployment pipeline, backed by hands-on IT support at a
-                        bank, a national automotive company and a university. At Kofa Technologies I work full stack
-                        on a battery swapping network running in live African markets.
-                    </p>
-                    <div class="hero__actions">
-                        <a class="btn btn--primary" href="/projects/">
-                            See the work
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M13 6l6 6-6 6"></path>
-                            </svg>
-                        </a>
-                        <a class="btn btn--ghost" href="/contact/">Get in touch</a>
-                    </div>
-                </div>
+        <section class="grid-hero">
+            <canvas class="grid-hero__map" aria-hidden="true"></canvas>
+            <div class="map-tip" aria-hidden="true"><b></b><span></span><em>Click to open</em></div>
 
-                <div class="portrait rise">
-                    <img src="/assets/portrait.png" alt="Frank Tetteh" width="433" height="577"
-                        fetchpriority="high">
-                </div>
-            </div>
-        </section>
-
-        <!-- Numbers -->
-        <section class="section--tight">
-            <div class="shell">
-                <dl class="stats">
-                    <div>
-                        <dt>Shipping since</dt>
-                        <dd>2023</dd>
-                    </div>
-                    <div>
-                        <dt>Platforms built solo</dt>
-                        <dd>3</dd>
-                    </div>
-                    <div>
-                        <dt>Shipped at Kofa, first 2 months</dt>
-                        <dd>35+</dd>
-                    </div>
-                    <div>
-                        <dt>B.Tech Computer Science</dt>
-                        <dd>2nd Upper</dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <!-- Capabilities -->
-        <section class="section">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">What I do</span>
-                    <h2>One engineer, the whole stack.</h2>
-                    <p>Most of my work spans the layers that usually get handed between people: the schema, the
-                        API, the screen and the pipeline that deploys all three.</p>
-                </div>
-
-                <div class="caps">
-                    <article class="cap">
-                        <span class="cap__num">01</span>
-                        <h3>Frontend engineering</h3>
-                        <p>Responsive React and Next.js interfaces wired to live APIs, with state that survives
-                            complex data flows. Figma handoffs translated component for component.</p>
-                        <div class="tags">
-                            <span class="tag">React.js</span><span class="tag">Next.js</span><span
-                                class="tag">TypeScript</span><span class="tag">Tailwind</span><span
-                                class="tag">Redux</span><span class="tag">Zustand</span>
-                        </div>
-                    </article>
-
-                    <article class="cap">
-                        <span class="cap__num">02</span>
-                        <h3>Backend and APIs</h3>
-                        <p>REST services, relational schema design, async workers and retry handling, in Node.js,
-                            NestJS, Spring Boot, FastAPI and PHP (Laravel).</p>
-                        <div class="tags">
-                            <span class="tag">Node.js</span><span class="tag">NestJS</span><span
-                                class="tag">Spring Boot</span><span class="tag">Laravel</span><span class="tag">FastAPI</span><span
-                                class="tag">PostgreSQL</span><span class="tag">MySQL</span>
-                        </div>
-                    </article>
-
-                    <article class="cap">
-                        <span class="cap__num">03</span>
-                        <h3>Mobile</h3>
-                        <p>Flutter apps built beside the web frontend and sharing its backend, so one change lands
-                            in both places.</p>
-                        <div class="tags">
-                            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST
-                                integration</span>
-                        </div>
-                    </article>
-
-                    <article class="cap">
-                        <span class="cap__num">04</span>
-                        <h3>Deployment, systems and support</h3>
-                        <p>CI/CD pipelines, containerised builds, AWS and Vercel deployments, and metrics wired in
-                            before launch. Plus hands-on IT support: hardware, networks and user access at a bank,
-                            Toyota Ghana and a university.</p>
-                        <div class="tags">
-                            <span class="tag">GitHub Actions</span><span class="tag">Docker</span><span
-                                class="tag">AWS</span><span class="tag">Vercel</span><span
-                                class="tag">Prometheus</span><span class="tag">Linux</span><span class="tag">IT
-                                support</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Selected work -->
-        <section class="section section--sunken">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Selected work</span>
-                    <h2>Three platforms, each taken from an empty repository to a running system.</h2>
-                </div>
-
-                <div class="teasers">
-                    <article class="teaser">
-                        <span class="flag flag--live">In active use</span>
-                        <h3>PharmaSysGH</h3>
-                        <p>Multi-branch pharmacy management SaaS: point of sale across branches, real-time
-                            inventory, supplier records, staff role access control and reporting dashboards.</p>
-                        <div class="tags">
-                            <span class="tag">Next.js</span><span class="tag">Node.js</span><span
-                                class="tag">MySQL</span><span class="tag">Vercel</span>
-                        </div>
-                        <a class="teaser__more" href="/projects/#pharmasysgh">
-                            Read the build
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M13 6l6 6-6 6"></path>
-                            </svg>
-                        </a>
-                    </article>
-
-                    <article class="teaser">
-                        <span class="flag flag--live">Shipped 2024</span>
-                        <h3>FinWatch</h3>
-                        <p>Anti-money-laundering detection platform covering the full path from transaction to
-                            analyst: scoring pipeline, alert queues, case management and evidence review.</p>
-                        <div class="tags">
-                            <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span
-                                class="tag">Redis</span><span class="tag">XGBoost</span>
-                        </div>
-                        <a class="teaser__more" href="/projects/#finwatch">
-                            Read the build
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M13 6l6 6-6 6"></path>
-                            </svg>
-                        </a>
-                    </article>
-
-                    <article class="teaser">
-                        <span class="flag flag--live">Shipped 2025</span>
-                        <h3>CyberDefend 360</h3>
-                        <p>Multi-tenant cybersecurity SaaS: security assessments and risk scoring, phishing
-                            simulation campaigns with tracking, endpoint agents and encrypted S3 backups.</p>
-                        <div class="tags">
-                            <span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span
-                                class="tag">Redis</span><span class="tag">React</span>
-                        </div>
-                        <a class="teaser__more" href="/projects/#cyberdefend">
-                            Read the build
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M13 6l6 6-6 6"></path>
-                            </svg>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="btn-row" style="margin-top:32px">
-                    <a class="btn btn--ghost" href="/projects/">
-                        Every project
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M5 12h14M13 6l6 6-6 6"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Recent roles -->
-        <section class="section">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Experience</span>
-                    <h2>Where I've been shipping.</h2>
-                </div>
-
-                <div class="records">
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Sep 2026 – Present</b>
-                            <span>Accra · On-site</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Full Stack Developer</h3>
-                            <p class="record__org">Kofa Technologies</p>
-                            <ul class="points">
-                                <li>Delivered 35+ stories, tasks and bug fixes in my first two months across four products:
-                                    the operations dashboard, network platform, fleet-partner portal and Flutter rider
-                                    app.</li>
-                                <li>Built a real-time notification inbox and browser push alerts so operations staff
-                                    hear about at-risk stations even with the app closed.</li>
-                                <li>Built a manual slot-unlock flow in the rider app so redistribution trips finish
-                                    when a station slot faults.</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Nov 2024 – Aug 2026</b>
-                            <span>Remote · Full-time</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Full Stack Engineer</h3>
-                            <p class="record__org">Reuben Foundation Africa</p>
-                            <ul class="points">
-                                <li>Led frontend, backend and Flutter mobile development for an NGO platform,
-                                    shipping features that raised user engagement across the organisation.</li>
-                                <li>Built REST APIs in Node.js and Next.js on AWS infrastructure.</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>Jun 2024 – Jan 2025</b>
-                            <span>Remote · Full-time</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Frontend Developer</h3>
-                            <p class="record__org">Hepeps IT Solutions Limited</p>
-                            <ul class="points">
-                                <li>Delivered production React.js and Next.js interfaces across several
-                                    client-facing products.</li>
-                                <li>Cut page load times through render optimisation and code-splitting on key
-                                    client projects.</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="btn-row" style="margin-top:32px">
-                    <a class="btn btn--ghost" href="/about/">
-                        Full background
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M5 12h14M13 6l6 6-6 6"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Close -->
-        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
-            <div class="shell">
-                <div class="callout">
-                    <div>
-                        <h2>Have something to build?</h2>
-                        <p>Send me the requirements and I'll tell you what it takes, honestly, before either of us
-                            commits.</p>
-                    </div>
+            <div class="shell grid-hero__copy">
+                <div class="boot">
+                    <p class="status"><span class="status__dot" aria-hidden="true"></span>Accra, Ghana. Open to work.</p>
+                    <h1 class="display">I build systems that have to stay up.</h1>
+                    <p class="lede">Software engineer with an IT support background. I ship web and mobile products from the
+                        database to the deploy, and right now I work full stack on a battery-swapping network running
+                        across African markets at Kofa Technologies.</p>
                     <div class="btn-row">
-                        <a class="btn btn--primary" href="/contact/">Start a conversation</a>
-                        <a class="btn btn--onDeep" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
-                            target="_blank" rel="noopener">Book a call</a>
+                        <a class="btn btn--charge" href="#kofa">See what I'm shipping <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+                        <a class="btn btn--line" href="/contact/">Get in touch</a>
+                    </div>
+                    <p class="map-hint">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="12" r="8" opacity=".5"></circle></svg>
+                        <span>The ringed stations are places I've worked and things I've built. Hover one, or click anywhere on the map to send a charge through it.</span>
+                    </p>
+                </div>
+            </div>
+
+            <nav class="sr-only" aria-label="Stations on the map">
+                <ul>
+                    <li><a href="/#kofa">Kofa Technologies</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/about/#experience">Experience</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="band band--panel" id="kofa" aria-labelledby="kofa-title">
+            <div class="shell">
+                <div class="band__head">
+                    <h2 class="title" id="kofa-title">Now: keeping batteries moving at Kofa.</h2>
+                    <p class="lede">35+ stories, tasks and fixes in my first two months, across the operations dashboard,
+                        network platform, fleet-partner portal and Flutter rider app. Scroll to walk through a station.</p>
+                </div>
+
+                <div class="story">
+                    <figure class="story__figure" style="margin:0">
+                        <svg viewBox="0 0 360 320" role="img" aria-labelledby="station-title">
+                        <title id="station-title">A battery swap station with five slots, an operations alert, a slot log and a fleet map</title>
+                        <!-- Alert bell, top left -->
+                        <g class="st-part st-alert">
+                            <circle class="st-alert__ring" cx="44" cy="40" r="20"></circle>
+                            <path d="M44 24c-7 0-11 5-11 12v8l-4 5h30l-4-5v-8c0-7-4-12-11-12z" fill="var(--charge)"></path>
+                            <circle cx="44" cy="53" r="3.5" fill="var(--charge)"></circle>
+                            <text class="st-text" x="72" y="36">Station 14 at risk</text>
+                            <text class="st-text" x="72" y="52">Push sent to ops</text>
+                        </g>
+                        <!-- Cabinet -->
+                        <rect class="st-frame" x="100" y="80" width="160" height="220" rx="14"></rect>
+                        <rect class="st-screen" x="118" y="96" width="124" height="26" rx="6"></rect>
+                        <text class="st-text" x="130" y="114">5 slots  4 ready</text>
+                        <g>
+                            <rect class="st-part st-slot" x="118" y="134" width="124" height="28" rx="6"></rect>
+                            <rect class="st-bat st-bat--full" x="126" y="142" width="80" height="12" rx="3"></rect>
+                            <rect class="st-part st-slot" x="118" y="166" width="124" height="28" rx="6"></rect>
+                            <rect class="st-bat st-bat--full" x="126" y="174" width="96" height="12" rx="3"></rect>
+                            <rect class="st-part st-slot st-slot--fault" x="118" y="198" width="124" height="28" rx="6"></rect>
+                            <rect class="st-bat" x="126" y="206" width="52" height="12" rx="3"></rect>
+                            <rect class="st-part st-slot" x="118" y="230" width="124" height="28" rx="6"></rect>
+                            <rect class="st-bat st-bat--full" x="126" y="238" width="100" height="12" rx="3"></rect>
+                            <rect class="st-part st-slot" x="118" y="262" width="124" height="28" rx="6"></rect>
+                            <rect class="st-bat" x="126" y="270" width="70" height="12" rx="3"></rect>
+                        </g>
+                        <!-- Manual unlock: the faulted slot's door slides open -->
+                        <g class="st-part st-door">
+                            <rect x="196" y="200" width="44" height="24" rx="4" fill="var(--panel-2)" stroke="var(--full)" stroke-width="1.5"></rect>
+                            <path d="M210 212h16M222 208l4 4-4 4" fill="none" stroke="var(--full)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <!-- Slot log, right -->
+                        <g class="st-part st-log">
+                            <rect x="276" y="180" width="80" height="70" rx="8" fill="var(--panel-2)"></rect>
+                            <line x1="286" y1="196" x2="340" y2="196"></line>
+                            <line x1="286" y1="210" x2="330" y2="210"></line>
+                            <line x1="286" y1="224" x2="344" y2="224"></line>
+                            <line x1="286" y1="238" x2="322" y2="238"></line>
+                        </g>
+                        <!-- Fleet map, bottom left -->
+                        <g class="st-part st-map">
+                            <rect x="4" y="196" width="84" height="94" rx="8" fill="var(--panel-2)"></rect>
+                            <path d="M14 270 L40 230 L62 250 L80 214" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></path>
+                            <circle class="is-moving" cx="26" cy="250" r="4"></circle>
+                            <circle class="is-moving" cx="56" cy="244" r="4"></circle>
+                            <circle class="is-parked" cx="40" cy="226" r="4"></circle>
+                            <circle class="is-parked" cx="74" cy="222" r="4"></circle>
+                            <circle class="is-stopped" cx="70" cy="272" r="4"></circle>
+                        </g>
+                    </svg>
+                        <figcaption class="story__caption"><span class="story__drag">Kofa swap station</span><b data-step-label>Ops sees trouble with the app closed</b></figcaption>
+                    </figure>
+                    <div class="story__steps">
+                    <article class="step" data-label="Ops sees trouble with the app closed">
+                        <p class="step__count">1 of 4</p>
+                        <h3>Alerts that reach people</h3>
+                        <p>I built a real-time notification inbox and browser push alerts (service worker, web push). Operations staff hear about at-risk stations and new battery-movement requests even with the app closed, so supply problems get handled sooner.</p>
+                    </article>
+                    <article class="step" data-label="Trips finish when hardware faults">
+                        <p class="step__count">2 of 4</p>
+                        <h3>Manual slot unlock</h3>
+                        <p>When a station slot faults, riders on battery-redistribution trips can still unlock it by hand and finish the pickup or drop-off in the Flutter rider app. Batteries keep moving and stay correctly counted instead of trips failing.</p>
+                    </article>
+                    <article class="step" data-label="One view to diagnose a slot">
+                        <p class="step__count">3 of 4</p>
+                        <h3>Slot activity log</h3>
+                        <p>A slot-level log with search and type and date filters. Field technicians and customer support diagnose a faulty slot in one place instead of digging through the whole station's history.</p>
+                    </article>
+                    <article class="step" data-label="Partners see their bikes as they are">
+                        <p class="step__count">4 of 4</p>
+                        <h3>Live fleet map</h3>
+                        <p>Fleet partners get live moving, parked and immobilised bike counts on their network map. I also fixed the data bugs (battery counts between platforms, slot status after removal) that were giving operations teams wrong numbers.</p>
+                    </article>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="band" aria-labelledby="work-title">
+            <div class="shell">
+                <div class="band__head">
+                    <h2 class="title" id="work-title">Things I built on my own.</h2>
+                    <p class="lede">Each one taken from an empty repository to a running system: schema, API, interface
+                        and deployment.</p>
+                </div>
+                <div class="index">
+                    <a class="index__row" href="/projects/#pharmasysgh" data-3d-hover>
+                        <span class="emblem" data-3d="pill" aria-hidden="true"></span>
+                        <span class="index__name">PharmaSysGH</span>
+                        <span class="index__what">Multi-branch pharmacy SaaS: point of sale, real-time inventory, suppliers, staff roles and reporting.<span class="index__stack">Next.js, Node.js, MySQL, Vercel</span></span>
+                        <span class="index__year"><span class="live">In use</span></span>
+                    </a>
+                    <a class="index__row" href="/projects/#cyberdefend" data-3d-hover>
+                        <span class="emblem" data-3d="shield" aria-hidden="true"></span>
+                        <span class="index__name">CyberDefend 360</span>
+                        <span class="index__what">Security assessments, risk scoring and phishing simulations for organisations, with endpoint agents and encrypted backups.<span class="index__stack">NestJS, PostgreSQL, Redis, React</span></span>
+                        <span class="index__year">2025</span>
+                    </a>
+                    <a class="index__row" href="/projects/#finwatch" data-3d-hover>
+                        <span class="emblem" data-3d="ledger" aria-hidden="true"></span>
+                        <span class="index__name">FinWatch</span>
+                        <span class="index__what">Anti-money-laundering detection from transaction to analyst: scoring, alert queues and case management.<span class="index__stack">FastAPI, PostgreSQL, Redis, XGBoost</span></span>
+                        <span class="index__year">2024</span>
+                    </a>
+                    <a class="index__row" href="/projects/#tokenlink" data-3d-hover>
+                        <span class="emblem" data-3d="token" aria-hidden="true"></span>
+                        <span class="index__name">TokenLink Africa</span>
+                        <span class="index__what">Tokenization API and SDK for Ghanaian fintechs and banks, built for Mobile Money and GhIPSS.<span class="index__stack">NestJS, Spring Boot, Go, PostgreSQL</span></span>
+                        <span class="index__year">Building</span>
+                    </a>
+                </div>
+                <div class="btn-row" style="margin-top:36px">
+                    <a class="btn btn--line" href="/projects/">How each one is built</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--panel" aria-labelledby="path-title">
+            <div class="shell">
+                <div class="band__head">
+                    <h2 class="title" id="path-title">The path here.</h2>
+                    <p class="lede">Engineering roles alongside IT support at a bank, Toyota Ghana and a university. Both
+                        taught me the same thing: someone is relying on it working.</p>
+                </div>
+                <div class="timeline">
+                    <article class="role role--now">
+                        <p class="role__when">Sep 2026 to now</p>
+                        <div>
+                            <h3>Full Stack Developer</h3>
+                            <p class="role__org">Kofa Technologies <span class="role__kind">On-site, Accra</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Nov 2024 to Aug 2026</p>
+                        <div>
+                            <h3>Full Stack Engineer</h3>
+                            <p class="role__org">Reuben Foundation Africa <span class="role__kind">Remote</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Jan 2026 to May 2026</p>
+                        <div>
+                            <h3>IT Support Specialist</h3>
+                            <p class="role__org">Dumpong Community Bank <span class="role__kind">Internship</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Oct 2025 to Dec 2025</p>
+                        <div>
+                            <h3>IT Support Technician</h3>
+                            <p class="role__org">Toyota Ghana Company Limited <span class="role__kind">Contract, Tema</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Jun 2024 to Jan 2025</p>
+                        <div>
+                            <h3>Frontend Developer</h3>
+                            <p class="role__org">Hepeps IT Solutions Limited <span class="role__kind">Remote</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Oct 2024 to Nov 2024</p>
+                        <div>
+                            <h3>Full Stack Engineer</h3>
+                            <p class="role__org">Regional Maritime University <span class="role__kind">Accra</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Jan 2024 to Jun 2024</p>
+                        <div>
+                            <h3>Full Stack Engineer</h3>
+                            <p class="role__org">AfRipul Group <span class="role__kind">Remote</span></p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <p class="role__when">Oct 2023 to Dec 2023</p>
+                        <div>
+                            <h3>IT Technician</h3>
+                            <p class="role__org">Regional Maritime University <span class="role__kind">Internship, Nungua</span></p>
+                        </div>
+                    </article>
+                </div>
+                <div class="btn-row" style="margin-top:36px">
+                    <a class="btn btn--line" href="/about/">Full background and skills</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="shell close" data-3d-hover>
+            <span class="emblem emblem--cell" data-3d="battery" aria-hidden="true"></span>
+            <div>
+                <h2 class="title">Have something to build?</h2>
+                <p class="lede">Send me the requirements and I'll tell you honestly what it takes before either of us commits.</p>
+            </div>
+            <div class="btn-row">
+                <a class="btn btn--charge" href="/contact/">Start a conversation</a>
+                <a class="btn btn--line" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" target="_blank" rel="noopener">Book a call</a>
             </div>
         </section>
     </main>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Frank Tetteh",
+  "jobTitle": "Software Engineer",
+  "email": "mailto:frankiekweku@gmail.com",
+  "telephone": "+233532681140",
+  "url": "https://frankielaroi.github.io/",
+  "image": "https://frankielaroi.github.io/assets/portrait.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Accra",
+    "addressCountry": "GH"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kofa Technologies"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Koforidua Technical University"
+  },
+  "knowsAbout": [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "NestJS",
+    "Spring Boot",
+    "Flutter",
+    "PHP",
+    "Laravel",
+    "PostgreSQL",
+    "FastAPI",
+    "IT support"
+  ],
+  "sameAs": [
+    "https://github.com/frankielaroi",
+    "https://linkedin.com/in/frank-tetteh-a64900259",
+    "https://franktetteh.vercel.app"
+  ]
+}
+    </script>
+
     <footer class="footer">
-        <div class="shell">
-            <div class="footer__top">
-                <div>
-                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-                    <p class="footer__blurb">Software engineer in Accra, Ghana, building production web and
-                        mobile systems end to end, with an IT support background.</p>
-                </div>
-                <div class="footer__cols">
-                    <div class="footer__col">
-                        <h4>Site</h4>
-                        <a href="/">Home</a>
-                        <a href="/about/">About</a>
-                        <a href="/projects/">Projects</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Elsewhere</h4>
-                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            rel="noopener">LinkedIn</a>
-                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Direct</h4>
-                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
-                        <a href="tel:+233532681140">+233 53 268 1140</a>
-                    </div>
-                </div>
+        <div class="shell footer__inner">
+            <p>Software engineer in Accra, Ghana, building production web and mobile systems end to end.</p>
+            <div class="footer__links">
+                <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                <a href="tel:+233532681140">+233 53 268 1140</a>
             </div>
-            <div class="footer__bottom">
-                <p>© 2026 Frank Tetteh</p>
-                <p>Hand-built. No framework, no page builder.</p>
-            </div>
+        </div>
+        <div class="shell footer__inner" style="margin-top:22px">
+            <p>© 2026 Frank Tetteh</p>
+            <p>Hand-built. No framework, no page builder.</p>
         </div>
     </footer>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Frank Tetteh",
-      "jobTitle": "Software Engineer",
-      "email": "mailto:frankiekweku@gmail.com",
-      "telephone": "+233532681140",
-      "url": "https://frankielaroi.github.io/",
-      "image": "https://frankielaroi.github.io/assets/portrait.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Accra",
-        "addressCountry": "GH"
-      },
-      "worksFor": { "@type": "Organization", "name": "Kofa Technologies" },
-      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Koforidua Technical University" },
-      "knowsAbout": ["React.js", "Next.js", "TypeScript", "Node.js", "NestJS", "Spring Boot", "Flutter", "PHP", "Laravel", "PostgreSQL", "FastAPI", "IT support"],
-      "sameAs": [
-        "https://github.com/frankielaroi",
-        "https://linkedin.com/in/frank-tetteh-a64900259",
-        "https://franktetteh.vercel.app"
-      ]
-    }
-    </script>
+    <dialog class="palette" id="palette" aria-label="Jump to a page or action">
+        <div class="palette__head">
+            <span class="palette__prompt" aria-hidden="true">&gt;</span>
+            <input class="palette__input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list"
+                aria-autocomplete="list" aria-label="Search pages, projects and actions"
+                placeholder="Where to? Try &quot;projects&quot; or &quot;email&quot;" autocomplete="off" spellcheck="false">
+            <form method="dialog"><button class="icon-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button></form>
+        </div>
+        <div class="palette__list" id="palette-list" role="listbox" aria-label="Results"></div>
+        <div class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+    </dialog>
 
     <script src="/assets/js/site.js" defer></script>
+    <script type="module" src="/assets/js/views3d.js"></script>
+    <script type="module" src="/assets/js/world.js"></script>
+    <script type="module" src="/assets/js/station3d.js"></script>
+    <script nomodule src="/assets/js/network.js" defer></script>
+    <script>
+        /* If the 3D modules can't load (offline CDN, blocked scripts), fall back to the flat map. */
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var hero = document.querySelector('.grid-hero');
+                if (hero && !hero.classList.contains('is-3d') && !window.__flatMap) {
+                    var s = document.createElement('script');
+                    s.src = '/assets/js/network.js';
+                    document.body.appendChild(s);
+                }
+            }, 2500);
+        });
+    </script>
 </body>
 
 </html>

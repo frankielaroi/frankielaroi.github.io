@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact | Frank Tetteh</title>
-    <meta name="description"
-        content="Reach Frank Tetteh, full stack engineer in Accra, Ghana: email, phone, or book a call directly.">
+    <meta name="description" content="Reach Frank Tetteh, software engineer in Accra, Ghana: email, phone, or book a call directly.">
     <meta name="author" content="Frank Tetteh">
-    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1626" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://frankielaroi.github.io/contact/">
     <link rel="icon" href="/fav.ico">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contact | Frank Tetteh">
-    <meta property="og:description"
-        content="Email, phone or book a call with Frank Tetteh, full stack engineer in Accra, Ghana.">
+    <meta property="og:description" content="Reach Frank Tetteh, software engineer in Accra, Ghana: email, phone, or book a call directly.">
     <meta property="og:url" content="https://frankielaroi.github.io/contact/">
     <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Frank Tetteh">
+    <meta name="twitter:description" content="Reach Frank Tetteh, software engineer in Accra, Ghana: email, phone, or book a call directly.">
+    <meta name="twitter:image" content="https://frankielaroi.github.io/assets/portrait.png">
 
     <script>
+        /* Mark JS as present and apply a saved theme before paint. With no saved
+           choice the stylesheet follows the operating system. */
         (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            if ('noModule' in HTMLScriptElement.prototype && window.WebGLRenderingContext) root.classList.add('has-3d');
             try {
                 var saved = localStorage.getItem('theme');
-                if (saved === 'dark' || saved === 'light') {
-                    document.documentElement.setAttribute('data-theme', saved);
-                }
+                if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
             } catch (e) { /* storage unavailable */ }
         })();
     </script>
@@ -35,8 +39,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="/assets/css/site.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin>
 </head>
 
 <body>
@@ -44,7 +57,10 @@
 
     <header class="nav">
         <div class="shell nav__inner">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <a class="brand" href="/" aria-label="Frank Tetteh, home">
+                <span class="cell" aria-hidden="true"><span class="cell__fill"></span></span>
+                Frank Tetteh
+            </a>
 
             <nav class="nav__links" aria-label="Primary">
                 <a href="/">Home</a>
@@ -54,6 +70,16 @@
             </nav>
 
             <div class="nav__actions">
+                <button class="jump" type="button" data-palette-open aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="M16 16l4 4"></path>
+                    </svg>
+                    <span class="jump__label">Jump to</span>
+                    <span class="jump__menu">Menu</span>
+                    <kbd data-mod-key>Ctrl K</kbd>
+                </button>
                 <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                         stroke-linecap="round" aria-hidden="true">
@@ -65,61 +91,21 @@
                         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
                     </svg>
                 </button>
-                <a class="btn btn--ghost nav__cta" href="#write">Send a message</a>
-                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
-                    aria-label="Open menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                        aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <div class="drawer" data-open="false">
-        <div class="shell drawer__head">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    aria-hidden="true">
-                    <path d="M6 6l12 12M18 6L6 18"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="shell">
-            <nav aria-label="Mobile">
-                <a href="/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/projects/">Projects</a>
-                <a href="/contact/" aria-current="page">Contact</a>
-            </nav>
-            <a class="btn btn--primary btn--block" href="#write">Send a message</a>
-        </div>
-    </div>
-
     <main id="main">
-        <!-- Intro -->
-        <section class="hero" style="padding-bottom:clamp(16px,2.5vw,28px)">
-            <div class="shell">
-                <div class="rise" style="max-width:62ch">
-                    <span class="eyebrow">Contact</span>
-                    <h1 style="font-size:clamp(2.2rem,5.2vw,3.4rem);margin-block:20px 22px">Tell me what you're
-                        building.</h1>
-                    <p class="lede">
-                        I'm in Accra on GMT and work with teams locally and remotely. Use the form, email me, or
-                        put something in the diary. Replies usually go out within a day.
-                    </p>
-                </div>
-            </div>
+        <section class="shell page-head">
+            <h1 class="display">Tell me what you're building.</h1>
+            <p class="lede">I'm in Accra on GMT and work with teams locally and remotely. Use the form, email me, or put
+                something in the diary. Replies usually go out within a day.</p>
         </section>
 
-        <!-- Form and channels -->
-        <section class="section section--tight" id="write">
-            <div class="shell contact-grid">
-                <div class="panel">
-                    <h2>Send a message</h2>
-                    <form class="form" id="contactForm" novalidate>
+        <section class="shell contact-grid" id="write" style="padding-bottom:clamp(64px,9vw,112px)">
+            <div class="panel">
+                <h2>Send a message</h2>
+                <form class="form" id="contactForm" novalidate>
                         <div class="field">
                             <label for="name">Your name</label>
                             <input type="text" id="name" name="name" autocomplete="name" required>
@@ -140,147 +126,94 @@
                             <textarea id="message" name="message" rows="6" required></textarea>
                             <span class="field__error" data-error-for="message"></span>
                         </div>
-                        <button class="btn btn--primary btn--block" type="submit">Send message</button>
-                        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-                    </form>
-                </div>
-
-                <div>
-                    <div class="channels">
-                        <a class="channel" href="mailto:frankiekweku@gmail.com">
-                            <span class="channel__label">Email</span>
-                            <span class="channel__value">frankiekweku@gmail.com</span>
-                        </a>
-                        <a class="channel" href="tel:+233532681140">
-                            <span class="channel__label">Phone</span>
-                            <span class="channel__value">+233 53 268 1140</span>
-                            <span class="channel__note">WhatsApp too</span>
-                        </a>
-                        <div class="channel">
-                            <span class="channel__label">Location</span>
-                            <span class="channel__value">Accra, Ghana</span>
-                            <span class="channel__note">GMT</span>
-                        </div>
-                        <a class="channel" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
-                            target="_blank" rel="noopener">
-                            <span class="channel__label">Calendar</span>
-                            <span class="channel__value">Book a call</span>
-                            <span class="channel__note">30 min</span>
-                        </a>
-                        <a class="channel" href="https://github.com/frankielaroi" target="_blank" rel="noopener">
-                            <span class="channel__label">GitHub</span>
-                            <span class="channel__value">github.com/frankielaroi</span>
-                        </a>
-                        <a class="channel" href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            rel="noopener">
-                            <span class="channel__label">LinkedIn</span>
-                            <span class="channel__value">frank-tetteh-a64900259</span>
-                        </a>
-                        <a class="channel" href="https://franktetteh.vercel.app" target="_blank" rel="noopener">
-                            <span class="channel__label">Portfolio</span>
-                            <span class="channel__value">franktetteh.vercel.app</span>
-                        </a>
-                    </div>
-                </div>
+                    <button class="btn btn--charge btn--block" type="submit">Send message</button>
+                    <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+            <div class="channels">
+                    <a class="channel" href="mailto:frankiekweku@gmail.com"><span class="channel__label">Email</span><span class="channel__value">frankiekweku@gmail.com</span><span></span></a>
+                    <a class="channel" href="tel:+233532681140"><span class="channel__label">Phone</span><span class="channel__value">+233 53 268 1140</span><span class="channel__note">WhatsApp too</span></a>
+                    <div class="channel"><span class="channel__label">Location</span><span class="channel__value">Accra, Ghana</span><span class="channel__note">GMT</span></div>
+                    <a class="channel" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" target="_blank" rel="noopener"><span class="channel__label">Calendar</span><span class="channel__value">Book a call</span><span class="channel__note">30 min</span></a>
+                    <a class="channel" href="https://github.com/frankielaroi" target="_blank" rel="noopener"><span class="channel__label">GitHub</span><span class="channel__value">frankielaroi</span><span></span></a>
+                    <a class="channel" href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank" rel="noopener"><span class="channel__label">LinkedIn</span><span class="channel__value">frank-tetteh-a64900259</span><span></span></a>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="section section--sunken">
+        <section class="band band--panel" aria-labelledby="faq-title">
             <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Before you write</span>
-                    <h2>Questions I get asked.</h2>
+                <div class="band__head">
+                    <h2 class="title" id="faq-title">Questions I get asked.</h2>
                 </div>
-
                 <div class="faq">
                     <details>
                         <summary>What kind of work do you take on?</summary>
-                        <p>Full stack and frontend engineering: React and Next.js interfaces, Node.js, NestJS,
-                            Laravel and FastAPI backends, Flutter mobile apps, and database and API design. I have
-                            also built complete platforms alone when a client needed the whole thing.</p>
+                        <p>Full stack and frontend engineering: React and Next.js interfaces, Node.js, NestJS, Spring Boot, Laravel and FastAPI backends, Flutter mobile apps, and database and API design. I've also built complete platforms alone when a client needed the whole thing.</p>
                     </details>
                     <details>
                         <summary>Are you available for remote work?</summary>
-                        <p>Yes. I'm in Accra on GMT and have worked remotely with distributed teams at Reuben
-                            Foundation Africa, Hepeps IT Solutions and AfRipul Group. On-site in Accra works too.
-                        </p>
+                        <p>Yes. I'm in Accra on GMT and have worked remotely with distributed teams at Reuben Foundation Africa, Hepeps IT Solutions and AfRipul Group. On-site in Accra works too.</p>
                     </details>
                     <details>
                         <summary>How long will my project take?</summary>
-                        <p>It depends on scope. A focused frontend build is usually weeks; a full platform with
-                            backend, database and deployment takes longer. Send the requirements and I'll give you
-                            a realistic estimate rather than an optimistic one.</p>
+                        <p>It depends on scope. A focused frontend build is usually weeks; a full platform with backend, database and deployment takes longer. Send the requirements and I'll give you a realistic estimate rather than an optimistic one.</p>
                     </details>
                     <details>
                         <summary>Do you support what you build after launch?</summary>
-                        <p>Yes. I ship with CI/CD and metrics in place so problems are visible, and I'm happy to
-                            arrange ongoing maintenance or hand over with documentation.</p>
+                        <p>Yes. I ship with CI/CD and monitoring in place so problems are visible, and I'm happy to arrange ongoing maintenance or hand over with documentation. My IT support background means I think about the people who run it after me.</p>
                     </details>
                     <details>
                         <summary>What's the fastest way to reach you?</summary>
-                        <p>Phone or WhatsApp on +233 53 268 1140 if it's urgent. Otherwise email, and I'll reply
-                            within a day.</p>
+                        <p>Phone or WhatsApp on +233 53 268 1140 if it's urgent. Otherwise email, and I'll reply within a day.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Close -->
-        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
-            <div class="shell">
-                <div class="callout">
-                    <div>
-                        <h2>Prefer to talk it through?</h2>
-                        <p>Pick a time that suits you and we'll go through what you need.</p>
-                    </div>
-                    <div class="btn-row">
-                        <a class="btn btn--primary" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
-                            target="_blank" rel="noopener">Book a call</a>
-                    </div>
-                </div>
+        <section class="shell close" data-3d-hover>
+            <span class="emblem emblem--cell" data-3d="battery" aria-hidden="true"></span>
+            <div>
+                <h2 class="title">Prefer to talk it through?</h2>
+                <p class="lede">Pick a time that suits you and we'll go through what you need.</p>
+            </div>
+            <div class="btn-row">
+                <a class="btn btn--charge" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" target="_blank" rel="noopener">Book a call</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="shell">
-            <div class="footer__top">
-                <div>
-                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-                    <p class="footer__blurb">Software engineer in Accra, Ghana, building production web and
-                        mobile systems end to end, with an IT support background.</p>
-                </div>
-                <div class="footer__cols">
-                    <div class="footer__col">
-                        <h4>Site</h4>
-                        <a href="/">Home</a>
-                        <a href="/about/">About</a>
-                        <a href="/projects/">Projects</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Elsewhere</h4>
-                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            rel="noopener">LinkedIn</a>
-                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Direct</h4>
-                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
-                        <a href="tel:+233532681140">+233 53 268 1140</a>
-                    </div>
-                </div>
+        <div class="shell footer__inner">
+            <p>Software engineer in Accra, Ghana, building production web and mobile systems end to end.</p>
+            <div class="footer__links">
+                <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                <a href="tel:+233532681140">+233 53 268 1140</a>
             </div>
-            <div class="footer__bottom">
-                <p>© 2026 Frank Tetteh</p>
-                <p>Hand-built. No framework, no page builder.</p>
-            </div>
+        </div>
+        <div class="shell footer__inner" style="margin-top:22px">
+            <p>© 2026 Frank Tetteh</p>
+            <p>Hand-built. No framework, no page builder.</p>
         </div>
     </footer>
 
+    <dialog class="palette" id="palette" aria-label="Jump to a page or action">
+        <div class="palette__head">
+            <span class="palette__prompt" aria-hidden="true">&gt;</span>
+            <input class="palette__input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list"
+                aria-autocomplete="list" aria-label="Search pages, projects and actions"
+                placeholder="Where to? Try &quot;projects&quot; or &quot;email&quot;" autocomplete="off" spellcheck="false">
+            <form method="dialog"><button class="icon-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button></form>
+        </div>
+        <div class="palette__list" id="palette-list" role="listbox" aria-label="Results"></div>
+        <div class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+    </dialog>
+
     <script src="/assets/js/site.js" defer></script>
+    <script type="module" src="/assets/js/views3d.js"></script>
     <script src="/contact/form.js" defer></script>
 </body>
 

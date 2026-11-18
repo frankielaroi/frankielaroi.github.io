@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Projects | Frank Tetteh</title>
-    <meta name="description"
-        content="PharmaSysGH, FinWatch, CyberDefend 360 and TokenLink Africa: platforms Frank Tetteh built from scratch, plus production work at Kofa Technologies, Reuben Foundation Africa and Hepeps IT Solutions.">
+    <meta name="description" content="PharmaSysGH, CyberDefend 360, FinWatch and TokenLink Africa: platforms Frank Tetteh built from scratch, plus production work at Kofa Technologies, Reuben Foundation Africa and Hepeps IT Solutions.">
     <meta name="author" content="Frank Tetteh">
-    <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121116" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1626" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://frankielaroi.github.io/projects/">
     <link rel="icon" href="/fav.ico">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Projects | Frank Tetteh">
-    <meta property="og:description"
-        content="A pharmacy management SaaS, an AML detection platform and a tokenization API, built end to end.">
+    <meta property="og:description" content="PharmaSysGH, CyberDefend 360, FinWatch and TokenLink Africa: platforms Frank Tetteh built from scratch, plus production work at Kofa Technologies, Reuben Foundation Africa and Hepeps IT Solutions.">
     <meta property="og:url" content="https://frankielaroi.github.io/projects/">
     <meta property="og:image" content="https://frankielaroi.github.io/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects | Frank Tetteh">
+    <meta name="twitter:description" content="PharmaSysGH, CyberDefend 360, FinWatch and TokenLink Africa: platforms Frank Tetteh built from scratch, plus production work at Kofa Technologies, Reuben Foundation Africa and Hepeps IT Solutions.">
+    <meta name="twitter:image" content="https://frankielaroi.github.io/assets/portrait.png">
 
     <script>
+        /* Mark JS as present and apply a saved theme before paint. With no saved
+           choice the stylesheet follows the operating system. */
         (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            if ('noModule' in HTMLScriptElement.prototype && window.WebGLRenderingContext) root.classList.add('has-3d');
             try {
                 var saved = localStorage.getItem('theme');
-                if (saved === 'dark' || saved === 'light') {
-                    document.documentElement.setAttribute('data-theme', saved);
-                }
+                if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
             } catch (e) { /* storage unavailable */ }
         })();
     </script>
@@ -35,8 +39,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="/assets/css/site.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin>
 </head>
 
 <body>
@@ -44,7 +57,10 @@
 
     <header class="nav">
         <div class="shell nav__inner">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
+            <a class="brand" href="/" aria-label="Frank Tetteh, home">
+                <span class="cell" aria-hidden="true"><span class="cell__fill"></span></span>
+                Frank Tetteh
+            </a>
 
             <nav class="nav__links" aria-label="Primary">
                 <a href="/">Home</a>
@@ -54,6 +70,16 @@
             </nav>
 
             <div class="nav__actions">
+                <button class="jump" type="button" data-palette-open aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="M16 16l4 4"></path>
+                    </svg>
+                    <span class="jump__label">Jump to</span>
+                    <span class="jump__menu">Menu</span>
+                    <kbd data-mod-key>Ctrl K</kbd>
+                </button>
                 <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                         stroke-linecap="round" aria-hidden="true">
@@ -65,365 +91,196 @@
                         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
                     </svg>
                 </button>
-                <a class="btn btn--ghost nav__cta" href="/contact/">Start a project</a>
-                <button class="icon-btn nav__toggle" type="button" data-drawer-open aria-expanded="false"
-                    aria-label="Open menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                        aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <div class="drawer" data-open="false">
-        <div class="shell drawer__head">
-            <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-            <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    aria-hidden="true">
-                    <path d="M6 6l12 12M18 6L6 18"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="shell">
-            <nav aria-label="Mobile">
-                <a href="/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/projects/" aria-current="page">Projects</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-            <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
-        </div>
-    </div>
-
     <main id="main">
-        <!-- Intro -->
-        <section class="hero" style="padding-bottom:clamp(20px,3vw,32px)">
-            <div class="shell">
-                <div class="rise" style="max-width:64ch">
-                    <span class="eyebrow">Projects</span>
-                    <h1 style="font-size:clamp(2.2rem,5.2vw,3.4rem);margin-block:20px 22px">Built, deployed, and
-                        answerable for.</h1>
-                    <p class="lede">
-                        Platforms I designed and built on my own, from schema to deployment, and the
-                        production work I do inside engineering teams. Every architecture note below describes
-                        what actually runs.
-                    </p>
-                    <div class="hero__actions">
-                        <a class="btn btn--primary" href="/contact/">Work with me</a>
-                        <a class="btn btn--ghost" href="https://github.com/frankielaroi" target="_blank"
-                            rel="noopener">
-                            GitHub
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M7 17L17 7M9 7h8v8"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+        <section class="shell page-head">
+            <h1 class="display">Built, deployed, and answerable for.</h1>
+            <p class="lede">Platforms I designed and built on my own, and the production work I do inside engineering
+                teams. Every architecture note describes what actually runs.</p>
+            <div class="btn-row">
+                <a class="btn btn--charge" href="/contact/">Work with me</a>
+                <a class="btn btn--line" href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub profile</a>
             </div>
         </section>
 
-        <!-- Independent -->
-        <section class="section section--tight">
+        <section class="shell" aria-label="Solo builds" style="padding-bottom:clamp(48px,7vw,88px)">
+            <article class="case" id="pharmasysgh" data-3d-hover>
+                <div class="case__rail"><span class="emblem emblem--lg" data-3d="pill" aria-hidden="true"></span><b>2024 to now</b><span class="live">In active use</span><span>Solo build</span></div>
+                <div>
+                    <h2>PharmaSysGH<small>Multi-branch pharmacy management SaaS</small></h2>
+                    <p>A pharmacy platform designed and built from scratch and in active use across branches.</p>
+                    <ul class="points">
+                                <li><b>Architecture.</b> React and Next.js frontend, Node.js REST API and MySQL, deployed on Vercel behind a CI/CD pipeline.</li>
+                                <li><b>Operations.</b> Multi-branch point of sale, real-time inventory tracking and supplier management across locations.</li>
+                                <li><b>Access.</b> Role-based staff access, with reporting dashboards for branch and group figures.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">React.js</li><li class="chip">Next.js</li><li class="chip">Node.js</li><li class="chip">MySQL</li><li class="chip">Vercel</li><li class="chip">CI/CD</li></ul>
+                </div>
+            </article>
+            <article class="case" id="cyberdefend" data-3d-hover>
+                <div class="case__rail"><span class="emblem emblem--lg" data-3d="shield" aria-hidden="true"></span><b>2025</b><span>Shipped</span><span>Solo build</span></div>
+                <div>
+                    <h2>CyberDefend 360<small>Cybersecurity assessment and phishing simulation platform</small></h2>
+                    <p>A multi-tenant SaaS that measures an organisation's security posture and trains its people, built as two products over one backend.</p>
+                    <ul class="points">
+                                <li><b>DefendX.</b> An adaptive questionnaire that scores an organisation's Cyber Safety Index, places it in risk tiers A to F and benchmarks it against regional, sector and national averages.</li>
+                                <li><b>DefendX+.</b> Phishing simulation campaigns with tracking and analytics, a live alert dashboard, security scanning, detection rules and resilience scoring.</li>
+                                <li><b>Security.</b> JWT auth, role-based access control, rate limiting and audit logging, plus endpoint agents and encrypted S3 backups.</li>
+                                <li><b>Commercial.</b> Tiered subscriptions with card and Mobile Money payments, invoicing, auto-renewal and trials.</li>
+                                <li><b>Architecture.</b> React 18 and TypeScript with Redux Toolkit and RTK Query on Vite, over a NestJS API on PostgreSQL (Prisma) with Redis/Bull queues, shipped in Docker.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">React 18</li><li class="chip">TypeScript</li><li class="chip">Redux Toolkit</li><li class="chip">NestJS</li><li class="chip">PostgreSQL</li><li class="chip">Prisma</li><li class="chip">Redis</li><li class="chip">Docker</li></ul>
+                </div>
+            </article>
+            <article class="case" id="finwatch" data-3d-hover>
+                <div class="case__rail"><span class="emblem emblem--lg" data-3d="ledger" aria-hidden="true"></span><b>2024</b><span>Shipped</span><span>Solo build</span></div>
+                <div>
+                    <h2>FinWatch<small>Anti-money-laundering detection platform</small></h2>
+                    <p>A financial crime detection platform covering the full path from transaction to analyst decision.</p>
+                    <ul class="points">
+                                <li><b>Backend.</b> FastAPI with PostgreSQL and Alembic migrations, plus Redis-backed async workers with dead-letter retry.</li>
+                                <li><b>Detection.</b> An XGBoost model registry feeding the scoring pipeline, with Prometheus monitoring across the system.</li>
+                                <li><b>Process split.</b> The API, the ingestion worker and the retry worker run as separate processes, so each scales and restarts on its own.</li>
+                                <li><b>Security.</b> API-key authentication on every route, role-based access control and audit records for authenticated traffic.</li>
+                                <li><b>Frontend.</b> A React dashboard with alert queues, case management and evidence review.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">FastAPI</li><li class="chip">PostgreSQL</li><li class="chip">Alembic</li><li class="chip">Redis</li><li class="chip">XGBoost</li><li class="chip">Prometheus</li><li class="chip">Docker</li><li class="chip">React</li></ul>
+                </div>
+            </article>
+            <article class="case" id="tokenlink" data-3d-hover>
+                <div class="case__rail"><span class="emblem emblem--lg" data-3d="token" aria-hidden="true"></span><b>2026</b><span class="wip">In progress</span><span>Solo build</span></div>
+                <div>
+                    <h2>TokenLink Africa<small>Tokenization as a service</small></h2>
+                    <p>A plug-in tokenization API and SDK so fintechs and banks in Ghana can add secure payment and credential tokenization without building compliance infrastructure in-house.</p>
+                    <ul class="points">
+                                <li><b>Architecture.</b> Microservices in NestJS, Spring Boot and Go over PostgreSQL, with a Next.js frontend.</li>
+                                <li><b>Multi-tenancy.</b> Organisations with owner, admin, developer and viewer roles, scoped API keys, webhooks and audit logging.</li>
+                                <li><b>Local rails.</b> Built for Mobile Money and GhIPSS, aligned with Bank of Ghana and SEC frameworks.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">NestJS</li><li class="chip">Spring Boot</li><li class="chip">Go</li><li class="chip">PostgreSQL</li><li class="chip">Next.js</li></ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="band band--panel" aria-labelledby="team-title">
             <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">Independent</span>
-                    <h2>Solo builds.</h2>
+                <div class="band__head">
+                    <h2 class="title" id="team-title">Shipped with teams.</h2>
+                    <p class="lede">Products I worked on as part of an engineering team, or as the sole developer on a client engagement.</p>
                 </div>
-
-                <div class="records">
-                    <article class="record" id="pharmasysgh">
-                        <div class="record__rail">
-                            <b>2024 – Present</b>
-                            <span class="flag flag--live">In active use</span>
-                            <span>Solo build</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>PharmaSysGH: Pharmacy Management SaaS</h3>
-                            <p>A multi-branch pharmacy management platform, designed and built from scratch and
-                                currently in active use.</p>
-                            <ul class="points">
-                                <li><b>Architecture</b> React.js and Next.js frontend, Node.js REST API, MySQL
-                                    database, deployed on Vercel behind a CI/CD pipeline.</li>
-                                <li><b>Operations</b> Multi-branch point of sale, real-time inventory tracking and
-                                    supplier management across locations.</li>
-                                <li><b>Access</b> Staff role access control, with reporting dashboards for branch
-                                    and group level figures.</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="tag">React.js</span><span class="tag">Next.js</span><span
-                                    class="tag">Node.js</span><span class="tag">MySQL</span><span
-                                    class="tag">Vercel</span><span class="tag">CI/CD</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record" id="finwatch">
-                        <div class="record__rail">
-                            <b>2024</b>
-                            <span class="flag flag--live">Shipped</span>
-                            <span>Solo build</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>FinWatch: AML Detection Platform</h3>
-                            <p>A financial crime detection platform covering the full path from transaction to
-                                analyst decision.</p>
-                            <ul class="points">
-                                <li><b>Backend</b> FastAPI with PostgreSQL and Alembic migrations, plus
-                                    Redis-backed async workers with dead-letter queue retry.</li>
-                                <li><b>Detection</b> An XGBoost model registry feeding the scoring pipeline, with
-                                    Prometheus observability across the system.</li>
-                                <li><b>Process split</b> The API, the profile ingestion worker and the DLQ retry
-                                    worker run as separate processes, so each scales and restarts on its own.</li>
-                                <li><b>Deployment</b> A Docker Compose stack (Postgres, Redis, migrations, API,
-                                    both workers) for local work, and systemd units for the servers.</li>
-                                <li><b>Security</b> API key authentication on every <code>/api/v1</code> route,
-                                    role-based access control, and audit records written for authenticated
-                                    traffic.</li>
-                                <li><b>Frontend</b> A React.js dashboard with alert queues, case management views
-                                    and evidence review interfaces.</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span
-                                    class="tag">Alembic</span><span class="tag">Redis</span><span
-                                    class="tag">XGBoost</span><span class="tag">Prometheus</span><span
-                                    class="tag">Docker</span><span class="tag">React.js</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record" id="cyberdefend">
-                        <div class="record__rail">
-                            <b>2025</b>
-                            <span class="flag flag--live">Shipped</span>
-                            <span>Solo build</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>CyberDefend 360: Security Posture Platform</h3>
-                            <p>A cybersecurity assessment and monitoring platform for organisations, built as two
-                                products over one backend.</p>
-                            <ul class="points">
-                                <li><b>DefendX</b> An adaptive questionnaire that scores an organisation's Cyber
-                                    Safety Index, classifies it into risk tiers A to F, and benchmarks it against
-                                    regional, sectoral and national averages, with generated reports and
-                                    assessment history.</li>
-                                <li><b>DefendX+</b> Phishing simulation campaigns, a live alert monitoring
-                                    dashboard, security scanning, detection rule management and resilience
-                                    scoring.</li>
-                                <li><b>Commercial</b> Tiered subscriptions with card and Mobile Money payments,
-                                    invoicing, auto-renewal and trial lifecycle handling.</li>
-                                <li><b>Admin and public</b> System-wide analytics, a question bank, organisation
-                                    oversight and audit logging, plus a public CSI directory searchable by sector,
-                                    region and company size.</li>
-                                <li><b>Security</b> JWT auth, role-based access control, rate limiting and audit
-                                    logging, plus endpoint agents and encrypted S3 backups.</li>
-                                <li><b>Architecture</b> React 18 and TypeScript with Redux Toolkit and RTK Query
-                                    on Vite, over a NestJS API on PostgreSQL (Prisma) with Redis/Bull queues,
-                                    shipped in Docker.</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="tag">React 18</span><span class="tag">TypeScript</span><span
-                                    class="tag">Redux Toolkit</span><span class="tag">RTK Query</span><span
-                                    class="tag">Vite</span><span class="tag">Tailwind CSS</span><span
-                                    class="tag">Recharts</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span
-                                    class="tag">Prisma</span><span class="tag">Redis</span><span
-                                    class="tag">Docker</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record" id="tokenlink">
-                        <div class="record__rail">
-                            <b>2026</b>
-                            <span class="flag flag--wip">In progress</span>
-                            <span>Solo build</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>TokenLink Africa: Tokenization as a Service</h3>
-                            <p>A plug-in tokenization API and SDK that lets fintechs and banks in Ghana add secure
-                                payment and credential tokenization to existing systems, without standing up
-                                blockchain or compliance infrastructure in-house.</p>
-                            <ul class="points">
-                                <li><b>Architecture</b> Microservices in NestJS, Java Spring Boot and Go, over a
-                                    PostgreSQL database, with a Next.js frontend.</li>
-                                <li><b>Multi-tenancy</b> An Organization Service with role-based access control
-                                    (Owner, Admin, Developer, Viewer), scoped API keys, webhooks and audit logging
-                                    across the organisation and membership lifecycle.</li>
-                                <li><b>Local rails</b> Built for Mobile Money and GhIPSS integration, aligned with
-                                    Bank of Ghana and SEC frameworks for payment and virtual asset service
-                                    providers.</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="tag">NestJS</span><span class="tag">Spring Boot</span><span
-                                    class="tag">Go</span><span class="tag">PostgreSQL</span><span
-                                    class="tag">Next.js</span><span class="tag">Microservices</span>
-                            </div>
-                        </div>
-                    </article>
+            <article class="case" id="kofa-work">
+                <div class="case__rail"><b>2026 to now</b><span class="live">Live</span></div>
+                <div>
+                    <h2>Battery-swap network<small>Kofa Technologies</small></h2>
+                    <p>Four products for a clean-energy platform running in multiple African markets: operations dashboard, network platform, fleet-partner portal and Flutter rider app.</p>
+                    <ul class="points">
+                                <li><b>Alerts.</b> Real-time notification inbox and web push for at-risk stations and battery-movement requests.</li>
+                                <li><b>Rider app.</b> Manual slot unlock so redistribution trips finish when a slot faults.</li>
+                                <li><b>Diagnostics.</b> Slot-level activity log with search and filters.</li>
+                                <li><b>Fleet.</b> Live moving, parked and immobilised bike counts, and fixes to cross-platform data bugs.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">React</li><li class="chip">Next.js</li><li class="chip">TypeScript</li><li class="chip">Web Push</li><li class="chip">Laravel</li><li class="chip">Flutter</li></ul>
                 </div>
+            </article>
+            <article class="case" id="reuben">
+                <div class="case__rail"><b>2024 to 2026</b></div>
+                <div>
+                    <h2>Platform and mobile app<small>Reuben Foundation Africa</small></h2>
+                    <p>Led frontend, backend and Flutter mobile development for the organisation's platform.</p>
+                    <ul class="points">
+                                <li><b>APIs.</b> REST services in Node.js and Next.js on AWS.</li>
+                                <li><b>Automation.</b> Workflows that removed manual reporting work.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">Node.js</li><li class="chip">Next.js</li><li class="chip">Flutter</li><li class="chip">AWS</li></ul>
+                </div>
+            </article>
+            <article class="case" id="hepeps">
+                <div class="case__rail"><b>2024 to 2025</b></div>
+                <div>
+                    <h2>Client product interfaces<small>Hepeps IT Solutions</small></h2>
+                    <p>Production React and Next.js interfaces across several client products.</p>
+                    <ul class="points">
+                                <li><b>Delivery.</b> Figma designs translated to responsive components that passed client UAT first time in most projects.</li>
+                                <li><b>Speed.</b> Code-splitting and render optimisation for page load.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">React.js</li><li class="chip">Next.js</li><li class="chip">Figma-to-code</li></ul>
+                </div>
+            </article>
+            <article class="case" id="rmu">
+                <div class="case__rail"><b>2024</b></div>
+                <div>
+                    <h2>Internal administration apps<small>Regional Maritime University</small></h2>
+                    <p>Internal web applications for institutional administration, alongside IT support for staff.</p>
+                    <ul class="points">
+                                <li><b>Build.</b> PHP and MySQL apps for administration teams.</li>
+                                <li><b>Support.</b> Hardware, software and network fixes that kept staff working.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">PHP</li><li class="chip">MySQL</li><li class="chip">IT support</li></ul>
+                </div>
+            </article>
+            <article class="case" id="afripul">
+                <div class="case__rail"><b>2024</b></div>
+                <div>
+                    <h2>API integration and automation<small>AfRipul Group</small></h2>
+                    <p>Integration and performance work on a production application.</p>
+                    <ul class="points">
+                                <li><b>APIs.</b> REST integrations and fixes for production bottlenecks.</li>
+                                <li><b>Data.</b> Automation tools and MySQL schemas that held up as the app grew.</li>
+                    </ul>
+                    <ul class="chips"><li class="chip">REST APIs</li><li class="chip">MySQL</li><li class="chip">Automation</li></ul>
+                </div>
+            </article>
             </div>
         </section>
 
-        <!-- Team work -->
-        <section class="section section--sunken">
-            <div class="shell">
-                <div class="section-head">
-                    <span class="eyebrow">In production</span>
-                    <h2>Work shipped with teams.</h2>
-                    <p>Products I contributed to as part of an engineering team, or as the sole developer on a
-                        client engagement.</p>
-                </div>
-
-                <div class="records">
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2026 – Present</b>
-                            <span>Kofa Technologies</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Battery swapping platform</h3>
-                            <p>A clean energy platform running in multiple African markets. 35+ stories and fixes in
-                                my first two months across the operations dashboard, network platform, fleet-partner
-                                portal and Flutter rider app: real-time notifications and web push for at-risk
-                                stations, a manual slot-unlock flow for riders, a slot-level activity log, and live
-                                bike status on the fleet map.</p>
-                            <div class="tags">
-                                <span class="tag">React</span><span class="tag">Next.js</span><span
-                                    class="tag">TypeScript</span><span class="tag">Web Push</span><span
-                                    class="tag">Laravel</span><span class="tag">Flutter</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2024 – 2026</b>
-                            <span>Reuben Foundation Africa</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>NGO platform and mobile app</h3>
-                            <p>Led frontend, backend and Flutter mobile development: REST APIs in Node.js and
-                                Next.js on AWS, plus automation that removed manual reporting work.</p>
-                            <div class="tags">
-                                <span class="tag">Node.js</span><span class="tag">Next.js</span><span
-                                    class="tag">Flutter</span><span class="tag">AWS</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2024 – 2025</b>
-                            <span>Hepeps IT Solutions</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Client product interfaces</h3>
-                            <p>Production React.js and Next.js interfaces across several client products. Figma
-                                designs translated to pixel-accurate components, with code-splitting and render
-                                optimisation for page load.</p>
-                            <div class="tags">
-                                <span class="tag">React.js</span><span class="tag">Next.js</span><span
-                                    class="tag">Figma-to-code</span><span class="tag">Performance</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2024</b>
-                            <span>Regional Maritime University</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>Internal administration apps</h3>
-                            <p>Built and maintained internal web applications for institutional administration,
-                                while also resolving hardware, software and network issues for staff.</p>
-                            <div class="tags">
-                                <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">IT
-                                    support</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="record">
-                        <div class="record__rail">
-                            <b>2024</b>
-                            <span>AfRipul Group</span>
-                        </div>
-                        <div class="record__body">
-                            <h3>API integration and automation tooling</h3>
-                            <p>Integrated RESTful APIs, resolved production performance bottlenecks, built custom
-                                automation tools, and designed MySQL schemas that held up as the application
-                                grew.</p>
-                            <div class="tags">
-                                <span class="tag">REST APIs</span><span class="tag">MySQL</span><span
-                                    class="tag">Automation</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+        <section class="shell close" data-3d-hover>
+            <span class="emblem emblem--cell" data-3d="battery" aria-hidden="true"></span>
+            <div>
+                <h2 class="title">Interested in working together?</h2>
+                <p class="lede">Tell me what you're building and I'll say plainly whether I'm the right person for it.</p>
             </div>
-        </section>
-
-        <!-- Close -->
-        <section class="section--tight" style="padding-bottom:clamp(44px,6vw,72px)">
-            <div class="shell">
-                <div class="callout">
-                    <div>
-                        <h2>Interested in collaborating?</h2>
-                        <p>Tell me what you're building and I'll say plainly whether I'm the right person for it.
-                        </p>
-                    </div>
-                    <div class="btn-row">
-                        <a class="btn btn--primary" href="/contact/">Get in touch</a>
-                        <a class="btn btn--onDeep" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd"
-                            target="_blank" rel="noopener">Book a call</a>
-                    </div>
-                </div>
+            <div class="btn-row">
+                <a class="btn btn--charge" href="/contact/">Get in touch</a>
+                <a class="btn btn--line" href="https://appt.link/meet-with-frank-ntim-tetteh-UjyAqSXd" target="_blank" rel="noopener">Book a call</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="shell">
-            <div class="footer__top">
-                <div>
-                    <a class="brand" href="/">Frank Tetteh<span>.</span></a>
-                    <p class="footer__blurb">Software engineer in Accra, Ghana, building production web and
-                        mobile systems end to end, with an IT support background.</p>
-                </div>
-                <div class="footer__cols">
-                    <div class="footer__col">
-                        <h4>Site</h4>
-                        <a href="/">Home</a>
-                        <a href="/about/">About</a>
-                        <a href="/projects/">Projects</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Elsewhere</h4>
-                        <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank"
-                            rel="noopener">LinkedIn</a>
-                        <a href="https://franktetteh.vercel.app" target="_blank" rel="noopener">franktetteh.vercel.app</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Direct</h4>
-                        <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
-                        <a href="tel:+233532681140">+233 53 268 1140</a>
-                    </div>
-                </div>
+        <div class="shell footer__inner">
+            <p>Software engineer in Accra, Ghana, building production web and mobile systems end to end.</p>
+            <div class="footer__links">
+                <a href="https://github.com/frankielaroi" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/frank-tetteh-a64900259" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:frankiekweku@gmail.com">frankiekweku@gmail.com</a>
+                <a href="tel:+233532681140">+233 53 268 1140</a>
             </div>
-            <div class="footer__bottom">
-                <p>© 2026 Frank Tetteh</p>
-                <p>Hand-built. No framework, no page builder.</p>
-            </div>
+        </div>
+        <div class="shell footer__inner" style="margin-top:22px">
+            <p>© 2026 Frank Tetteh</p>
+            <p>Hand-built. No framework, no page builder.</p>
         </div>
     </footer>
 
+    <dialog class="palette" id="palette" aria-label="Jump to a page or action">
+        <div class="palette__head">
+            <span class="palette__prompt" aria-hidden="true">&gt;</span>
+            <input class="palette__input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list"
+                aria-autocomplete="list" aria-label="Search pages, projects and actions"
+                placeholder="Where to? Try &quot;projects&quot; or &quot;email&quot;" autocomplete="off" spellcheck="false">
+            <form method="dialog"><button class="icon-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button></form>
+        </div>
+        <div class="palette__list" id="palette-list" role="listbox" aria-label="Results"></div>
+        <div class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+    </dialog>
+
     <script src="/assets/js/site.js" defer></script>
+    <script type="module" src="/assets/js/views3d.js"></script>
 </body>
 
 </html>
