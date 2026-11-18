@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /google0275461c5aae65cc.html
 
-Sitemap: https://frankielaroi.github.io/sitemap.xml 
+Sitemap: https://frankielaroi.github.io/sitemap.xml
